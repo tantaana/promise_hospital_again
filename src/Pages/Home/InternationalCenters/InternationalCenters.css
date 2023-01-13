@@ -1,0 +1,10 @@
+.chooseManipal-bg {
+    background-image: url(../../../image/home.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.good-health {
+    background-color: #0c51a0;
+    opacity: 0.8;
+}
