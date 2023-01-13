@@ -1,0 +1,5 @@
+.medicalValue-bg {
+    background-image: url(./MedicalValueImages/medicalValue-bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
