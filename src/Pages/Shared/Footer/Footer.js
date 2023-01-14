@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
+        <div className='text-white mt-10' style={{ background: '#413d3d' }}>
             <footer className="footer p-10 ">
                 <div>
                     <span className="footer-title">About Promise Hospital</span>

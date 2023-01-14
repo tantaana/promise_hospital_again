@@ -1,15 +1,16 @@
 import React from 'react';
 import { FaHome } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import newYear from './new_year.png'
 
 
 const Nav2 = () => {
     return (
         <div className='bg-gradient-to-r from-blue-400 to-teal-500 xl:flex items-center gap-28 justify-between hidden'>
 
-            {/* <div>
+            <div>
                 <img src={newYear} className="hidden xl:block xl:h-[120px]" alt="" srcset="" />
-            </div> */}
+            </div>
 
             <div className='flex gap-10 items-center justify-center'>
                 <Link to='/' className='text-4xl text-white font-semibold'><FaHome /></Link>
