@@ -16,7 +16,7 @@ const Nav2 = () => {
                 <Link to='/' className='text-4xl text-white font-semibold'><FaHome /></Link>
                 <Link to='/doctors' className='text-lg text-white font-semibold hover:bg-blue-500 p-4'>Doctors</Link>
                 <Link to='/specialities' className='text-lg text-white font-semibold hover:bg-blue-500 p-4'>Specialities</Link>
-                <Link to='/gallery' className='text-lg text-white font-semibold hover:bg-blue-500 p-4'>Health Packages</Link>
+                <Link to='/packages' className='text-lg text-white font-semibold hover:bg-blue-500 p-4'>Health Packages</Link>
                 <Link to='/plan' className='text-lg text-white font-semibold hover:bg-blue-500 p-4'>Plan Your Visit</Link>
             </div>
 
