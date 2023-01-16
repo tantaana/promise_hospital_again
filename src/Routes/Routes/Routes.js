@@ -225,6 +225,39 @@ export const router = createBrowserRouter([
         ]
     },
 
+    /////// Tanvir login & logout aria (228-260) line ------------------/////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /////------- Tanvir login & logout aria end -------
 ])
 
 
