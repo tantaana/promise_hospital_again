@@ -194,7 +194,7 @@ export const router = createBrowserRouter([
             ////////////--------- Solyman aria is end ----------///////////////////
 
 
-            //////////--------- Jahid aria is 197-127 line----------- /////////////////////
+            //////////--------- Jahid aria is 197-117 line----------- /////////////////////
 
 
 
