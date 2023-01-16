@@ -36,7 +36,6 @@ const Nav1 = () => {
                             <li><Link to='/about' className='hover:bg-gray-300'><FaUserMd />About Us</Link></li>
                             <li><Link to='/blogs' className='hover:bg-gray-300'><MdContactPage />Blogs</Link></li>
                             <li><Link to='/news' className='hover:bg-gray-300'><BsNewspaper />News & Media</Link></li>
-                            <li><Link to='/packages' className='hover:bg-gray-300'><FaClipboardList />Packages</Link></li>
                             <li><Link to='/contact' className='hover:bg-gray-300'><RiContactsBookLine />Contact Us</Link></li>
                         </ul>
                     </div>
@@ -53,7 +52,7 @@ const Nav1 = () => {
                         <li><Link to='/about' className='hover:bg-gray-300'><FaUserMd />About Us</Link></li>
                         <li><Link to='/blogs' className='hover:bg-gray-300'><MdContactPage />Blogs</Link></li>
                         <li><Link to='/news' className='hover:bg-gray-300'><BsNewspaper />News & Media</Link></li>
-                        <li><Link to='/packages' className='hover:bg-gray-300'><FaClipboardList />Packages</Link></li>
+                        <li><Link to='/packages' className='hover:bg-gray-300'><FaClipboardList />Health Packages</Link></li>
                         <li><Link to='/contact' className='hover:bg-gray-300'><RiContactsBookLine />Contact Us</Link></li>
                         <input type="text" placeholder="🔍 Search Here" className="input input-bordered input-success rounded-full input-sm" />
                         <li><a href='tel:+8801628672468' className='mt-10 font-semibold'>📞(+880)1628672468</a></li>
