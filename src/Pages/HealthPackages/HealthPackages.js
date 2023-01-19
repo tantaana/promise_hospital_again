@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './HealthPackages.css'
+import Packages from './Packages'
 
 const HealthPackages = () => {
+    const [packages, setPackages] = useState([])
+
+    useEffect(()=>{
+        fetch('http://localhost:5000/packages')
+        .then(res => res.json())
+        .then(data => setPackages(data))
+    }, [])
+    console.log(packages)
   return (
     <div>
         <div>
@@ -16,11 +25,11 @@ const HealthPackages = () => {
             <div className='package'>
                 <div className='text-center mt-5 lg:flex lg:justify-center'>
                     <select className="select select-bordered max-w-xs ms-2 rounded-r-none">
-                        <option disabled selected>Select Your Hospital Loacation</option>
+                        <option disabled>Select Your Hospital Loacation</option>
                         <option>Old Airport Road - Bangalore</option>
                     </select>
                     <select className="select select-bordered max-w-xs rounded-l-none rounded-r-none">
-                        <option disabled selected>Select Gender</option>
+                        <option disabled>Select Gender</option>
                         <option>Male</option>
                         <option>Female</option>
                         <option>Others</option>
@@ -31,11 +40,12 @@ const HealthPackages = () => {
                     <div className='text-center'>
                         <h2 className='text-2xl'>Popular Packages</h2>
                     </div>
-                    {/* <div className='grid lg:grid-cols-3 gap-5 md:grid-cols-2 sm:grid-cols-1 p-10'>
+                    <div className='grid lg:grid-cols-3 gap-5 md:grid-cols-2 sm:grid-cols-1 p-10'>
                         {
-                            packes.map(packe => <Packes key={packe.id} packe={packe}></Packes>)
+                            packages.map(pk => <Packages key={pk._id} pk={pk}></Packages>)
+                            
                         }
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </div>
