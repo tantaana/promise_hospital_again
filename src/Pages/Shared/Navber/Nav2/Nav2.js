@@ -6,7 +6,7 @@ import newYear from './new_year.png'
 
 const Nav2 = () => {
     return (
-        <div className='bg-gradient-to-r from-blue-400 to-teal-500 xl:flex items-center gap-28 justify-between hidden'>
+        <div className='bg-gradient-to-r from-blue-400 to-teal-500 xl:flex items-center gap-28 justify-between hidden sticky top-0 z-30'>
 
             <div>
                 <img src={newYear} className="hidden xl:block xl:h-[120px]" alt="" srcset="" />

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const HomeCarousel = () => {
     return (
-        <div>
+        <div className=''>
             <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://storage.googleapis.com/jacksonh/1/JHS_International-2.jpg" className="h-[400px] md:h-[600px] w-full object-cover brightness-50" />
