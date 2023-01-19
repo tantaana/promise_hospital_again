@@ -5,6 +5,7 @@ import errorImg from '../../assets/404Image/error.png'
 
 
 
+
 ///// Tanvir import place(8-16) -----//////////
 
 
@@ -20,7 +21,8 @@ import errorImg from '../../assets/404Image/error.png'
 
 
 
-
+import Specialities from "../../Pages/Specialities/Specialities";
+import SpecialitiesDetails from "../../Pages/Specialities/SpecialitiesDetails";
 
 
 
@@ -106,7 +108,18 @@ export const router = createBrowserRouter([
 
 
 
+            {
+                path: '/specialities',
+                element: <Specialities></Specialities>,
+         
+            },
 
+            {
+                path: '/specialitiesDetails/:id',
+                element: <SpecialitiesDetails></SpecialitiesDetails>,
+                loader : ({params}) => fetch(`http://localhost:5000/specialities/${params.id}`),
+         
+            },
 
 
 
