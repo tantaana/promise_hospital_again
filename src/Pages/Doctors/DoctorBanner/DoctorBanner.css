@@ -1,0 +1,22 @@
+#doctors-hero {
+    background: url('https://i.ibb.co/m8QTkbd/best-hospital-in-india.jpg') no-repeat;
+    height: 60vh;
+    background-size: cover;
+    width: 100%;
+    background-position: center;
+}
+
+/* @media screen and (min-width:320px) {
+    #doctors-hero{
+    background-size: cover;
+    background-position: center;
+    
+    
+    }
+    
+} */
+
+#btn-video-consulation,
+.text-color {
+    color: #2a4f91;
+}
