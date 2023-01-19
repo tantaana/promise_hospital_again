@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const BlogCard = ({ blog }) => {
-    console.log('hallo blogs', blog)
-    const { img, fullTitle, description } = blog;
+    console.log(blog)
+    const { img, fullTitle, description, _id } = blog;
+    console.log(_id)
     return (
 
-        <Link to={'/'} className="card md:card-side bg-base-100 shadow-xl rounded-md  border-solid border-2 border-teal-500  transform transition duration-500 hover:scale-105">
+        <Link to={`/blog/${_id}`} className="card md:card-side bg-base-100 shadow-xl rounded-md  border-solid border-2 border-teal-500  transform transition duration-500 hover:scale-105">
             <img className='h-full md:w-7/12 rounded-md ' src={img} alt="Album" />
             <div className="card-body md:w-6/12">
 

@@ -58,7 +58,7 @@ import errorImg from '../../assets/404Image/error.png'
 ///--------------------------------------------------
 //// Jahid import place (59-68)///////
 import Blogs from "../../Pages/Blogs/Blogs/Blogs";
-
+import BlogDetails from "../../Pages/Blogs/BlogDetails/BlogDetails";
 
 
 
@@ -198,9 +198,10 @@ export const router = createBrowserRouter([
             {
                 path: '/blogs', element: <Blogs></Blogs>
             },
-
-
-
+            {
+                path: '/blog/:id', element: <BlogDetails></BlogDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/blog/${params.id}`)
+            },
 
 
 

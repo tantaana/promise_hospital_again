@@ -1,6 +1,6 @@
 [
     {
-        "id": "01",
+        "_id": "01",
         "title": "Bone Marrow Transplant",
         "fullTitle": "Bone Marrow Transplant : Facts With Conditions And Treatment",
         "care": "Liver Care",
@@ -27,7 +27,7 @@
         ]
     },
     {
-        "id": "02",
+        "_id": "02",
         "title": "Spine Problems",
         "fullTitle": "The Top 7 Foods For A Healthy Spine",
         "care": "Spine Care",
@@ -58,7 +58,7 @@
         ]
     },
     {
-        "id": "03",
+        "_id": "03",
         "title": "Liver Transplantation Surgery",
         "fullTitle": "Which is the Best Treatment for Liver Resection on Bile Duct Cancer?",
         "care": "Liver Care",
@@ -89,7 +89,7 @@
         ]
     },
     {
-        "id": "04",
+        "_id": "04",
         "title": "Diabetes",
         "fullTitle": "Tips to Control Type 2 Diabetes Naturally",
         "care": "Diabetes & Endocrinology",
@@ -120,7 +120,7 @@
         ]
     },
     {
-        "id": "05",
+        "_id": "05",
         "title": "General Medicine",
         "fullTitle": "Things to Know About Medical Tourism in India",
         "care": "General Surgery",
@@ -135,7 +135,7 @@
         ]
     },
     {
-        "id": "06",
+        "_id": "06",
         "title": "Children Paediatrics",
         "fullTitle": "Know How Intestinal Lymphangiectasia is Diagnosed and Treated in Children",
         "care": "Gastrointestinal Sciences",
@@ -150,7 +150,7 @@
         ]
     },
     {
-        "id": "07",
+        "_id": "07",
         "title": "Neurology",
         "fullTitle": "Know All About Mental Health Awareness",
         "care": "Neurology and Neurosurgery",
@@ -177,7 +177,7 @@
         ]
     },
     {
-        "id": "08",
+        "_id": "08",
         "title": "Organ Transplant",
         "fullTitle": "Keys to a Successful Organ Transplant",
         "care": "Organ Transplants",
@@ -200,7 +200,7 @@
         ]
     },
     {
-        "id": "09",
+        "_id": "09",
         "title": "Cancer Care",
         "fullTitle": "Ways to Improve Your Lung Cancer Survival",
         "care": "Comprehensive Cancer Care",
