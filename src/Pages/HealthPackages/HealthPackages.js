@@ -10,7 +10,7 @@ const HealthPackages = () => {
         .then(res => res.json())
         .then(data => setPackages(data))
     }, [])
-    console.log(packages)
+    // console.log(packages)
   return (
     <div>
         <div>
@@ -22,7 +22,7 @@ const HealthPackages = () => {
                     </div>
                 </div>
             </div>
-            <div className='package'>
+            <div className='package pt-10'>
                 <div className='text-center mt-5 lg:flex lg:justify-center'>
                     <select className="select select-bordered max-w-xs ms-2 rounded-r-none">
                         <option disabled>Select Your Hospital Loacation</option>
@@ -38,9 +38,9 @@ const HealthPackages = () => {
                 </div>
                 <div className='mt-5'>
                     <div className='text-center'>
-                        <h2 className='text-2xl'>Popular Packages</h2>
+                        <h2 className='text-4xl mt-10 text-blue-800'>Popular Packages</h2>
                     </div>
-                    <div className='grid lg:grid-cols-3 gap-5 md:grid-cols-2 sm:grid-cols-1 p-10'>
+                    <div className='grid lg:grid-cols-3 gap-10 md:grid-cols-2 sm:grid-cols-1 p-10'>
                         {
                             packages.map(pk => <Packages key={pk._id} pk={pk}></Packages>)
                             

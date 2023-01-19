@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 const Packages = ({pk}) => {
   const {img, name, location, includes, price, old_price, save, _id} = pk
-  console.log(img)
+  // console.log(img)
   return (
     <div className='transform transition duration-500 hover:scale-105 mb-8'>
-      <div className="h-full card card-compact w-96 bg-base-100 rounded-md shadow-xl packes-card">
+      <div className="h-full w-full card card-compact bg-base-100 rounded-md shadow-xl packes-card">
         <figure><img className='w-full' src={img} alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title text-blue-500">{name}</h2>
@@ -22,7 +22,7 @@ const Packages = ({pk}) => {
               <p className='text-xl mt-5 text-green-500'>{save}</p>
             </div>
             <div>
-              <Link to={`/details/${name}`}><button className='btn bg-blue-500 border-none rounded-sm hover:bg-blue-700'>Explore</button></Link>
+              <Link to={`/details/${_id}`}><button className='btn bg-blue-500 text-white font-semibold border-none rounded-sm hover:bg-blue-700'>Explore</button></Link>
             </div>
           </div>
         </div>

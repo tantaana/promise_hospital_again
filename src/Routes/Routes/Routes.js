@@ -38,7 +38,7 @@ import errorImg from '../../assets/404Image/error.png'
 ///-------------------------------------------------------
 ///////  Kausarul import place (39-47)----///
 import HealthPackes from "../../Pages/HealthPackages/HealthPackages";
-
+import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails";
 
 
 
@@ -153,7 +153,11 @@ export const router = createBrowserRouter([
                 path: '/packages',
                 element: <HealthPackes></HealthPackes>
             },
-
+            {
+                path: '/details/:id',
+                element: <PackagesDetails></PackagesDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
+            },
 
 
 
