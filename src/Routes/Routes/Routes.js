@@ -57,7 +57,7 @@ import errorImg from '../../assets/404Image/error.png'
 /////  solyman end ////////////////
 ///--------------------------------------------------
 //// Jahid import place (59-68)///////
-
+import Blogs from "../../Pages/Blogs/Blogs/Blogs";
 
 
 
@@ -195,9 +195,9 @@ export const router = createBrowserRouter([
 
 
             //////////--------- Jahid aria is 197-117 line----------- /////////////////////
-
-
-
+            {
+                path: '/blogs', element: <Blogs></Blogs>
+            },
 
 
 
@@ -259,6 +259,5 @@ export const router = createBrowserRouter([
 
     /////------- Tanvir login & logout aria end -------
 ])
-
 
 
