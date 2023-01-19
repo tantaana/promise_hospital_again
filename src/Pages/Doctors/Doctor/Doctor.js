@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import DoctorBookingForm from '../DoctorBookingForm/DoctorBookingForm';
 import './doctor.css'
 const Doctor = ({ doctor }) => {
     console.log(doctor)
@@ -21,7 +22,14 @@ const Doctor = ({ doctor }) => {
                 <span className="">{location}</span> <br />
                 <div className="mt-8">
                     <Link to={`/doctors/${_id}`} className="py-2 px-2 rounded btn1 mx-2">View profile</Link>
-                    <button className="py-2 px-2 rounded btn2 mx-2">Book an appointment</button>
+                    <label htmlFor="doctor-book-modal" className="py-2 px-2 rounded btn2 mx-2">Book an appointment</label>
+                </div>
+            </div>
+            <input type="checkbox" id="doctor-book-modal" className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box w-11/12 max-w-5xl">
+                    <label htmlFor="doctor-book-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <DoctorBookingForm></DoctorBookingForm>
                 </div>
             </div>
         </div>
