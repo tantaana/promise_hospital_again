@@ -39,8 +39,8 @@ import DoctorProfile from "../../Pages/Doctors/DoctorsProfile/DoctorsProfile";
 ////////Rabib import end /////////
 ///-------------------------------------------------------
 ///////  Kausarul import place (39-47)----///
-
-
+import HealthPackes from "../../Pages/HealthPackages/HealthPackages";
+import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails";
 
 
 
@@ -162,8 +162,15 @@ export const router = createBrowserRouter([
 
 
             ////////----------- Kausarul aria is 151-171 line ---------/////////////
-
-
+            {
+                path: '/packages',
+                element: <HealthPackes></HealthPackes>
+            },
+            {
+                path: '/details/:id',
+                element: <PackagesDetails></PackagesDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
+            },
 
 
 
