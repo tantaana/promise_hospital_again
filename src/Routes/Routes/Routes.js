@@ -27,8 +27,8 @@ import SuccessStories from "../../Pages/SuccessStories/SuccessStories";
 ///// Fouzia import end  /////////
 //------------------------------------------------------
 ///// Rakib import place (29-37)---/////
-
-
+import Doctors from "../../Pages/Doctors/Doctors";
+import DoctorProfile from "../../Pages/Doctors/DoctorsProfile/DoctorsProfile";
 
 
 
@@ -126,16 +126,16 @@ export const router = createBrowserRouter([
 
             ///////---------- Rakib aria is 127-147 line ---------///////////////
 
-
-
-
-
-
-
-
-
-
-
+            {
+                path: '/doctors', element: <Doctors></Doctors>
+            },
+            {
+                path: '/doctors/:id',
+                loader: async ({ params }) => {
+                    return fetch(`https://server-new-rokibul-bd.vercel.app/doctors/${params.id}`)
+                },
+                element: <DoctorProfile></DoctorProfile>
+            },
 
 
 
