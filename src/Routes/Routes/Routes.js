@@ -59,9 +59,9 @@ import DoctorProfile from "../../Pages/Doctors/DoctorsProfile/DoctorsProfile";
 /////  solyman end ////////////////
 ///--------------------------------------------------
 //// Jahid import place (59-68)///////
-
-
-
+import Blogs from "../../Pages/Blogs/Blogs/Blogs";
+import BlogDetails from "../../Pages/Blogs/BlogDetails/BlogDetails";
+import About from "../../Pages/About/About";
 
 
 
@@ -208,16 +208,16 @@ export const router = createBrowserRouter([
 
 
             //////////--------- Jahid aria is 197-117 line----------- /////////////////////
-
-
-
-
-
-
-
-
-
-
+            {
+                path: '/blogs', element: <Blogs></Blogs>
+            },
+            {
+                path: '/blog/:id', element: <BlogDetails></BlogDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/blog/${params.id}`)
+            },
+            {
+                path: '/about', element: <About></About>
+            },
 
 
 
@@ -279,6 +279,5 @@ export const router = createBrowserRouter([
 
     /////------- Tanvir login & logout aria end -------
 ])
-
 
 
