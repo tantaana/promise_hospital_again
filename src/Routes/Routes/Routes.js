@@ -6,8 +6,8 @@ import errorImg from '../../assets/404Image/error.png'
 
 
 ///// Tanvir import place(8-16) -----//////////
-
-
+import Login from "../../Pages/Login/Login"; import Signup from "../../Pages/Signup/Signup";
+import SuccessStories from "../../Pages/SuccessStories/SuccessStories";
 
 
 
@@ -79,10 +79,10 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             ////----- Tanvir aria is 81-101 line ----------//////////////////////////
-
-
-
-
+            {
+                path: '/stories',
+                element: <SuccessStories></SuccessStories>
+            },
 
 
 
@@ -227,7 +227,14 @@ export const router = createBrowserRouter([
 
     /////// Tanvir login & logout aria (228-260) line ------------------/////
 
-
+    {
+        path: '/login',
+        element: <Login></Login>
+    },
+    {
+        path: '/signup',
+        element: <Signup></Signup>
+    },
 
 
 
