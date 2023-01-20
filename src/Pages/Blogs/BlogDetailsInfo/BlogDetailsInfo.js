@@ -12,7 +12,7 @@ const BlogDetailsInfo = ({ blogInfo }) => {
 
             }
         }>
-            <div className=' w-11/12  mx-auto border-4 border-blue-500 rounded-lg p-6 md:p-10'>
+            <div className=' w-11/12  mx-auto border-4 border-blue-500 rounded-lg md:p-10'>
                 <div className='mt-4'>
                     <p>{description}</p>
                 </div>

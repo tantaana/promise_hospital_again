@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const BlogCard = ({ blog }) => {
     console.log(blog)
-    const { img, fullTitle, description, _id } = blog;
+    const { img, fullTitle, description, _id, title } = blog;
     console.log(_id)
     return (
 
@@ -12,10 +12,10 @@ const BlogCard = ({ blog }) => {
             <div className="card-body md:w-6/12">
 
                 <h2 className="text-base font-bold">{
-                    fullTitle.slice(1, 30) + '...'
+                    title.slice(0, 35)
                 }</h2>
-                <p>{
-                    description.slice(1, 60) + '...'
+                <p className='text-sm font-semibold text-slate-400'>{
+                    description.slice(0, 60) + '...'
                 }</p>
 
             </div>

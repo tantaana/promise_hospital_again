@@ -59,7 +59,7 @@ import errorImg from '../../assets/404Image/error.png'
 //// Jahid import place (59-68)///////
 import Blogs from "../../Pages/Blogs/Blogs/Blogs";
 import BlogDetails from "../../Pages/Blogs/BlogDetails/BlogDetails";
-
+import About from "../../Pages/About/About";
 
 
 
@@ -202,10 +202,9 @@ export const router = createBrowserRouter([
                 path: '/blog/:id', element: <BlogDetails></BlogDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/blog/${params.id}`)
             },
-
-
-
-
+            {
+                path: '/about', element: <About></About>
+            },
 
 
 
