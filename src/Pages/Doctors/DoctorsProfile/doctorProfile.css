@@ -18,13 +18,13 @@
 
 
 /* custome text color  */
-.primary-color {
+.primary-doctor-color {
     color: #2a4f91;
 }
 
 
 /* doctors section button === */
-.btn {
+.btn-doctor {
     background: #2a4f91;
     color: #fff;
 }

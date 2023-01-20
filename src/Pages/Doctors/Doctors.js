@@ -14,7 +14,7 @@ const Doctors = () => {
     return (
         <>
             <DoctorBanner doctors={doctors}></DoctorBanner>
-            <div className='grid md:grid-cols-2 gap-8 mt-8 mx-4'>
+            <div className='grid md:grid-cols-2 gap-8 mt-8 md:w-11/12 w-10/12 mx-auto'>
 
                 {
                     doctors.map(doctor => <Doctor key={doctor._id} doctor={doctor}></Doctor>)
