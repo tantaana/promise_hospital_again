@@ -34,7 +34,6 @@ import DoctorProfile from "../../Pages/Doctors/DoctorsProfile/DoctorsProfile";
 
 
 
-
 ////////Rabib import end /////////
 ///-------------------------------------------------------
 ///////  Kausarul import place (39-47)----///
@@ -137,15 +136,6 @@ export const router = createBrowserRouter([
                 },
                 element: <DoctorProfile></DoctorProfile>
             },
-
-
-
-
-
-
-
-
-
 
 
 
