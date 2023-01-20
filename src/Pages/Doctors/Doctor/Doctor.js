@@ -12,17 +12,17 @@ const Doctor = ({ doctor }) => {
 
         //     </div>
         // </div>
-        <div className=" flex " id="border-color2">
+        <div className=" lg:flex " id="doctor-border-color2">
             <div className="img border-r-2 bg-white rounded-l-2xl  " id="border-color" >
-                <img className="h-60 w-48 rounded-l-2xl " src={doctorImg} alt="" />
+                <img className="h-60 w-full lg:w-48 rounded-l-2xl " src={doctorImg} alt="" />
             </div>
             <div className="doctors-text py-4 pl-4 bg-white w-full rounded-r-2xl ">
                 <h2 className="font-semibold text-2xl text-color">{name}</h2>
                 <p className="text-gray-500 my-4">{sepecilaty}</p>
                 <span className="">{location}</span> <br />
                 <div className="mt-8">
-                    <Link to={`/doctors/${_id}`} className="py-2 px-2 rounded btn1 mx-2">View profile</Link>
-                    <label htmlFor="doctor-book-modal" className="py-2 px-2 rounded btn2 mx-2">Book an appointment</label>
+                    <Link to={`/doctors/${_id}`} className="py-2 px-2 rounded doctor-btn1 mx-2 block md:inline">View profile</Link>
+                    <label htmlFor="doctor-book-modal" className="py-2 px-2 rounded doctor-btn2 mx-2 block md:inline mt-2 md:mt-0">Book an appointment</label>
                 </div>
             </div>
             <input type="checkbox" id="doctor-book-modal" className="modal-toggle" />
