@@ -75,6 +75,7 @@ const Nav1 = () => {
                             <li><Link to='/about' className='hover:bg-gray-300'><FaUserMd />About Us</Link></li>
                             <li><Link to='/blogs' className='hover:bg-gray-300'><MdContactPage />Blogs</Link></li>
                             <li><Link to='/news' className='hover:bg-gray-300'><BsNewspaper />News & Media</Link></li>
+                            <li><Link to='/social' className='hover:bg-gray-300'><BsNewspaper />Social Media</Link></li>
                             <li><Link to='/contact' className='hover:bg-gray-300'><RiContactsBookLine />Contact Us</Link></li>
 
                         </ul>

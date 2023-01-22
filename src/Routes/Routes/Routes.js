@@ -62,6 +62,8 @@ import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails";
 import Blogs from "../../Pages/Blogs/Blogs/Blogs";
 import BlogDetails from "../../Pages/Blogs/BlogDetails/BlogDetails";
 import About from "../../Pages/About/About";
+import NewsAndMedia from "../../Pages/NewsAndMedia/NewsAndMedia";
+import SocilMedia from "../../Pages/SocilMedia/SocilMedia";
 
 
 
@@ -111,14 +113,14 @@ export const router = createBrowserRouter([
             {
                 path: '/specialities',
                 element: <Specialities></Specialities>,
-         
+
             },
 
             {
                 path: '/specialitiesDetails/:id',
                 element: <SpecialitiesDetails></SpecialitiesDetails>,
-                loader : ({params}) => fetch(`http://localhost:5000/specialities/${params.id}`),
-         
+                loader: ({ params }) => fetch(`https://promise-hospoital-server.vercel.app/specialities/${params.id}`),
+
             },
 
 
@@ -169,7 +171,7 @@ export const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PackagesDetails></PackagesDetails>,
-                loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
+                loader: ({ params }) => fetch(`https://promise-hospoital-server.vercel.app/details/${params.id}`)
             },
 
 
@@ -192,7 +194,12 @@ export const router = createBrowserRouter([
 
 
             ///////--------- solyman aria is 174-194 line----------- ////////////////////
-
+            {
+                path: '/news', element: <NewsAndMedia></NewsAndMedia>
+            },
+            {
+                path: '/social', element: <SocilMedia></SocilMedia>
+            },
 
 
 
@@ -220,7 +227,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/blog/:id', element: <BlogDetails></BlogDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/blog/${params.id}`)
+                loader: ({ params }) => fetch(`https://promise-hospoital-server.vercel.app/blog/${params.id}`)
             },
             {
                 path: '/about', element: <About></About>

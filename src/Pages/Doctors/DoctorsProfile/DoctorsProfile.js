@@ -14,7 +14,7 @@ const DoctorsProfile = () => {
     const doctorData = useLoaderData()
     const { name, location, sepecilaty, qualification, doctorImg, locationImg } = doctorData
     return (
-        <div className='mb-36'>
+        <div className='lg:mb-52 sm:mb-96'>
             <div className='h-screen'>
                 <div id="doctors-view-page" style={{
                     backgroundImage: `url(${locationImg})`
@@ -75,6 +75,7 @@ const DoctorsProfile = () => {
                     </div>
                 </div>
             </div>
+
             {/* <div className='container mt-56 px-20'>
                 <div className='row grid xl:grid-cols-2 lg:grid-cols-2 text-ariya-border-color rounded-xl'>
                     <div>
@@ -91,6 +92,7 @@ const DoctorsProfile = () => {
 
             </div> */}
         </div>
+
     );
 };
 
