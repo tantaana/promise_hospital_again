@@ -37,8 +37,9 @@ import errorImg from '../../assets/404Image/error.png'
 ////////Rabib import end /////////
 ///-------------------------------------------------------
 ///////  Kausarul import place (39-47)----///
-import HealthPackes from "../../Pages/HealthPackages/HealthPackages";
-import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails";
+import HealthPackages from "../../Pages/HealthPackages/HealthPackages/HealthPackages";
+import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails/PackagesDetails";
+
 
 
 
@@ -151,7 +152,7 @@ export const router = createBrowserRouter([
             ////////----------- Kausarul aria is 151-171 line ---------/////////////
             {
                 path: '/packages',
-                element: <HealthPackes></HealthPackes>
+                element: <HealthPackages></HealthPackages>
             },
             {
                 path: '/details/:id',

@@ -1,5 +1,5 @@
 .packes{
-    background-image: url(../../image/package-banner.png);
+    background-image: url(../../../image/package-banner.png);
     height: 400px;
     background-position: center;
     background-size: cover;
@@ -22,11 +22,11 @@
 }
 
 .package{
-    background-image: url(../../image/package-bg.png);
+    background-image: url(../../../image/package-bg.png);
 }
 
 .detailsPages{
-    background-image: url(../../image/detailsPagesBg.png);
+    background-image: url(../../../image/detailsPagesBg.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -35,4 +35,10 @@
 
 .des{
     background-color: #00b7ac;
+}
+
+@media (max-width: 576px) {
+    .detailsPages{
+        height: 300px;
+    }
 }

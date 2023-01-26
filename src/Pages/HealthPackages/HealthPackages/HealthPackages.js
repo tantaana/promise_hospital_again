@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './HealthPackages.css'
-import Packages from './Packages'
+import Packages from '../Packages/Packages'
 
 const HealthPackages = () => {
     const [packages, setPackages] = useState([])
@@ -15,7 +15,7 @@ const HealthPackages = () => {
     <div>
         <div>
             <div className='packes'>
-                <div className='flex justify-end'>
+                <div className='lg:flex lg:justify-end sm:pt-10'>
                     <div className='mt-10 pr-10'>
                         <button className='w-full btn bg-white text-blue-500 border-none hover:bg-white block mb-3'>Video consulation</button>
                         <button className='w-full btn bg-white text-blue-500 border-none hover:bg-white'>Get a second opinion</button>
@@ -23,7 +23,7 @@ const HealthPackages = () => {
                 </div>
             </div>
             <div className='package pt-10'>
-                <div className='text-center mt-5 lg:flex lg:justify-center'>
+                <div className='text-center mt-5 lg:flex sm:block lg:justify-center'>
                     <select className="select select-bordered max-w-xs ms-2 rounded-r-none">
                         <option disabled>Select Your Hospital Loacation</option>
                         <option>Old Airport Road - Bangalore</option>
@@ -40,10 +40,9 @@ const HealthPackages = () => {
                     <div className='text-center'>
                         <h2 className='text-4xl mt-10 text-blue-800'>Popular Packages</h2>
                     </div>
-                    <div className='grid lg:grid-cols-3 gap-10 md:grid-cols-2 sm:grid-cols-1 p-10'>
+                    <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 p-10'>
                         {
                             packages.map(pk => <Packages key={pk._id} pk={pk}></Packages>)
-                            
                         }
                     </div>
                 </div>
@@ -53,4 +52,4 @@ const HealthPackages = () => {
   )
 }
 
-export default HealthPackages
+export default HealthPackages;
