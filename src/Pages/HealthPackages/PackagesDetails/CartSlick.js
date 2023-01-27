@@ -65,4 +65,4 @@ const CartSlick = () => {
     )
 }
 
-export default CartSlick
+export default CartSlick;
