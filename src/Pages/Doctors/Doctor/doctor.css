@@ -1,0 +1,28 @@
+#border-color {
+    border-color: #2a4f91;
+
+}
+
+#liner-gradin {
+    background: linear-gradient(to right, #2a4f91, #17a2b8);
+}
+
+.doctor-btn1 {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+.doctor-btn2 {
+    background-color: #2a4f91;
+    color: #fff;
+
+}
+
+#doctor-border-color2 {
+    border-radius: 16px;
+    background: linear-gradient(180deg, #034ea1 0, #00b7ac 100%);
+    background-clip: padding-box;
+    padding: 2px 10px 2px 4px;
+    margin-bottom: 33px;
+    transition: 1s;
+}

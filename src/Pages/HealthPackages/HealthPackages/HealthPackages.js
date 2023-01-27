@@ -5,14 +5,13 @@ import Packages from '../Packages/Packages'
 const HealthPackages = () => {
     const [packages, setPackages] = useState([])
 
-    useEffect(()=>{
-        fetch('http://localhost:5000/packages')
-        .then(res => res.json())
-        .then(data => setPackages(data))
+    useEffect(() => {
+        fetch('https://promise-hospoital-server.vercel.app/packages')
+            .then(res => res.json())
+            .then(data => setPackages(data))
     }, [])
     // console.log(packages)
-  return (
-    <div>
+    return (
         <div>
             <div className='packes'>
                 <div className='lg:flex lg:justify-end sm:pt-10'>
@@ -48,8 +47,7 @@ const HealthPackages = () => {
                 </div>
             </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default HealthPackages;
