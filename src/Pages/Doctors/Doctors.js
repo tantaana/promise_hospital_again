@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Doctor from './Doctor/Doctor';
 import DoctorBanner from './DoctorBanner/DoctorBanner';
+import DoctorBookingForm from './DoctorBookingForm/DoctorBookingForm';
 
 const Doctors = () => {
     const [doctors, setDoctors] = useState([])
