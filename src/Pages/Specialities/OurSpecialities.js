@@ -92,7 +92,8 @@ const OurSpecialities = () => {
             <p className='mt-7 text-3xl font-bold  mb-5 text-center' style={{ color: '#034ea1', }} >All Our Specialities</p>
 
 
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  mt-10' style={
+
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto mt-10' style={
                 {
                     background: `url(${sbg})`,
                     padding: 20,
