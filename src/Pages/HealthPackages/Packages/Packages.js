@@ -5,7 +5,7 @@ const Packages = ({pk}) => {
   const {img, name, location, includes, price, old_price, save, _id} = pk
   // console.log(img)
   return (
-    <div className='transform transition duration-500 hover:scale-105 mb-8'>
+    <div className='transform transition duration-500 hover:scale-105 mb-8 mr-10'>
       <div className="h-full w-full card card-compact bg-base-100 rounded-md shadow-xl packes-card">
         <figure><img className='w-full' src={img} alt="Shoes" /></figure>
         <div className="card-body">
