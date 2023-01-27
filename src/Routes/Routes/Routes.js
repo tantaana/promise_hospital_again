@@ -62,8 +62,9 @@ import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails";
 import Blogs from "../../Pages/Blogs/Blogs/Blogs";
 import BlogDetails from "../../Pages/Blogs/BlogDetails/BlogDetails";
 import About from "../../Pages/About/About";
-import NewsAndMedia from "../../Pages/NewsAndMedia/NewsAndMedia";
-import SocilMedia from "../../Pages/SocilMedia/SocilMedia";
+import NewsAndMedia from "../../Pages/NewsMediya/NewsAndMediya";
+
+import SocilaMediya from "../../Pages/SocialMediya/SocilaMediya";
 
 
 
@@ -198,7 +199,7 @@ export const router = createBrowserRouter([
                 path: '/news', element: <NewsAndMedia></NewsAndMedia>
             },
             {
-                path: '/social', element: <SocilMedia></SocilMedia>
+                path: '/social', element: <SocilaMediya></SocilaMediya>
             },
 
 
