@@ -165,7 +165,7 @@ export const router = createBrowserRouter([
 
 
 
-            ////////----------- Kausarul aria is 151-171 line ---------/////////////
+            //////----------- Kausarul aria is 151-171 line ---------/////////////
             {
                 path: '/packages',
                 element: <HealthPackages></HealthPackages>
