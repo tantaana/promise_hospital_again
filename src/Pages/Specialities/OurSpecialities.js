@@ -93,7 +93,13 @@ const OurSpecialities = () => {
 
 
             
+
+
+
+
+
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto mt-10' style={
+
                 {
                     background: `url(${sbg})`,
                     padding: 20,
