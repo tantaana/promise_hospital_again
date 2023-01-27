@@ -12,7 +12,7 @@ const Doctor = ({ doctor }) => {
 
         //     </div>
         // </div>
-        <div className=" lg:flex " id="doctor-border-color2">
+        <div className=" lg:flex hover:scale-105 hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)] ease-in duration-300" id="doctor-border-color2">
             <div className="img border-r-2 bg-white rounded-l-2xl  " id="border-color" >
                 <img className="h-60 w-full lg:w-48 rounded-l-2xl " src={doctorImg} alt="" />
             </div>
