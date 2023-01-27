@@ -12,7 +12,7 @@ const CartSlick = () => {
     const [packages, setPackages] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/packages')
+        fetch('https://promise-hospoital-server.vercel.app/packages')
             .then(res => res.json())
             .then(data => setPackages(data))
     }, [])
@@ -55,9 +55,9 @@ const CartSlick = () => {
         <div className='package p-16 pt-7'>
             <h2 className='text-4xl mb-5 text-blue-500'>Explore More</h2>
             <Slider {...settings}>
-                    {
-                        packages.map(pk => <Packages key={pk._id} pk={pk}></Packages>)
-                    }
+                {
+                    packages.map(pk => <Packages key={pk._id} pk={pk}></Packages>)
+                }
             </Slider>
 
 
