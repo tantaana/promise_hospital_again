@@ -75,6 +75,7 @@ const DoctorsProfile = () => {
                     </div>
                 </div>
             </div>
+
             {/* <div className='container mt-56 px-20'>
                 <div className='row grid xl:grid-cols-2 lg:grid-cols-2 text-ariya-border-color rounded-xl'>
                     <div>
@@ -91,6 +92,7 @@ const DoctorsProfile = () => {
 
             </div> */}
         </div>
+
     );
 };
 

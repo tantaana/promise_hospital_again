@@ -5,8 +5,9 @@ import errorImg from '../../assets/404Image/error.png'
 
 
 
-///// Tanvir import place(8-16) -----//////////
 
+///// Tanvir import place(8-16) -----//////////
+import Login from "../../Pages/Login/Login"; import Signup from "../../Pages/Signup/Signup"; import SuccessStories from "../../Pages/SuccessStories/SuccessStories"; import VisitPlan from "../../Pages/VisitPlan/VisitPlan"; import Insurance from "../../Pages/VisitPlan/Insurance/Insurance"; import Arrival from "../../Pages/VisitPlan/Arrival/Arrival"; import Discharge from "../../Pages/VisitPlan/Discharge/Discharge";
 
 
 
@@ -20,7 +21,8 @@ import errorImg from '../../assets/404Image/error.png'
 
 
 
-
+import Specialities from "../../Pages/Specialities/Specialities";
+import SpecialitiesDetails from "../../Pages/Specialities/SpecialitiesDetails";
 
 
 
@@ -37,8 +39,8 @@ import DoctorProfile from "../../Pages/Doctors/DoctorsProfile/DoctorsProfile";
 ////////Rabib import end /////////
 ///-------------------------------------------------------
 ///////  Kausarul import place (39-47)----///
-
-
+import HealthPackes from "../../Pages/HealthPackages/HealthPackages";
+import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails";
 
 
 
@@ -57,9 +59,11 @@ import DoctorProfile from "../../Pages/Doctors/DoctorsProfile/DoctorsProfile";
 /////  solyman end ////////////////
 ///--------------------------------------------------
 //// Jahid import place (59-68)///////
-
-
-
+import Blogs from "../../Pages/Blogs/Blogs/Blogs";
+import BlogDetails from "../../Pages/Blogs/BlogDetails/BlogDetails";
+import About from "../../Pages/About/About";
+import NewsAndMedia from "../../Pages/NewsAndMedia/NewsAndMedia";
+import SocilMedia from "../../Pages/SocilMedia/SocilMedia";
 
 
 
@@ -79,11 +83,11 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             ////----- Tanvir aria is 81-101 line ----------//////////////////////////
-
-
-
-
-
+            { path: '/stories', element: <SuccessStories></SuccessStories> },
+            { path: '/plan', element: <VisitPlan></VisitPlan> },
+            { path: '/plan/insurance', element: <Insurance></Insurance> },
+            { path: '/plan/arrival', element: <Arrival></Arrival> },
+            { path: '/plan/discharge', element: <Discharge></Discharge> },
 
 
 
@@ -106,7 +110,18 @@ export const router = createBrowserRouter([
 
 
 
+            {
+                path: '/specialities',
+                element: <Specialities></Specialities>,
 
+            },
+
+            {
+                path: '/specialitiesDetails/:id',
+                element: <SpecialitiesDetails></SpecialitiesDetails>,
+                loader: ({ params }) => fetch(`https://promise-hospoital-server.vercel.app/specialities/${params.id}`),
+
+            },
 
 
 
@@ -149,8 +164,15 @@ export const router = createBrowserRouter([
 
 
             ////////----------- Kausarul aria is 151-171 line ---------/////////////
-
-
+            {
+                path: '/packages',
+                element: <HealthPackes></HealthPackes>
+            },
+            {
+                path: '/details/:id',
+                element: <PackagesDetails></PackagesDetails>,
+                loader: ({ params }) => fetch(`https://promise-hospoital-server.vercel.app/details/${params.id}`)
+            },
 
 
 
@@ -172,7 +194,12 @@ export const router = createBrowserRouter([
 
 
             ///////--------- solyman aria is 174-194 line----------- ////////////////////
-
+            {
+                path: '/news', element: <NewsAndMedia></NewsAndMedia>
+            },
+            {
+                path: '/social', element: <SocilMedia></SocilMedia>
+            },
 
 
 
@@ -195,16 +222,16 @@ export const router = createBrowserRouter([
 
 
             //////////--------- Jahid aria is 197-117 line----------- /////////////////////
-
-
-
-
-
-
-
-
-
-
+            {
+                path: '/blogs', element: <Blogs></Blogs>
+            },
+            {
+                path: '/blog/:id', element: <BlogDetails></BlogDetails>,
+                loader: ({ params }) => fetch(`https://promise-hospoital-server.vercel.app/blog/${params.id}`)
+            },
+            {
+                path: '/about', element: <About></About>
+            },
 
 
 
@@ -227,7 +254,14 @@ export const router = createBrowserRouter([
 
     /////// Tanvir login & logout aria (228-260) line ------------------/////
 
-
+    {
+        path: '/login',
+        element: <Login></Login>
+    },
+    {
+        path: '/signup',
+        element: <Signup></Signup>
+    },
 
 
 
@@ -259,6 +293,5 @@ export const router = createBrowserRouter([
 
     /////------- Tanvir login & logout aria end -------
 ])
-
 
 

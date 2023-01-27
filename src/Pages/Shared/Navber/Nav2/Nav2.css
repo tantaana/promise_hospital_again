@@ -1,0 +1,8 @@
+.border-down {
+    background-color: #ffffff;
+}
+
+.border-down:active {
+    background-color: #af2121;
+    margin-bottom: 20px;
+}

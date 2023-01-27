@@ -5,6 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
+    // apiKey: process.env.REACT_APP_apiKey,
+    // authDomain: process.env.REACT_APP_authDomain,
+    // projectId: process.env.REACT_APP_projectId,
+    // storageBucket: process.env.REACT_APP_storageBucket,
+    // messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    // appId: process.env.REACT_APP_appId,
     apiKey: "AIzaSyBWPwYqVOnY0dxQQW3VEV9elTRIouf7RO8",
     authDomain: "promise-hospital-5e53f.firebaseapp.com",
     projectId: "promise-hospital-5e53f",
