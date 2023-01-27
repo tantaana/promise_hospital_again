@@ -83,12 +83,22 @@ const Nav1 = () => {
 
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn hover:bg-teal-500 m-1 text-3xl bg-transparent border border-teal-700 rounded-2xl text-black"><BiMenu /></label>
+<<<<<<< HEAD
                         <ul tabIndex={0} className="dropdown-content menu p-2 shadow rounded-box w-52 text-lg font-semibold bg-gradient-to-r from-blue-400 to-teal-300 m-1">
                             <li onClick={handleClick}><NavLink to='/stories' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><BiHappyBeaming />Success Stories</NavLink></li>
                             <li onClick={handleClick}><NavLink to='/about' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaUserMd />About Us</NavLink></li>
                             <li onClick={handleClick}><NavLink to='/blogs' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><MdContactPage />Blogs</NavLink></li>
                             <li onClick={handleClick}><NavLink to='/news' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><BsNewspaper />News & Media</NavLink></li>
                             <li onClick={handleClick}><NavLink to='/contact' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><RiContactsBookLine />Contact Us</NavLink></li>
+=======
+                        <ul tabIndex={0} className="dropdown-content menu p-2 shadow rounded-box w-52 text-lg font-semibold bg-gradient-to-r from-blue-300 to-teal-300">
+                            <li><Link to='/stories' className='hover:bg-gray-300'><BiHappyBeaming />Success Stories</Link></li>
+                            <li><Link to='/about' className='hover:bg-gray-300'><FaUserMd />About Us</Link></li>
+                            <li><Link to='/blogs' className='hover:bg-gray-300'><MdContactPage />Blogs</Link></li>
+                            <li><Link to='/news' className='hover:bg-gray-300'><BsNewspaper />News & Media</Link></li>
+                            <li><Link to='/social' className='hover:bg-gray-300'><BsNewspaper />Social Media</Link></li>
+                            <li><Link to='/contact' className='hover:bg-gray-300'><RiContactsBookLine />Contact Us</Link></li>
+>>>>>>> semi
 
                         </ul>
                     </div>
