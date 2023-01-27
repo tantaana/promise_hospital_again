@@ -1,0 +1,42 @@
+/* doctor image use ===== */
+#doctors-view-page {
+    background-size: cover;
+    height: 60vh;
+    width: 100%;
+}
+
+
+/* doctors img margin bottom==== */
+.bottom-margin {
+    margin-bottom: -2rem;
+}
+
+/* doctors img shadow  */
+#doctors-profile img {
+    box-shadow: 0px 0px 10px #222;
+}
+
+
+/* custome text color  */
+.primary-doctor-color {
+    color: #2a4f91;
+}
+
+
+/* doctors section button === */
+.btn-doctor {
+    background: #2a4f91;
+    color: #fff;
+}
+
+
+/* text ariya btn bg color */
+.text-item-linear-gradien {
+    background: linear-gradient(to right, #2a4f91, #17a2b8);
+}
+
+
+/* text ariya border color use  */
+.text-ariya-border-color {
+    border: 3px solid #17a2b8;
+}

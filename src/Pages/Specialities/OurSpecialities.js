@@ -7,11 +7,11 @@ import { useEffect } from 'react';
 const OurSpecialities = () => {
 
 
-    const [specialities,setSpecialities] = useState([]);
+    const [specialities, setSpecialities] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/specialities')
-        .then(res => res.json())
-        .then(data => setSpecialities(data))
+        fetch('https://promise-hospoital-server.vercel.app/specialities')
+            .then(res => res.json())
+            .then(data => setSpecialities(data))
     }, []);
 
     // const images = [
@@ -88,11 +88,16 @@ const OurSpecialities = () => {
                     </div>
 
                 </div>
-                </div>
-                <p className='mt-7 text-3xl font-bold  mb-5 text-center' style={{ color: '#034ea1', }} >All Our Specialities</p>
+            </div>
+            <p className='mt-7 text-3xl font-bold  mb-5 text-center' style={{ color: '#034ea1', }} >All Our Specialities</p>
 
+
+<<<<<<< HEAD
             
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto mt-10' style={
+=======
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1  mt-10' style={
+>>>>>>> semi
                 {
                     background: `url(${sbg})`,
                     padding: 20,
