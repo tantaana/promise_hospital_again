@@ -7,8 +7,8 @@ module.exports = {
     themes: [
       {
         hospital: {
-          primary: "#007bff",
-          secondary: '#17a2b8',
+          primary: "#0ea5e9",
+          secondary: '#14b8a6',
           success: "#1BA175",
           error: "#E01F28",
           "base-100": "#FFFFFF",
