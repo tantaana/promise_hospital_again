@@ -7,8 +7,8 @@ import errorImg from '../../assets/404Image/error.png'
 
 
 ///// Tanvir import place(8-16) -----//////////
-import Login from "../../Pages/Login/Login"; import Signup from "../../Pages/Signup/Signup";
-import SuccessStories from "../../Pages/SuccessStories/SuccessStories";
+import Login from "../../Pages/Login/Login"; import Signup from "../../Pages/Signup/Signup"; import SuccessStories from "../../Pages/SuccessStories/SuccessStories"; import VisitPlan from "../../Pages/VisitPlan/VisitPlan"; import Insurance from "../../Pages/VisitPlan/Insurance/Insurance"; import Arrival from "../../Pages/VisitPlan/Arrival/Arrival"; import Discharge from "../../Pages/VisitPlan/Discharge/Discharge";
+
 
 
 
@@ -39,8 +39,9 @@ import DoctorProfile from "../../Pages/Doctors/DoctorsProfile/DoctorsProfile";
 ////////Rabib import end /////////
 ///-------------------------------------------------------
 ///////  Kausarul import place (39-47)----///
-import HealthPackes from "../../Pages/HealthPackages/HealthPackages";
-import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails";
+import HealthPackages from "../../Pages/HealthPackages/HealthPackages/HealthPackages";
+import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails/PackagesDetails";
+
 
 
 
@@ -62,8 +63,9 @@ import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails";
 import Blogs from "../../Pages/Blogs/Blogs/Blogs";
 import BlogDetails from "../../Pages/Blogs/BlogDetails/BlogDetails";
 import About from "../../Pages/About/About";
-import NewsAndMedia from "../../Pages/NewsAndMedia/NewsAndMedia";
-import SocilMedia from "../../Pages/SocilMedia/SocilMedia";
+import NewsAndMedia from "../../Pages/NewsMediya/NewsAndMediya";
+
+import SocilaMediya from "../../Pages/SocialMediya/SocilaMediya";
 
 
 
@@ -83,11 +85,11 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             ////----- Tanvir aria is 81-101 line ----------//////////////////////////
-            {
-                path: '/stories',
-                element: <SuccessStories></SuccessStories>
-            },
-
+            { path: '/stories', element: <SuccessStories></SuccessStories> },
+            { path: '/plan', element: <VisitPlan></VisitPlan> },
+            { path: '/plan/insurance', element: <Insurance></Insurance> },
+            { path: '/plan/arrival', element: <Arrival></Arrival> },
+            { path: '/plan/discharge', element: <Discharge></Discharge> },
 
 
 
@@ -163,10 +165,10 @@ export const router = createBrowserRouter([
 
 
 
-            ////////----------- Kausarul aria is 151-171 line ---------/////////////
+            //////----------- Kausarul aria is 151-171 line ---------/////////////
             {
                 path: '/packages',
-                element: <HealthPackes></HealthPackes>
+                element: <HealthPackages></HealthPackages>
             },
             {
                 path: '/details/:id',
@@ -198,7 +200,7 @@ export const router = createBrowserRouter([
                 path: '/news', element: <NewsAndMedia></NewsAndMedia>
             },
             {
-                path: '/social', element: <SocilMedia></SocilMedia>
+                path: '/social', element: <SocilaMediya></SocilaMediya>
             },
 
 

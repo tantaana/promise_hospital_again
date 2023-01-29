@@ -26,8 +26,8 @@ const BlogsCards = () => {
 
             }
         }>
-            <div className='w-10/12	mx-auto mt-12' >
-                <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6'>
+            <div className='w-full md:w-10/12	mx-auto mt-12' >
+                <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  gap-6'>
                     {
                         blogs.map(blog => <BlogCard key={blog._id} blog={blog}></BlogCard>)
                     }

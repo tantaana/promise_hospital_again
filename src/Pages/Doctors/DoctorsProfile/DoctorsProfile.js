@@ -14,7 +14,7 @@ const DoctorsProfile = () => {
     const doctorData = useLoaderData()
     const { name, location, sepecilaty, qualification, doctorImg, locationImg } = doctorData
     return (
-        <div className='lg:mb-52 sm:mb-96'>
+        <div className='mb-72 md:mb-36 sm:mb-96 lg:mb-96 lg:pb-7 pb-44 md:pb-0'>
             <div className='h-screen'>
                 <div id="doctors-view-page" style={{
                     backgroundImage: `url(${locationImg})`

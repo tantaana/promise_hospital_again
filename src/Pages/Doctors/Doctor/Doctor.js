@@ -12,7 +12,9 @@ const Doctor = ({ doctor }) => {
 
         //     </div>
         // </div>
-        <div className=" lg:flex " id="doctor-border-color2">
+
+        <>
+        <div className=" lg:flex hover:scale-105 hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)] ease-in duration-300" id="doctor-border-color2">
             <div className="img border-r-2 bg-white rounded-l-2xl  " id="border-color" >
                 <img className="h-60 w-full lg:w-48 rounded-l-2xl " src={doctorImg} alt="" />
             </div>
@@ -25,14 +27,16 @@ const Doctor = ({ doctor }) => {
                     <label htmlFor="doctor-book-modal" className="py-2 px-2 rounded doctor-btn2 mx-2 block md:inline mt-2 md:mt-0">Book an appointment</label>
                 </div>
             </div>
-            <input type="checkbox" id="doctor-book-modal" className="modal-toggle" />
-            <div className="modal">
-                <div className="modal-box w-11/12 max-w-5xl">
-                    <label htmlFor="doctor-book-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <DoctorBookingForm></DoctorBookingForm>
-                </div>
-            </div>
         </div>
+
+        <input type="checkbox" id="doctor-book-modal" className="modal-toggle" />
+        <div className="modal">
+        <div className="modal-box w-11/12 max-w-5xl">
+            <label htmlFor="doctor-book-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <DoctorBookingForm></DoctorBookingForm>
+        </div>
+        </div>
+        </>
 
     );
 };

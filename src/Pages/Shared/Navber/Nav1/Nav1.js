@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { BiMenu } from "react-icons/bi";
 import { FaUserMd, FaClipboardList, FaHome, FaHospitalUser } from "react-icons/fa";
 import { MdContactPage } from "react-icons/md";
@@ -13,6 +13,19 @@ import { AuthContext } from '../../../../context/AuthProvider/AuthProvider';
 
 const Nav1 = () => {
     const { user, logOut } = useContext(AuthContext);
+
+    const activeLinks = ({ isActive }) => {
+        return {
+            backgroundColor: isActive ? 'white' : '',
+        }
+    }
+
+    const handleClick = () => {
+        const elem = document.activeElement;
+        if (elem) {
+            elem?.blur();
+        }
+    };
 
     const handleLogOut = () => {
         logOut()
@@ -28,11 +41,11 @@ const Nav1 = () => {
                 <a href='mailto:info@promise-hospital.com' className='font-semibold text-xl'>📧 info@promise-hospital.com</a>
             </div>
 
-            <div className='flex justify-between m-2'>
+            <div className='flex justify-between p-2 m-0 xl:p-0'>
                 <Link className="btn bg-transparent border-none hover:bg-transparent normal-case text-3xl" to='/'>
                     <div>
                         <div>
-                            <span className='text-blue-700'>promise</span><span className='text-teal-500'>hospital</span>
+                            <span className='text-blue-900'>promise</span><span className='text-teal-500'>hospital</span>
                         </div>
                         <div className='flex justify-end'>
                             <h2 className='text-blue-500 text-sm'>Beside you forever ❤️</h2>
@@ -48,19 +61,19 @@ const Nav1 = () => {
                                 user?.uid ?
                                     <div className='hidden xl:flex justify-end items-center gap-4 p-2'>
                                         <div className='avatar online'>
-                                            <div className='w-14 rounded-full'>
+                                            <div className='w-12 rounded-full'>
                                                 {user.photoURL ?
                                                     <img src={user.photoURL} alt="" /> :
                                                     <img src="https://www.pinkvilla.com/english/images/2022/10/1942600650_hrithik-roshan-fighter-main-final_640*360.jpg" alt="" />}
                                             </div>
                                         </div>
                                         <h2 className='text-xl font-semibold'>{user.displayName}</h2>
-                                        <button onClick={handleLogOut} className='btn glass bg-red-400 hover:bg-red-500 text-black btn-outline'>Sign Out</button>
+                                        <button onClick={handleLogOut} className='btn glass bg-red-500 hover:bg-red-600 text-black btn-outline'>Sign Out</button>
                                     </div>
                                     :
                                     <div className='hidden xl:flex justify-end items-center gap-4 p-2'>
-                                        <Link to='/login'><button className='btn glass bg-blue-400 hover:bg-blue-600 text-black btn-outline'>Log In</button></Link>
-                                        <Link to='/signup'><button className='btn glass bg-green-400 hover:bg-green-600 text-black btn-outline'>Sign Up</button></Link>
+                                        <Link to='/login'><button className='btn glass bg-blue-500 hover:bg-blue-600 text-black btn-outline'>Log In</button></Link>
+                                        <Link to='/signup'><button className='btn glass bg-teal-500 hover:bg-teal-600 text-black btn-outline'>Sign Up</button></Link>
 
                                     </div>
                             }
@@ -70,13 +83,12 @@ const Nav1 = () => {
 
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn hover:bg-teal-500 m-1 text-3xl bg-transparent border border-teal-700 rounded-2xl text-black"><BiMenu /></label>
-                        <ul tabIndex={0} className="dropdown-content menu p-2 shadow rounded-box w-52 text-lg font-semibold bg-gradient-to-r from-blue-300 to-teal-300">
-                            <li><Link to='/stories' className='hover:bg-gray-300'><BiHappyBeaming />Success Stories</Link></li>
-                            <li><Link to='/about' className='hover:bg-gray-300'><FaUserMd />About Us</Link></li>
-                            <li><Link to='/blogs' className='hover:bg-gray-300'><MdContactPage />Blogs</Link></li>
-                            <li><Link to='/news' className='hover:bg-gray-300'><BsNewspaper />News & Media</Link></li>
-                            <li><Link to='/social' className='hover:bg-gray-300'><BsNewspaper />Social Media</Link></li>
-                            <li><Link to='/contact' className='hover:bg-gray-300'><RiContactsBookLine />Contact Us</Link></li>
+                        <ul tabIndex={0} className="dropdown-content menu p-2 shadow rounded-box w-52 text-lg font-semibold bg-gradient-to-r from-blue-400 to-teal-300 m-1">
+                            <li onClick={handleClick}><NavLink to='/stories' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><BiHappyBeaming />Success Stories</NavLink></li>
+                            <li onClick={handleClick}><NavLink to='/about' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaUserMd />About Us</NavLink></li>
+                            <li onClick={handleClick}><NavLink to='/blogs' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><MdContactPage />Blogs</NavLink></li>
+                            <li onClick={handleClick}><NavLink to='/news' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><BsNewspaper />News & Media</NavLink></li>
+                            <li onClick={handleClick}><NavLink to='/contact' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><RiContactsBookLine />Contact Us</NavLink></li>
 
                         </ul>
                     </div>
@@ -84,18 +96,18 @@ const Nav1 = () => {
 
                 <div className="dropdown dropdown-end block xl:hidden">
                     <label tabIndex={0} className="btn hover:bg-teal-500 m-1 text-3xl bg-transparent border-none text-black"><BiMenu /></label>
-                    <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-gradient-to-r from-blue-300 to-teal-300 rounded-box w-52 break-all">
-                        <li><Link to='/' className='flex justify-center text-3xl'><FaHome /></Link></li>
-                        <li><Link to='/doctors' className='hover:bg-gray-300'><FaHospitalUser />Doctors</Link></li>
-                        <li><Link to='/specialities' className='hover:bg-gray-300'><GiFallingStar />Specialities</Link></li>
-                        <li><Link to='/packages' className='hover:bg-gray-300'><FaClipboardList />Health Packages</Link></li>
-                        <li><Link to='/plan' className='hover:bg-gray-300'><ImAirplane />Plan Your Visit</Link></li>
-                        <li><Link to='/stories' className='hover:bg-gray-300'><BiHappyBeaming />Success Stories</Link></li>
-                        <li><Link to='/about' className='hover:bg-gray-300'><FaUserMd />About Us</Link></li>
-                        <li><Link to='/blogs' className='hover:bg-gray-300'><MdContactPage />Blogs</Link></li>
-                        <li><Link to='/news' className='hover:bg-gray-300'><BsNewspaper />News & Media</Link></li>
+                    <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-gradient-to-r from-blue-400 to-teal-300 rounded-box w-52 break-all">
+                        <li onClick={handleClick}><Link to='/' className='flex justify-center text-3xl'><FaHome /></Link></li>
+                        <li onClick={handleClick}><NavLink to='/doctors' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaHospitalUser />Doctors</NavLink></li>
+                        <li onClick={handleClick}><NavLink to='/specialities' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><GiFallingStar />Specialities</NavLink></li>
+                        <li onClick={handleClick}><NavLink to='/packages' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaClipboardList />Health Packages</NavLink></li>
+                        <li onClick={handleClick}><NavLink to='/plan' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><ImAirplane />Plan Your Visit</NavLink></li>
+                        <li onClick={handleClick}><NavLink to='/stories' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><BiHappyBeaming />Success Stories</NavLink></li>
+                        <li onClick={handleClick}><NavLink to='/about' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaUserMd />About Us</NavLink></li>
+                        <li onClick={handleClick}><NavLink to='/blogs' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><MdContactPage />Blogs</NavLink></li>
+                        <li onClick={handleClick}><NavLink to='/news' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><BsNewspaper />News & Media</NavLink></li>
 
-                        <li><Link to='/contact' className='hover:bg-gray-300'><RiContactsBookLine />Contact Us</Link></li>
+                        <li onClick={handleClick}><NavLink to='/contact' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-2'><RiContactsBookLine />Contact Us</NavLink></li>
                         <input type="text" placeholder="🔍 Search Here" className="input input-bordered input-success rounded-full input-sm" />
                         {
                             user?.uid ?
@@ -128,7 +140,7 @@ const Nav1 = () => {
             </div>
 
 
-        </div>
+        </div >
     );
 };
 
