@@ -84,6 +84,11 @@ const Nav1 = () => {
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn hover:bg-teal-500 m-1 text-3xl bg-transparent border border-teal-700 rounded-2xl text-black"><BiMenu /></label>
                         <ul tabIndex={0} className="dropdown-content menu p-2 shadow rounded-box w-52 text-lg font-semibold bg-gradient-to-r from-blue-400 to-teal-300 m-1">
+                            {/* <label htmlFor="dashboard-drawer" className="">
+                                
+                            </label> */}
+                            <li onClick={handleClick}><NavLink to='/dashboard' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><BiHappyBeaming />Dashboard</NavLink></li>
+
                             <li onClick={handleClick}><NavLink to='/stories' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><BiHappyBeaming />Success Stories</NavLink></li>
                             <li onClick={handleClick}><NavLink to='/about' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaUserMd />About Us</NavLink></li>
                             <li onClick={handleClick}><NavLink to='/blogs' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><MdContactPage />Blogs</NavLink></li>
@@ -97,8 +102,13 @@ const Nav1 = () => {
                 <div className="dropdown dropdown-end block xl:hidden">
                     <label tabIndex={0} className="btn hover:bg-teal-500 m-1 text-3xl bg-transparent border-none text-black"><BiMenu /></label>
                     <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-gradient-to-r from-blue-400 to-teal-300 rounded-box w-52 break-all">
+                        {/* <label htmlFor="dashboard-drawer" className="">
+                           
+                        </label> */}
+
                         <li onClick={handleClick}><Link to='/' className='flex justify-center text-3xl'><FaHome /></Link></li>
                         <li onClick={handleClick}><NavLink to='/doctors' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaHospitalUser />Doctors</NavLink></li>
+                        <li onClick={handleClick}><NavLink to='/dashboard' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaHospitalUser />Dashboard</NavLink></li>
                         <li onClick={handleClick}><NavLink to='/specialities' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><GiFallingStar />Specialities</NavLink></li>
                         <li onClick={handleClick}><NavLink to='/packages' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaClipboardList />Health Packages</NavLink></li>
                         <li onClick={handleClick}><NavLink to='/plan' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><ImAirplane />Plan Your Visit</NavLink></li>

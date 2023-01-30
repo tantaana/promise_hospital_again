@@ -5,7 +5,6 @@ import errorImg from '../../assets/404Image/error.png'
 
 
 
-
 ///// Tanvir import place(8-16) -----//////////
 import Login from "../../Pages/Login/Login"; import Signup from "../../Pages/Signup/Signup"; import SuccessStories from "../../Pages/SuccessStories/SuccessStories"; import VisitPlan from "../../Pages/VisitPlan/VisitPlan"; import Insurance from "../../Pages/VisitPlan/Insurance/Insurance"; import Arrival from "../../Pages/VisitPlan/Arrival/Arrival"; import Discharge from "../../Pages/VisitPlan/Discharge/Discharge";
 
@@ -23,7 +22,6 @@ import Login from "../../Pages/Login/Login"; import Signup from "../../Pages/Sig
 
 import Specialities from "../../Pages/Specialities/Specialities";
 import SpecialitiesDetails from "../../Pages/Specialities/SpecialitiesDetails";
-
 
 
 ///// Fouzia import end  /////////
@@ -46,12 +44,11 @@ import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails/Packages
 
 
 
-
 ////// Kausarul end //////////////
 /////----------------------------------------
 ////// solyman import place (49-57)//////////
-
-
+import NewsAndMedia from "../../Pages/NewsMediya/NewsAndMediya";
+import SocilaMediya from "../../Pages/SocialMediya/SocilaMediya";
 
 
 
@@ -63,10 +60,7 @@ import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails/Packages
 import Blogs from "../../Pages/Blogs/Blogs/Blogs";
 import BlogDetails from "../../Pages/Blogs/BlogDetails/BlogDetails";
 import About from "../../Pages/About/About";
-import NewsAndMedia from "../../Pages/NewsMediya/NewsAndMediya";
-
-import SocilaMediya from "../../Pages/SocialMediya/SocilaMediya";
-
+import DashboardLayout from "../../Layout/DashboardLayout";
 
 
 
@@ -108,10 +102,6 @@ export const router = createBrowserRouter([
 
 
             //////----------- Fouzia aria is 104-124 line ---------/////////////////////////
-
-
-
-
             {
                 path: '/specialities',
                 element: <Specialities></Specialities>,
@@ -124,13 +114,6 @@ export const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://promise-hospoital-server.vercel.app/specialities/${params.id}`),
 
             },
-
-
-
-
-
-
-
 
 
 
@@ -185,13 +168,6 @@ export const router = createBrowserRouter([
 
 
 
-
-
-
-
-
-
-
             /////////----------  kausarul aria is end ----------- /////////////////////
 
 
@@ -202,11 +178,6 @@ export const router = createBrowserRouter([
             {
                 path: '/social', element: <SocilaMediya></SocilaMediya>
             },
-
-
-
-
-
 
 
 
@@ -253,8 +224,114 @@ export const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: '/dashboard',
+        element: <DashboardLayout></DashboardLayout>, children: [
+            ///// tanvir start 230-245 line //////////////////
 
-    /////// Tanvir login & logout aria (228-260) line ------------------/////
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //////   tanvir end ///////////////////
+
+            ////   fouzia aria 247-264 line //////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //////  fouzia end 264 line //////////////////
+
+            /////// jahid aria 266-280 line //////
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /////     jahid end 280 line ///////
+
+            //// Rakibul aria 282-195 line /////
+
+
+
+
+
+
+
+
+
+
+
+
+            ///////// rakibul end 295 line /////
+
+
+            //////  kausarul aria start 298-315 line //////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            ////  kausarul end 315 line ////////////
+
+            //// solyman aria start 317-330 line //////////
+
+
+
+
+
+
+
+
+
+
+
+
+            ////// solyman aria end 330 line 
+
+        ]
+    },
+
 
     {
         path: '/login',
