@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import DoctorBookingForm from '../DoctorBookingForm/DoctorBookingForm';
 import './doctor.css'
-const Doctor = ({ doctor }) => {
-    console.log(doctor)
-    const { doctorImg, location, sepecilaty, name, _id } = doctor
+import circleImg from '../../../assets/loading-circle.gif'
+
+const Doctor = ({ doctor, setAnotherLoader }) => {
+    const { doctorImg, location, sepecilaty, name, _id } = doctor;
+    const [loader, setLoader] = useState(false);
+
+    const checkLoader = () => {
+        setLoader(true);
+        console.log(loader)
+
+    }
     return (
 
         // <div id="doctors-section" className="lg:px-20 sm:px-4">
@@ -12,26 +20,25 @@ const Doctor = ({ doctor }) => {
 
         //     </div>
         // </div>
-        <div className=" lg:flex " id="doctor-border-color2">
+        <div className=" lg:flex border shadow-2xl" id="doctor-border-color2">
             <div className="img border-r-2 bg-white rounded-l-2xl  " id="border-color" >
-                <img className="h-60 w-full lg:w-48 rounded-l-2xl " src={doctorImg} alt="" />
+                <img className="object-cover h-full w-full rounded-l-2xl" src={doctorImg} alt="" />
             </div>
             <div className="doctors-text py-4 pl-4 bg-white w-full rounded-r-2xl ">
                 <h2 className="font-semibold text-2xl text-color">{name}</h2>
                 <p className="text-gray-500 my-4">{sepecilaty}</p>
                 <span className="">{location}</span> <br />
-                <div className="mt-8">
-                    <Link to={`/doctors/${_id}`} className="py-2 px-2 rounded doctor-btn1 mx-2 block md:inline">View profile</Link>
-                    <label htmlFor="doctor-book-modal" className="py-2 px-2 rounded doctor-btn2 mx-2 block md:inline mt-2 md:mt-0">Book an appointment</label>
+                <div className="mt-8 flex flex-col xl:flex-row gap-2">
+                    <Link to={`/doctors/${_id}`} onClick={checkLoader} className="py-2 px-2 rounded doctor-btn1 mx-2 block md:inline w-[100px]">View Profile
+                    </Link>
+                    <div className='flex items-center'>
+                        <label onClick={() => setAnotherLoader(doctor)} htmlFor="doctor-book-modal" className="py-2 px-2 rounded doctor-btn2 mx-2 block md:inline mt-2 md:mt-0 w-[170px] btn">Book an appointment</label>
+                        <>{loader ? <img src={circleImg} className='w-[30px] h-[30px]' alt='' /> : ''}</>
+                    </div>
                 </div>
             </div>
-            <input type="checkbox" id="doctor-book-modal" className="modal-toggle" />
-            <div className="modal">
-                <div className="modal-box w-11/12 max-w-5xl">
-                    <label htmlFor="doctor-book-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <DoctorBookingForm></DoctorBookingForm>
-                </div>
-            </div>
+
+
         </div>
 
     );
