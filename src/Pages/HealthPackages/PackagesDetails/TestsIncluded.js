@@ -30,7 +30,7 @@ const TestsIncluded = ({ packagesDetails }) => {
                         </div>
                     </div>
                     <div className='text-center'>
-                        <button className='btn bg-primary hover:bg-primary border-none text-white font-semibold mt-5'>Make an Enquiry</button>
+                        <label htmlFor="packages-book" className='btn bg-primary hover:bg-primary border-none text-white font-semibold mt-5'>Make an Enquiry</label>
                     </div>
                 </div>
             }
