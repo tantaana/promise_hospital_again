@@ -25,8 +25,8 @@ const DashboardLayout = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 bg-gradient-to-r from-blue-900 to-teal-500">
 
-                        <li className='text-white'><a>Sidebar Item 1</a></li>
-                        <li className='text-white'><a>Sidebar Item 2</a></li>
+                        {/* <li className='text-white'><a>Sidebar Item 1</a></li>
+                        <li className='text-white'><a>Sidebar Item 2</a></li> */}
                         <Link to='/dashboard/addPackage'><li className='text-white'>Add Health Package</li></Link>
                     </ul>
 
