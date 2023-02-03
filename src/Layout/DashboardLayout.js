@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import Advertise from '../Pages/Shared/Advertise/Advertise';
 import Footer from '../Pages/Shared/Footer/Footer';
 import Nav1 from '../Pages/Shared/Navber/Nav1/Nav1';
@@ -27,7 +27,7 @@ const DashboardLayout = () => {
 
                         <li className='text-white'><a>Sidebar Item 1</a></li>
                         <li className='text-white'><a>Sidebar Item 2</a></li>
-
+                        <Link to='/dashboard/addPackage'><li className='text-white'>Add Health Package</li></Link>
                     </ul>
 
                 </div>

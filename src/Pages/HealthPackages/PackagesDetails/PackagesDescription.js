@@ -4,7 +4,7 @@ import { HiArrowSmLeft, IconName } from "react-icons/hi";
 import pic from '../../../image/detailsPackagesImg.png'
 
 const PackagesDescription = ({packagesDetails}) => {
-    const { img, name, price } = packagesDetails
+    const { img, name, price, des } = packagesDetails
     return (
         <div>
             <div className='detailsPages'>
@@ -24,8 +24,7 @@ const PackagesDescription = ({packagesDetails}) => {
                 <div className='des p-10 lg:flex lg:justify-between sm:mb-4'>
                     <div className='lg:w-2/4 sm:w-full text-white'>
                         <h2 className='lg:text-4xl sm:text-4xl mb-7 font-bold'>Package Description</h2>
-                        <p className='lg:text-xl sm:text-xs mb-5'>About 30% of the young Indians are at risk of developing lifestyle diseases such as obesity, diabetes mellitus,hypertension and cardiac disease, due to various lifestyle practices including irregular meals, lack of physical activity, inadequate sleep, smoking or alcohol consumption. This Checkup helps in early detection of serious health problems including diabetes, abnorma thyroid levels, liver abnormalities, impaired kidney function , anemia, poor immunity, and elevated
-                            cholesterol levels.</p>
+                        <p className='lg:text-xl sm:text-xs mb-5'>{des}</p>
                     </div>
                     <div>
                         <img src={pic}></img>
