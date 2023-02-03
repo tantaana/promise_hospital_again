@@ -61,6 +61,8 @@ import Blogs from "../../Pages/Blogs/Blogs/Blogs";
 import BlogDetails from "../../Pages/Blogs/BlogDetails/BlogDetails";
 import About from "../../Pages/About/About";
 import DashboardLayout from "../../Layout/DashboardLayout";
+import SpecialitiesAdd from "../../Pages/Specialities/seviceDashboard/SpecialitiesAdd";
+import AllServiceShow from "../../Pages/Specialities/seviceDashboard/AllServiceShow";
 
 
 
@@ -116,7 +118,7 @@ export const router = createBrowserRouter([
             },
 
 
-
+           
 
 
 
@@ -247,7 +249,14 @@ export const router = createBrowserRouter([
             ////   fouzia aria 247-264 line //////////////
 
 
-
+            {
+                path: '/dashboard', element: <SpecialitiesAdd></SpecialitiesAdd>
+            },
+           
+            {
+                path: '/dashboard/show', element: <AllServiceShow></AllServiceShow>
+            },
+           
 
 
 
