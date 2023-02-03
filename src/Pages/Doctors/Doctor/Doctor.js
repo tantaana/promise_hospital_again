@@ -15,12 +15,7 @@ const Doctor = ({ doctor, setAnotherLoader }) => {
     }
     return (
 
-        // <div id="doctors-section" className="lg:px-20 sm:px-4">
-        //     <div className="row grid gap-x-7 xl:grid-cols-2 lg:grid-cols-2  md:grid-cols-1 sm:grid-cols-1">
-
-        //     </div>
-        // </div>
-        <div className=" lg:flex border shadow-2xl" id="doctor-border-color2">
+        <div className=" xl:flex border shadow-2xl scale-100 hover:scale-105" id="doctor-border-color2">
             <div className="img border-r-2 bg-white rounded-l-2xl  " id="border-color" >
                 <img className="object-cover h-full w-full rounded-l-2xl" src={doctorImg} alt="" />
             </div>
@@ -28,18 +23,16 @@ const Doctor = ({ doctor, setAnotherLoader }) => {
                 <h2 className="font-semibold text-2xl text-color">{name}</h2>
                 <p className="text-gray-500 my-4">{sepecilaty}</p>
                 <span className="">{location}</span> <br />
-                <div className="mt-8 flex flex-col xl:flex-row gap-2">
-                    <Link to={`/doctors/${_id}`} onClick={checkLoader} className="py-2 px-2 rounded doctor-btn1 mx-2 block md:inline w-[100px]">View Profile
-                    </Link>
+                <div className="mt-8 2xl:flex-row flex flex-col gap-2">
+                    <Link to={`/doctors/${_id}`} onClick={checkLoader}><button className='btn btn-md rounded btn-primary hover:text-white'>View profile</button></Link>
                     <div className='flex items-center'>
-                        <label onClick={() => setAnotherLoader(doctor)} htmlFor="doctor-book-modal" className="py-2 px-2 rounded doctor-btn2 mx-2 block md:inline mt-2 md:mt-0 w-[170px] btn">Book an appointment</label>
-                        <>{loader ? <img src={circleImg} className='w-[30px] h-[30px]' alt='' /> : ''}</>
+                        <label className='btn btn-secondary rounded hover:text-white' onClick={() => setAnotherLoader(doctor)} htmlFor="doctor-book-modal">Book an appointment</label>
+                        <div>{loader ? <img src={circleImg} className='w-[30px] h-[30px]' alt="" /> : ''}</div>
                     </div>
                 </div>
             </div>
-
-
         </div>
+
 
     );
 };

@@ -14,20 +14,20 @@ const DoctorsProfile = () => {
     const doctorData = useLoaderData()
     const { name, location, sepecilaty, qualification, doctorImg, locationImg } = doctorData
     return (
-        <div className='lg:mb-52 sm:mb-96'>
+        <div className='lg:mb-40 mb-52'>
             <div className='h-screen'>
                 <div id="doctors-view-page" style={{
                     backgroundImage: `url(${locationImg})`
                 }} className="xl:p-20 lg:p-16 md:p-10 sm:p-8 p-4 bg-center bg-cover">
                     <div className="back-btn  ">
-                        <Link to="/doctors" className="bg-white px-4 py-2 rounded flex items-center w-32 gap-2"><AiOutlineArrowLeft /> <span>Go back</span></Link>
+                        <Link to="/doctors" className="bg-teal-500 hover:bg-teal-400 font-semibold px-4 py-2 rounded flex items-center w-32 gap-2 "><AiOutlineArrowLeft /> <span>Go back</span></Link>
                     </div>
 
                     <div id="doctors-profile" className="xl:m-20 lg:m-10 sm:mt-8 mb-16">
                         <div className="row mt-44">
                             <div className="col">
                                 <img className="w-80 border-4 xl:ml-8 md:ml-40 sm:ml-32 bottom-margin shadow-md rounded" src={doctorImg} alt="" />
-                                <div className=" grid xl:grid-cols-2 lg:grid-cols-1 border-4 bg-white py-20 px-8 rounded-2xl">
+                                <div className=" grid xl:grid-cols-2 lg:grid-cols-1 border-2 bg-white py-20 px-8 rounded-2xl shadow-2xl">
                                     <div className="left ">
                                         <div className="item flex items-center mt-8">
                                             <i className="fa-solid fa-user text-4xl primary-doctor-color"></i>
@@ -51,10 +51,10 @@ const DoctorsProfile = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="right mt-8">
+                                    {/* <div className="right mt-8 border border-black">
                                         <label htmlFor="doctor-opinion-modal" className="btn px-8 py-4 rounded font-bold btn-doctor">Get a second opinion</label>
                                         <label htmlFor='doctor-booking-modal-profile' className="btn px-8 py-4 rounded font-bold btn-doctor">Video consultation</label>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
