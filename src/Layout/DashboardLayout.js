@@ -27,7 +27,7 @@ const DashboardLayout = () => {
 
                         <li className='text-white'><a>Sidebar Item 1</a></li>
                         <li className='text-white'><a>Sidebar Item 2</a></li>
-
+                        <Link to='/dashboard/addPackage'><li className='text-white'>Add Health Package</li></Link>
                     </ul>
 
                 </div>
