@@ -1,0 +1,58 @@
+.card {
+
+    display: flex;
+}
+
+.h :hover {
+    background-color: red;
+}
+
+@media screen and (max-width: 600px) {
+
+    .mar {
+
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .hei {
+        height: 200%;
+        background-color: black;
+    }
+
+    .fl {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wi {
+        width: 100%;
+    }
+
+    .sc {
+        height: 100px;
+        overflow-y: scroll;
+
+    }
+
+    .mrr {
+        margin-right: 5%;
+    }
+
+    .bb {
+        border: 2px;
+        border-bottom-right-radius: 0px;
+
+        border-bottom-left-radius: 0px;
+    }
+
+    .mb {
+
+        overflow: hidden;
+    }
+
+    .pbot{
+        padding-bottom: 3px;
+        
+    }
+}

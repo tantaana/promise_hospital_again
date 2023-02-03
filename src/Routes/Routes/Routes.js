@@ -5,7 +5,6 @@ import errorImg from '../../assets/404Image/error.png'
 
 
 
-
 ///// Tanvir import place(8-16) -----//////////
 import Login from "../../Pages/Login/Login"; import Signup from "../../Pages/Signup/Signup"; import SuccessStories from "../../Pages/SuccessStories/SuccessStories"; import VisitPlan from "../../Pages/VisitPlan/VisitPlan"; import Insurance from "../../Pages/VisitPlan/Insurance/Insurance"; import Arrival from "../../Pages/VisitPlan/Arrival/Arrival"; import Discharge from "../../Pages/VisitPlan/Discharge/Discharge";
 
@@ -25,7 +24,6 @@ import Specialities from "../../Pages/Specialities/Specialities";
 import SpecialitiesDetails from "../../Pages/Specialities/SpecialitiesDetails";
 
 
-
 ///// Fouzia import end  /////////
 //------------------------------------------------------
 ///// Rakib import place (29-37)---/////
@@ -39,9 +37,9 @@ import DoctorProfile from "../../Pages/Doctors/DoctorsProfile/DoctorsProfile";
 ////////Rabib import end /////////
 ///-------------------------------------------------------
 ///////  Kausarul import place (39-47)----///
-import HealthPackes from "../../Pages/HealthPackages/HealthPackages";
-import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails";
-
+import HealthPackages from "../../Pages/HealthPackages/HealthPackages/HealthPackages";
+import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails/PackagesDetails";
+import AddHealthPackage from "../../Pages/Dashboard/HealthPackage/AddHealthPackage";
 
 
 
@@ -49,8 +47,8 @@ import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails";
 ////// Kausarul end //////////////
 /////----------------------------------------
 ////// solyman import place (49-57)//////////
-
-
+import NewsAndMedia from "../../Pages/NewsMediya/NewsAndMediya";
+import SocilaMediya from "../../Pages/SocialMediya/SocilaMediya";
 
 
 
@@ -62,9 +60,9 @@ import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails";
 import Blogs from "../../Pages/Blogs/Blogs/Blogs";
 import BlogDetails from "../../Pages/Blogs/BlogDetails/BlogDetails";
 import About from "../../Pages/About/About";
-import NewsAndMedia from "../../Pages/NewsAndMedia/NewsAndMedia";
-import SocilMedia from "../../Pages/SocilMedia/SocilMedia";
-
+import DashboardLayout from "../../Layout/DashboardLayout";
+import SpecialitiesAdd from "../../Pages/Specialities/seviceDashboard/SpecialitiesAdd";
+import AllServiceShow from "../../Pages/Specialities/seviceDashboard/AllServiceShow";
 
 
 
@@ -106,10 +104,6 @@ export const router = createBrowserRouter([
 
 
             //////----------- Fouzia aria is 104-124 line ---------/////////////////////////
-
-
-
-
             {
                 path: '/specialities',
                 element: <Specialities></Specialities>,
@@ -124,14 +118,7 @@ export const router = createBrowserRouter([
             },
 
 
-
-
-
-
-
-
-
-
+           
 
 
 
@@ -163,23 +150,16 @@ export const router = createBrowserRouter([
 
 
 
-            ////////----------- Kausarul aria is 151-171 line ---------/////////////
+            //////----------- Kausarul aria is 151-171 line ---------/////////////
             {
                 path: '/packages',
-                element: <HealthPackes></HealthPackes>
+                element: <HealthPackages></HealthPackages>
             },
             {
                 path: '/details/:id',
                 element: <PackagesDetails></PackagesDetails>,
                 loader: ({ params }) => fetch(`https://promise-hospoital-server.vercel.app/details/${params.id}`)
             },
-
-
-
-
-
-
-
 
 
 
@@ -198,13 +178,8 @@ export const router = createBrowserRouter([
                 path: '/news', element: <NewsAndMedia></NewsAndMedia>
             },
             {
-                path: '/social', element: <SocilMedia></SocilMedia>
+                path: '/social', element: <SocilaMediya></SocilaMediya>
             },
-
-
-
-
-
 
 
 
@@ -251,8 +226,124 @@ export const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: '/dashboard',
+        element: <DashboardLayout></DashboardLayout>, children: [
+            ///// tanvir start 230-245 line //////////////////
 
-    /////// Tanvir login & logout aria (228-260) line ------------------/////
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //////   tanvir end ///////////////////
+
+            ////   fouzia aria 247-264 line //////////////
+
+
+            {
+                path: '/dashboard', element: <SpecialitiesAdd></SpecialitiesAdd>
+            },
+           
+            {
+                path: '/dashboard/show', element: <AllServiceShow></AllServiceShow>
+            },
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //////  fouzia end 264 line //////////////////
+
+            /////// jahid aria 266-280 line //////
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /////     jahid end 280 line ///////
+
+            //// Rakibul aria 282-195 line /////
+
+
+
+
+
+
+
+
+
+
+
+
+            ///////// rakibul end 295 line /////
+
+
+            //////  kausarul aria start 298-315 line //////////
+            {
+                path: '/dashboard/addPackage',
+                element: <AddHealthPackage></AddHealthPackage>
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            ////  kausarul end 315 line ////////////
+
+            //// solyman aria start 317-330 line //////////
+
+
+
+
+
+
+
+
+
+
+
+
+            ////// solyman aria end 330 line 
+
+        ]
+    },
+
 
     {
         path: '/login',
