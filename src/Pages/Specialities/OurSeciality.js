@@ -5,7 +5,7 @@ import icon from '../Specialities/SpecialitiesImg/errow.jpg'
 
 
 const OurSeciality = ({imag}) => {
-    const {img ,name ,_id} = imag
+    const {image ,name ,_id} = imag
     return (
        <Link to={`/specialitiesDetails/${_id}`}><div>
             <div className="hero  bg-base-500  border border-gray-500">
@@ -15,7 +15,7 @@ const OurSeciality = ({imag}) => {
       </div>
     <div className="avatar justify-start text-start ">
   <div className="w-24 rounded hover:scale-110 transition duration-300 ease-in-out">
-    <img  src={img} />
+    <img  src={image} />
     
   </div>
   
