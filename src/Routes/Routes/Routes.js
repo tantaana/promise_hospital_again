@@ -61,6 +61,7 @@ import Blogs from "../../Pages/Blogs/Blogs/Blogs";
 import BlogDetails from "../../Pages/Blogs/BlogDetails/BlogDetails";
 import About from "../../Pages/About/About";
 import DashboardLayout from "../../Layout/DashboardLayout";
+import Chatbox from "../../Pages/Chatbox/Chatbox/Chatbox";
 
 
 
@@ -168,6 +169,7 @@ export const router = createBrowserRouter([
 
 
 
+
             /////////----------  kausarul aria is end ----------- /////////////////////
 
 
@@ -204,6 +206,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/about', element: <About></About>
+            },
+            {
+                path: '/chat', element: <Chatbox></Chatbox>
             },
 
 
