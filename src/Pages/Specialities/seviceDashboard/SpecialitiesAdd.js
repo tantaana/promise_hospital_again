@@ -33,6 +33,7 @@ const SpecialitiesAdd = () => {
                         docName: data.docName,
                         title: data.title,
                         qualification: data.qualification,
+                        email: data.email,
                         image: imgData.data.url,
                         docImg:imgData.data.url2,
 
@@ -52,7 +53,7 @@ const SpecialitiesAdd = () => {
                         .then(data => {
                             setError('');
                             console.log(data)
-                            toast.success('Product added successfully');
+                            toast.success('Service added successfully');
                             //navigate(from, { replace: true });
 
 
@@ -76,18 +77,11 @@ const SpecialitiesAdd = () => {
                     <form className=' ' onSubmit={handleSubmit(handleSpecialitiesAdd)}>
                         <div className=''>
                             <input name="image" type="file"  {...register("image", {
-                                required: "Image is required"
+                                required: "image is required"
                             })} className="form-control-file p-3 input input-bordered input-accent w-full h-15 mt-3 text-lg" id="exampleFormControlFile1" />
                             {errors.image && <p className='text-red-600'>{errors.image?.message}</p>}
                             <br />
                             
-                            <input name="docImg" type="file"  {...register("docImg", {
-                                required: "Image is required"
-                            })} className="form-control-file p-3 input input-bordered input-accent w-full h-15 mt-3 text-lg" id="exampleFormControlFile1" />
-                            {errors.docImg && <p className='text-red-600'>{errors.docImg?.message}</p>}
-                            <br />
-                            
-                         
 
                             <label ><b>Service Name</b></label><br></br>
                             <input name="name" type="text"   {...register("name", {
@@ -124,6 +118,13 @@ const SpecialitiesAdd = () => {
                             {errors.price && <p className='text-red-600'>{errors.price?.message}</p>}
                             <br />
                             
+                            <label ><b>Doctor Email</b></label><br></br>
+                            <input name="reprice" type="text"  {...register("email", {
+                                required: "email is Required"
+                            })} placeholder="Email" className="input input-bordered input-accent w-full mt-3 text-lg" />
+                            {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
+                            <br />
+                            
                            
 
                             <label ><b>Service Description</b></label><br></br>
@@ -134,7 +135,7 @@ const SpecialitiesAdd = () => {
                             <br />
                             <br />
                             <div className='flex justify-center'>
-                                <button className="h-10 mb-8 w-48 bg-gradient-to-r from-cyan-500 to-blue-500 text-lg font-bold">Add Product</button>
+                                <button className="h-10 mb-8 w-48 bg-gradient-to-r from-cyan-500 to-blue-500 text-lg font-bold">Add Service</button>
 
                             </div>
 

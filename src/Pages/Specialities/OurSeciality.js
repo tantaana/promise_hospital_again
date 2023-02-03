@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import icon from '../Specialities/SpecialitiesImg/errow.jpg'
+import bg1 from '../Specialities/SpecialitiesImg/bg1.jpg'
 
 
 const OurSeciality = ({imag}) => {

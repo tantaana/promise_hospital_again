@@ -31,19 +31,20 @@ const AllServiceShow = () => {
         }
       }
     return (
-        <div>
-             <div>
-                    <p className='text-2xl mb-2 font-bold text-cyan-600 border-b-4 mt-2  border-spacing-6 text-center justify-center' >All Special Service Data</p>
+        <div className='bg-slate-300'>
+             <div >
+                    <p className='text-2xl mb-4 font-bold text-cyan-600 border-b-4   border-spacing-6 text-center justify-center' >All Special Service Data</p>
                 </div>
                 <div className="overflow-x-auto">
                     <table className="table w-full">
 
-                        <thead>
+                        <thead className=''>
                             <tr>
-                                <th></th>
-                                <th>Service Name</th>
-                                <th>Doctor</th>
-                                <th>Delete</th>
+                                <th className='bg-cyan-600 text-white text-xl'></th>
+                                <th className='bg-cyan-600 text-white text-xl' >Service Name</th>
+                                <th className='bg-cyan-600 text-white text-xl'>Cost</th>
+                                <th className='bg-cyan-600 text-white text-xl'>Doctor</th>
+                                <th className='bg-cyan-600 text-white text-xl'>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,6 +55,7 @@ const AllServiceShow = () => {
 
                         <th>{i + 1}</th>
                         <td>{service.name}</td>
+                        <td>{service.amount}</td>
                         <td>{service.docName}</td>
                       <td><Link onClick={() => handleDelete(service._id)}><FaTimes></FaTimes></Link>  </td>
                         {/* <td><button  onClick={() => handleOrder('Cancel')}></button></td> */}
