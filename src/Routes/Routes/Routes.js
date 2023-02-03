@@ -39,7 +39,7 @@ import DoctorProfile from "../../Pages/Doctors/DoctorsProfile/DoctorsProfile";
 ///////  Kausarul import place (39-47)----///
 import HealthPackages from "../../Pages/HealthPackages/HealthPackages/HealthPackages";
 import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails/PackagesDetails";
-
+import AddHealthPackage from "../../Pages/Dashboard/HealthPackage/AddHealthPackage";
 
 
 
@@ -305,7 +305,10 @@ export const router = createBrowserRouter([
 
 
             //////  kausarul aria start 298-315 line //////////
-
+            {
+                path: '/dashboard/addPackage',
+                element: <AddHealthPackage></AddHealthPackage>
+            }
 
 
 
