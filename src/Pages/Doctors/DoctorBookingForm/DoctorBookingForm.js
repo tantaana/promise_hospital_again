@@ -5,6 +5,7 @@ import { format } from 'date-fns';
 import 'react-day-picker/dist/style.css';
 import { useQuery } from '@tanstack/react-query';
 import { toast } from 'react-hot-toast';
+import imgCircle from '../../../assets/loading-circle.gif'
 
 
 
@@ -13,6 +14,8 @@ const DoctorBookingForm = ({ anotherLoader }) => {
     const imageHostKey = process.env.REACT_APP_imgbb_key;
 
     const [treatDate, setTreatDate] = useState('');
+
+    const [loader, setLoader] = useState(false);
 
 
     const handleChange = event => {
@@ -30,6 +33,7 @@ const DoctorBookingForm = ({ anotherLoader }) => {
 
     const handlePatient = event => {
         event.preventDefault();
+        setLoader(true);
         const allData = event.target;
         const patientName = allData.patientName.value;
         const patientEmail = allData.patientEmail.value;
@@ -82,7 +86,7 @@ const DoctorBookingForm = ({ anotherLoader }) => {
                         .then(data => {
 
                             if (data.acknowledged) {
-
+                                setLoader(false);
                                 toast.success('Appointment has been booked successfully')
                                 setTimeout(() => {
                                     window.location.reload()
@@ -209,8 +213,9 @@ const DoctorBookingForm = ({ anotherLoader }) => {
 
                     </div>
 
-                    <div className='flex justify-center mt-10'>
+                    <div className='flex justify-center items-center gap-2 mt-10'>
                         <input className='btn btn-primary btn-lg bg-gradient-to-r from-blue-900 to-teal-500 hover:bg-gradient-to-r hover:from-teal-500 hover:to-teal-500 text-white font-semibold w-1/4' type="submit" value="Submit" />
+                        <h2 className=''>{loader ? <img src={imgCircle} className="w-[40px]" alt="" /> : ''}</h2>
                     </div>
                 </div>
             </form>
