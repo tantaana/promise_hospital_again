@@ -47,16 +47,41 @@ const Signup = () => {
                 console.log(user);
                 handleUserInfo(name)
 
-                toast.success('Successfully signed up')
 
 
-                setTimeout(() => {
-                    if (user.displayName) {
-                        setIsLoading(false);
-                        navigate(from, { replace: true });
-                        console.log('hello');
-                    }
-                }, 2000);
+                const addPatient = {
+                    name: name,
+                    email: email
+                }
+
+                //save user information to the database
+                fetch('http://localhost:5000/userData', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(addPatient)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+
+                        if (data.acknowledged) {
+                            toast.success('Successfully signed up');
+                            setIsLoading(false);
+                            setTimeout(() => {
+                                navigate(from, { replace: true });
+                            }, 2000);
+                        }
+                    })
+
+
+                // setTimeout(() => {
+                //     if (user.displayName) {
+                //         setIsLoading(false);
+                //         navigate(from, { replace: true });
+                //         console.log('hello');
+                //     }
+                // }, 2000);
 
 
 
@@ -107,9 +132,33 @@ const Signup = () => {
                 const user = result.user;
                 console.log(user)
                 if (user.uid) {
-                    toast.success('Successfully signed up');
-                    setIsLoading(false);
-                    navigate(from, { replace: true })
+
+                    const addPatient = {
+                        name: user?.displayName,
+                        email: user?.email
+                    }
+
+                    //save user information to the database
+                    fetch('http://localhost:5000/userData', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(addPatient)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+
+                            if (data.acknowledged) {
+                                toast.success('Successfully signed up');
+                                setIsLoading(false);
+                                setTimeout(() => {
+                                    navigate(from, { replace: true });
+                                }, 2000);
+                            }
+                        })
+
+
                 }
             })
             .catch(err => {

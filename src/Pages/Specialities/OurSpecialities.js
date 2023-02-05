@@ -14,52 +14,6 @@ const OurSpecialities = () => {
             .then(data => setSpecialities(data))
     }, []);
 
-    // const images = [
-    //     {
-    //         _id: 1,
-    //         img: 'https://i.ibb.co/HpZfgc8/img2.png',
-    //         name: " Bariatric Surgery ",
-    //     },
-    //     {
-    //         _id: 2,
-    //         img: 'https://i.ibb.co/qWsDcS5/img3.png',
-    //         name: " Cardiology and Cardiac surgery"
-    //     },
-    //     {
-    //         _id: 3,
-    //         img: 'https://i.ibb.co/8DC35Tc/img4.png',
-    //         name: "Cardiothoracic Vascular Surgery"
-    //     },
-    //     {
-    //         _id: 4,
-    //         img: 'https://i.ibb.co/bzDjwhj/img5.png',
-    //         name: "General Surgery"
-    //     },
-    //     {
-    //         _id: 5,
-    //         img: 'https://i.ibb.co/fpY5ZX8/img6.png',
-    //         name: "Dermatology"
-    //     },
-    //     {
-    //         _id: 6,
-    //         img: 'https://i.ibb.co/Q84NphX/img7.png',
-    //         name: 'Ear, Nose & Throat'
-    //     },
-    //     {
-    //         _id: 7,
-    //         img: 'https://i.ibb.co/K2RvKBT/img8.png',
-    //         name: 'Ophthalmology'
-    //     },
-    //     {
-    //         _id: 8,
-    //         img: 'https://i.ibb.co/5WVpfsH/img9.png',
-    //         name: 'Urologimg'
-    //     },
-    //     {
-    //         _id: 9,
-    //         img: "https://i.ibb.co/th63Zg8/img10.png",
-    //         name: 'Spine Care'
-    //     },]
     return (
         <div
             style={
@@ -92,7 +46,7 @@ const OurSpecialities = () => {
             <p className='mt-7 text-3xl font-bold  mb-5 text-center' style={{ color: '#034ea1', }} >All Our Specialities</p>
 
 
-            
+
 
 
 

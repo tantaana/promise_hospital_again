@@ -1,16 +1,25 @@
-.primary-color {
-    color: #2a4f91;
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.bg-primary {
-    background: #2a4f91;
-    border: #2a4f91;
-
+input[type="date"] {
+    background-color: #0080ff;
+    padding: 15px;
+    font-family: "Roboto Mono", monospace;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
 }
 
-.btn1-primary {
-    background: #2a4f91;
-    border: #2a4f91;
-    display: inline;
-
+::-webkit-calendar-picker-indicator {
+    background-color: #85b4eb;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
 }
