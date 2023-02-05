@@ -1,0 +1,44 @@
+/* .about-leader-shadow-1 {
+    background: linear-gradient(to right, #edf2f7 0%, rgba(255, 255, 255, 0) 100%)
+} */
+
+
+/* .about-leader-shadow-2 {
+    background: linear-gradient(to left, #edf2f7 0%, rgba(255, 255, 255, 0) 100%)
+} */
+
+.about-leader-banner-2 {
+    width: fit-content;
+    animation: carouselAnim 10s infinite alternate linear
+}
+
+@keyframes carouselAnim {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(calc(-100% + (6*300px)));
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container .about-leader-items {
+        animation: carouselAnim 60s infinite alternate linear;
+    }
+
+    @keyframes carouselAnim {
+        from {
+            transform: translate(0, 0);
+        }
+
+        to {
+            transform: translate(calc(-100% + (5*300px)));
+        }
+    }
+}
+
+.carousel-focus:hover {
+    transition: all 0.8s;
+    transform: scale(1.1);
+}
