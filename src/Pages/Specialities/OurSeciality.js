@@ -11,7 +11,7 @@ const OurSeciality = ({imag}) => {
             <div className="hero  bg-base-500  border border-gray-500">
   <div className="hero-content flex-col ">
     <div className="hover:scale-110 transition duration-300 ease-in-out">
-      <h1 className="text-xl ">{name}</h1>
+      <h1 className="text-xl font-bold" style={{ color: '#034ea1', }}>{name}</h1>
       </div>
     <div className="avatar justify-start text-start ">
   <div className="w-24 rounded hover:scale-110 transition duration-300 ease-in-out">
