@@ -63,6 +63,7 @@ import About from "../../Pages/About/About";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import SpecialitiesAdd from "../../Pages/Specialities/seviceDashboard/SpecialitiesAdd";
 import AllServiceShow from "../../Pages/Specialities/seviceDashboard/AllServiceShow";
+import Diagnosis from "../../Pages/Diagnosis/Diagnosis/Diagnosis";
 
 
 
@@ -118,7 +119,7 @@ export const router = createBrowserRouter([
             },
 
 
-           
+
 
 
 
@@ -207,6 +208,9 @@ export const router = createBrowserRouter([
             {
                 path: '/about', element: <About></About>
             },
+            {
+                path: '/diagnosis', element: <Diagnosis></Diagnosis>
+            },
 
 
 
@@ -252,11 +256,11 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard', element: <SpecialitiesAdd></SpecialitiesAdd>
             },
-           
+
             {
                 path: '/dashboard/show', element: <AllServiceShow></AllServiceShow>
             },
-           
+
 
 
 
