@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link,  Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import Advertise from '../Pages/Shared/Advertise/Advertise';
 import Footer from '../Pages/Shared/Footer/Footer';
 import Nav1 from '../Pages/Shared/Navber/Nav1/Nav1';
@@ -26,7 +26,9 @@ const DashboardLayout = () => {
                     <ul className="menu text-lg p-4 w-80 bg-gradient-to-r from-blue-900 to-teal-500">
                         <li className='text-white'><Link to='/dashboard'>Add Services with Doctor info</Link></li>
                         <li className='text-white'><Link to='/dashboard/show'>Show Services </Link></li>
-                        <li className='text-white'> <Link to='/dashboard/addPackage'>Add Health Package</Link></li>
+
+
+                        <li> <Link to='/dashboard/addPackage'><li className='text-white'>Add Health Package</li></Link></li>
                     </ul>
 
                 </div>

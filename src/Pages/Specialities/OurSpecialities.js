@@ -46,7 +46,7 @@ const OurSpecialities = () => {
             <p className='mt-7 text-3xl font-bold  mb-5 text-center' style={{ color: '#034ea1', }} >All Our Specialities</p>
 
 
-            
+
 
 
 
