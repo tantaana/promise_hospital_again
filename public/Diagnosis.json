@@ -3,7 +3,7 @@
         "_id": "01",
         "title": "Blood Test",
         "Why": "Why book with us?",
-        "price": "700 Tk",
+        "price": 700,
         "img": "https://i.ibb.co/3kftzSQ/blood-test.jpg",
         "description": "Finding a diagnostic centre near you, which has the test services you require and is pocket-friendly, is very hard to find on your own. So, We at Sulekha make your search easier by giving you a list of the best-rated Diagnostic Centres with friendly professionals. What are you waiting for, get a booking."
     },
@@ -11,7 +11,7 @@
         "_id": "02",
         "title": "Covid -19 Test",
         "Why": "Why book with us?",
-        "price": "1000 Tk",
+        "price": 1000,
         "img": "https://i.ibb.co/Y7zYVSJ/Covid.jpg",
         "description": "Finding a diagnostic centre near you, which has the test services you require and is pocket-friendly, is very hard to find on your own. So, We at Sulekha make your search easier by giving you a list of the best-rated Diagnostic Centres with friendly professionals. What are you waiting for, get a booking."
     },
@@ -19,15 +19,7 @@
         "_id": "03",
         "title": "CT Scan",
         "Why": "Why book with us?",
-        "price": "2000 Tk",
-        "img": "https://i.ibb.co/xCwY0ZP/CT-scan.jpg",
-        "description": "Finding a diagnostic centre near you, which has the test services you require and is pocket-friendly, is very hard to find on your own. So, We at Sulekha make your search easier by giving you a list of the best-rated Diagnostic Centres with friendly professionals. What are you waiting for, get a booking."
-    },
-    {
-        "_id": "04",
-        "title": "CT Scan",
-        "Why": "Why book with us?",
-        "price": "2000 Tk",
+        "price": 2000,
         "img": "https://i.ibb.co/xCwY0ZP/CT-scan.jpg",
         "description": "Finding a diagnostic centre near you, which has the test services you require and is pocket-friendly, is very hard to find on your own. So, We at Sulekha make your search easier by giving you a list of the best-rated Diagnostic Centres with friendly professionals. What are you waiting for, get a booking."
     }

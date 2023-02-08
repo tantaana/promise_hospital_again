@@ -7,7 +7,7 @@ const DiagnosisCards = () => {
     const { data: diagnosis = [], isLoading } = useQuery({
         queryKey: ['diagnosis'],
         queryFn: async () => {
-            const res = await fetch(`Diagnosis.json`)
+            const res = await fetch(`http://localhost:5000/diagnosis`)
             const data = await res.json()
             return data
         }

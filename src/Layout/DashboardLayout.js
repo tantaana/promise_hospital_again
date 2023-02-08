@@ -29,12 +29,13 @@ const DashboardLayout = () => {
 
 
                         <li> <Link to='/dashboard/addPackage'><li className='text-white'>Add Health Package</li></Link></li>
+                        <li> <Link to='/dashboard/addDiagnosis'><li className='text-white'>Add Diagnosis</li></Link></li>
                     </ul>
 
                 </div>
             </div>
 
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </div>
     );
 };

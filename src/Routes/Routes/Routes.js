@@ -64,6 +64,7 @@ import DashboardLayout from "../../Layout/DashboardLayout";
 import SpecialitiesAdd from "../../Pages/Specialities/seviceDashboard/SpecialitiesAdd";
 import AllServiceShow from "../../Pages/Specialities/seviceDashboard/AllServiceShow";
 import Diagnosis from "../../Pages/Diagnosis/Diagnosis/Diagnosis";
+import AddDiagnosis from "../../Pages/DashboardDiagnosis/AddDiagnosis/AddDiagnosis";
 
 
 
@@ -277,7 +278,9 @@ export const router = createBrowserRouter([
             //////  fouzia end 264 line //////////////////
 
             /////// jahid aria 266-280 line //////
-
+            {
+                path: '/dashboard/addDiagnosis', element: <AddDiagnosis></AddDiagnosis>
+            },
 
 
 
