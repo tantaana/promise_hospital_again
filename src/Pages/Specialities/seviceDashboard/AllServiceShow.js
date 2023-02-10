@@ -54,7 +54,7 @@ const AllServiceShow = () => {
                     return <tr key={service._id}>
 
                         <th>{i + 1}</th>
-                        <td>{service.name}</td>
+                        <td>{service.speciality}</td>
                         <td>{service.amount}</td>
                         <td>{service.docName}</td>
                       <td><Link onClick={() => handleDelete(service._id)}><FaTimes></FaTimes></Link>  </td>

@@ -29,7 +29,7 @@ const SpecialitiesAdd = () => {
                     console.log(imgData.data.url);
 
                     const service = {
-                        name: data.name,
+                        speciality: data.speciality,
                         amount: data.amount,
                         docName: data.docName,
                         title: data.title,
@@ -87,11 +87,11 @@ const SpecialitiesAdd = () => {
                         <div className='grid lg:grid-cols-2 grid-cols-1'>
                             <div className='ml-7'>
                                 <label ><b className='text-cyan-700 font-bold ml-2'>Service Name</b></label><br></br>
-                                <input name="name" type="text"   {...register("name", {
+                                <input name="name" type="text"   {...register("speciality", {
                                     required: "productName is Required"
                                 })}
                                     placeholder="Service Name" className="input input-bordered input-accent w-full mt-3 text-lg" />
-                                {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
+                                {errors.speciality && <p className='text-red-500'>{errors.speciality.message}</p>}
                                 <br />
                                 <label ><b className='text-cyan-700 font-bold ml-2'>Service Title</b></label><br></br>
                                 <input name="title" type="text"  {...register("title", {
