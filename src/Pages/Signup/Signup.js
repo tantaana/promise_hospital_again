@@ -51,7 +51,8 @@ const Signup = () => {
 
                 const addPatient = {
                     name: name,
-                    email: email
+                    email: email,
+                    userType: 'patient'
                 }
 
                 //save user information to the database
@@ -135,7 +136,9 @@ const Signup = () => {
 
                     const addPatient = {
                         name: user?.displayName,
-                        email: user?.email
+                        email: user?.email,
+                        userType: 'patient'
+
                     }
 
                     //save user information to the database
@@ -148,6 +151,7 @@ const Signup = () => {
                     })
                         .then(res => res.json())
                         .then(data => {
+                            console.log(data)
 
                             if (data.acknowledged) {
                                 toast.success('Successfully signed up');
@@ -157,6 +161,7 @@ const Signup = () => {
                                 }, 2000);
                             }
                         })
+                        .catch(err => console.error(err.message))
 
 
                 }

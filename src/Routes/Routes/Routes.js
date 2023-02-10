@@ -6,7 +6,7 @@ import errorImg from '../../assets/404Image/error.png'
 
 
 ///// Tanvir import place(8-16) -----//////////
-import Login from "../../Pages/Login/Login"; import Signup from "../../Pages/Signup/Signup"; import SuccessStories from "../../Pages/SuccessStories/SuccessStories"; import VisitPlan from "../../Pages/VisitPlan/VisitPlan"; import Insurance from "../../Pages/VisitPlan/Insurance/Insurance"; import Arrival from "../../Pages/VisitPlan/Arrival/Arrival"; import Discharge from "../../Pages/VisitPlan/Discharge/Discharge";
+import Login from "../../Pages/Login/Login"; import Signup from "../../Pages/Signup/Signup"; import SuccessStories from "../../Pages/SuccessStories/SuccessStories"; import VisitPlan from "../../Pages/VisitPlan/VisitPlan"; import Insurance from "../../Pages/VisitPlan/Insurance/Insurance"; import Arrival from "../../Pages/VisitPlan/Arrival/Arrival"; import Discharge from "../../Pages/VisitPlan/Discharge/Discharge"; import AddDoctors from "../../Pages/Doctors/AddDoctors/AddDoctors";
 
 
 
@@ -63,8 +63,8 @@ import About from "../../Pages/About/About";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import SpecialitiesAdd from "../../Pages/Specialities/seviceDashboard/SpecialitiesAdd";
 import AllServiceShow from "../../Pages/Specialities/seviceDashboard/AllServiceShow";
-
-
+import MyAppointments from "../../Pages/MyAppointments/MyAppointments";
+import MyDetails from "../../Pages/MyAppointments/MyDetails/MyDetails";
 
 
 ///// Jahid import end //////////////
@@ -118,7 +118,7 @@ export const router = createBrowserRouter([
             },
 
 
-           
+
 
 
 
@@ -134,7 +134,7 @@ export const router = createBrowserRouter([
             {
                 path: '/doctors/:id',
                 loader: async ({ params }) => {
-                    return fetch(`https://server-new-rokibul-bd.vercel.app/doctors/${params.id}`)
+                    return fetch(`http://localhost:5000/docInfo/${params.id}`)
                 },
                 element: <DoctorProfile></DoctorProfile>
             },
@@ -196,7 +196,7 @@ export const router = createBrowserRouter([
             ////////////--------- Solyman aria is end ----------///////////////////
 
 
-            //////////--------- Jahid aria is 197-117 line----------- /////////////////////
+            //////////--------- Jahid aria is 197-217 line----------- /////////////////////
             {
                 path: '/blogs', element: <Blogs></Blogs>
             },
@@ -230,7 +230,9 @@ export const router = createBrowserRouter([
         path: '/dashboard',
         element: <DashboardLayout></DashboardLayout>, children: [
             ///// tanvir start 230-245 line //////////////////
-
+            { path: '/dashboard/add_doctors', element: <AddDoctors></AddDoctors> },
+            { path: '/dashboard/appointments', element: <MyAppointments></MyAppointments> },
+            { path: '/dashboard/details/:id', element: <MyDetails></MyDetails>, loader: ({ params }) => fetch(`http://localhost:5000/details/${params.id}`) },
 
 
 
@@ -252,17 +254,10 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard', element: <SpecialitiesAdd></SpecialitiesAdd>
             },
-           
+
             {
                 path: '/dashboard/show', element: <AllServiceShow></AllServiceShow>
             },
-           
-
-
-
-
-
-
 
 
 
@@ -309,9 +304,6 @@ export const router = createBrowserRouter([
                 path: '/dashboard/addPackage',
                 element: <AddHealthPackage></AddHealthPackage>
             }
-
-
-
 
 
 
