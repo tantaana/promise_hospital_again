@@ -38,7 +38,7 @@ const AddHealthPackage = () => {
 
                     console.log(packages)
 
-                    fetch('http://localhost:5000/packages', {
+                    fetch('https://promise-hospoital-server-jahid900pj.vercel.app/packages', {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json'

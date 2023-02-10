@@ -7,7 +7,7 @@ import Loader from '../Shared/Loader/Loader';
 const MyAppointments = () => {
     const { user } = useContext(AuthContext);
 
-    const url = `http://localhost:5000/appointmentData?patientEmail=${user?.email}`;
+    const url = `https://promise-hospoital-server-jahid900pj.vercel.app/appointmentData?patientEmail=${user?.email}`;
 
     const { data: patientEmail = [], isLoading } = useQuery({
         queryKey: ['patientEmail', user?.email],

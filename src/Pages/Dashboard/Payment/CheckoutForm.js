@@ -15,7 +15,7 @@ const CheckoutForm = ({ data }) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://promise-hospoital-server-jahid900pj.vercel.app/create-payment-intent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ fees }),
@@ -81,9 +81,9 @@ const CheckoutForm = ({ data }) => {
                 fees,
                 transactionId: paymentIntent.id,
                 patientEmail,
-                bookingId : _id
+                bookingId: _id
             }
-            fetch('http://localhost:5000/payments', {
+            fetch('https://promise-hospoital-server-jahid900pj.vercel.app/payments', {
                 method: "POST",
                 headers: {
                     'content-type': "application/json"

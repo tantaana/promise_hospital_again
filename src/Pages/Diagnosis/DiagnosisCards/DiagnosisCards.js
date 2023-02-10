@@ -7,7 +7,7 @@ const DiagnosisCards = () => {
     const { data: diagnosis = [], isLoading } = useQuery({
         queryKey: ['diagnosis'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/diagnosis`)
+            const res = await fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/diagnosis`)
             const data = await res.json()
             return data
         }

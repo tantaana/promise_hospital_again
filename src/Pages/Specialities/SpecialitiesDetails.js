@@ -10,7 +10,7 @@ const SpecialitiesDetails = () => {
     const [docInfo, setDocInfo] = useState([])
     // console.log(specialities)
     useEffect(() => {
-        fetch('http://localhost:5000/docInfo')
+        fetch('https://promise-hospoital-server-jahid900pj.vercel.app/docInfo')
             .then(res => res.json())
             .then(data => setDocInfo(data))
     }, []);

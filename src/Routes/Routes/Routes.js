@@ -118,7 +118,7 @@ export const router = createBrowserRouter([
             {
                 path: '/specialitiesDetails/:id',
                 element: <SpecialitiesDetails></SpecialitiesDetails>,
-                loader: ({ params }) => fetch(`https://promise-hospoital-server.vercel.app/specialities/${params.id}`),
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/specialities/${params.id}`),
 
             },
 
@@ -139,7 +139,7 @@ export const router = createBrowserRouter([
             {
                 path: '/doctors/:id',
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/docInfo/${params.id}`)
+                    return fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/docInfo/${params.id}`)
                 },
                 element: <DoctorProfile></DoctorProfile>
             },
@@ -163,7 +163,7 @@ export const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PackagesDetails></PackagesDetails>,
-                loader: ({ params }) => fetch(`https://promise-hospoital-server.vercel.app/details/${params.id}`)
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/details/${params.id}`)
             },
 
 
@@ -207,7 +207,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/blog/:id', element: <BlogDetails></BlogDetails>,
-                loader: ({ params }) => fetch(`https://promise-hospoital-server.vercel.app/blog/${params.id}`)
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/blog/${params.id}`)
             },
             {
                 path: '/about', element: <About></About>
@@ -217,7 +217,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/diagnosis/:id', element: <DiagnosisForm></DiagnosisForm>,
-                loader: ({ params }) => fetch(`http://localhost:5000/diagnosis/${params.id}`)
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/diagnosis/${params.id}`)
 
             },
 
@@ -246,7 +246,7 @@ export const router = createBrowserRouter([
             ///// tanvir start 230-245 line //////////////////
             { path: '/dashboard/add_doctors', element: <AddDoctors></AddDoctors> },
             { path: '/dashboard/appointments', element: <MyAppointments></MyAppointments> },
-            { path: '/dashboard/details/:id', element: <MyDetails></MyDetails>, loader: ({ params }) => fetch(`http://localhost:5000/details/${params.id}`) },
+            { path: '/dashboard/details/:id', element: <MyDetails></MyDetails>, loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/details/${params.id}`) },
 
 
 
@@ -334,7 +334,7 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/payment/:id',
                 element: <Payment></Payment>,
-                loader: ({ params }) => fetch(`http://localhost:5000/booking/${params.id}`)
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/booking/${params.id}`)
             }
 
 

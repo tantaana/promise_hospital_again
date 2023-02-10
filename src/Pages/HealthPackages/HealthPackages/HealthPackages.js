@@ -6,7 +6,7 @@ const HealthPackages = () => {
     const [packages, setPackages] = useState([])
 
     useEffect(() => {
-        fetch('https://promise-hospoital-server.vercel.app/packages')
+        fetch('https://promise-hospoital-server-jahid900pj.vercel.app/packages')
             .then(res => res.json())
             .then(data => setPackages(data))
     }, [])

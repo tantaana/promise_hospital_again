@@ -30,9 +30,9 @@ const Signup = () => {
     //JWT 
     // const [signUpUserEmail, setSiginUpUserEmail] = useState('')
     // const [token] = useToken(signUpUserEmail)
-    
+
     // if(token){
-        
+
     // }
 
 
@@ -62,7 +62,7 @@ const Signup = () => {
                 }
 
                 //save user information to the database
-                fetch('http://localhost:5000/userData', {
+                fetch('https://promise-hospoital-server-jahid900pj.vercel.app/userData', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -149,7 +149,7 @@ const Signup = () => {
                     }
 
                     //save user information to the database
-                    fetch('http://localhost:5000/userData', {
+                    fetch('https://promise-hospoital-server-jahid900pj.vercel.app/userData', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

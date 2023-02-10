@@ -33,7 +33,7 @@ const AddDiagnosis = () => {
 
                     console.log(testes)
 
-                    fetch('http://localhost:5000/diagnosis', {
+                    fetch('https://promise-hospoital-server-jahid900pj.vercel.app/diagnosis', {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json'

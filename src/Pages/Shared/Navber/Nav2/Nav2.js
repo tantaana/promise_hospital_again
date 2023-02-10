@@ -29,6 +29,7 @@ const Nav2 = () => {
                 <NavLink to='/doctors' style={activeLinks} className="text-lg text-white font-semibold hover:bg-white hover:text-blue-800 hover:rounded-lg p-2">Doctors</NavLink>
                 <NavLink to='/specialities' style={activeLinks} className='text-lg text-white font-semibold hover:bg-white hover:text-blue-800 hover:rounded-lg p-2'>Specialities</NavLink>
                 <NavLink to='/packages' style={activeLinks} className='text-lg text-white font-semibold hover:bg-white hover:text-blue-800 hover:rounded-lg p-2'>Health Packages</NavLink>
+                <NavLink to='/diagnosis' style={activeLinks} className='text-lg text-white font-semibold hover:bg-white hover:text-blue-800 hover:rounded-lg p-2'>Diagnosis</NavLink>
                 <NavLink to='/plan' style={activeLinks} className='text-lg text-white font-semibold hover:bg-white hover:text-blue-800 hover:rounded-lg p-2'>Plan Your Visit</NavLink>
             </div>
 

@@ -84,7 +84,7 @@ const DoctorBookingForm = ({ anotherLoader }) => {
 
 
                     //save patient information to the database
-                    fetch('http://localhost:5000/createAppointment', {
+                    fetch('https://promise-hospoital-server-jahid900pj.vercel.app/createAppointment', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
