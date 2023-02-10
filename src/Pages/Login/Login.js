@@ -8,6 +8,7 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { toast, Toaster } from 'react-hot-toast';
 import circleLoading from '../../assets/loading-circle.gif'
+import useToken from '../../Hooks/useToken/useToken';
 
 const Login = () => {
     const { logIn, providerLogin } = useContext(AuthContext);
@@ -24,6 +25,14 @@ const Login = () => {
     //Loader to show while loading
     const [isLoading, setIsLoading] = useState(false);
 
+    //jwt
+    // const [loginUserEmail, setLoginUserEmail] = useState('')
+    // const [token] = useToken(loginUserEmail)
+
+    // if(token){
+    //     navigate(from, { replace: true })
+    // }
+
 
     const handleLogIn = event => {
         event.preventDefault();
@@ -39,6 +48,7 @@ const Login = () => {
                 console.log(user);
                 if (user) {
                     setIsLoading(false);
+                    // setLoginUserEmail(email)
                     toast.success('Successfully Logged In')
                     navigate(from, { replace: true })
 

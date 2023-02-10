@@ -1,5 +1,7 @@
 import React from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-hot-toast'
 import './AddHealthPackage.css'
 
 const AddHealthPackage = () => {
@@ -8,6 +10,7 @@ const AddHealthPackage = () => {
     const imgHostKey = "7bd087226ccbe42290452a157f175e5f"
 
     const handleAddPackage = data => {
+
 
 
         const image = data.image[0]
@@ -35,7 +38,7 @@ const AddHealthPackage = () => {
 
                     console.log(packages)
 
-                    fetch('https://promise-hospoital-server.vercel.app/packages', {
+                    fetch('http://localhost:5000/packages', {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json'
@@ -43,7 +46,11 @@ const AddHealthPackage = () => {
                         body: JSON.stringify(packages)
                     })
                         .then(res => res.json())
-                        .then(data => console.log(data))
+                        .then(updateData => {
+                            if (updateData.acknowledged) {
+                                toast("Successfully Add Package")
+                            }
+                        })
                 }
             })
 

@@ -6,9 +6,9 @@ import errorImg from '../../assets/404Image/error.png'
 
 
 ///// Tanvir import place(8-16) -----//////////
-import Login from "../../Pages/Login/Login"; import Signup from "../../Pages/Signup/Signup"; import SuccessStories from "../../Pages/SuccessStories/SuccessStories"; import VisitPlan from "../../Pages/VisitPlan/VisitPlan"; import Insurance from "../../Pages/VisitPlan/Insurance/Insurance"; import Arrival from "../../Pages/VisitPlan/Arrival/Arrival"; import Discharge from "../../Pages/VisitPlan/Discharge/Discharge";
-
-
+import Login from "../../Pages/Login/Login"; import Signup from "../../Pages/Signup/Signup"; import SuccessStories from "../../Pages/SuccessStories/SuccessStories"; import VisitPlan from "../../Pages/VisitPlan/VisitPlan"; import Insurance from "../../Pages/VisitPlan/Insurance/Insurance"; import Arrival from "../../Pages/VisitPlan/Arrival/Arrival"; import Discharge from "../../Pages/VisitPlan/Discharge/Discharge"; import AddDoctors from "../../Pages/Doctors/AddDoctors/AddDoctors";
+import MyAppointments from "../../Pages/MyAppointments/MyAppointments";
+import MyDetails from "../../Pages/MyAppointments/MyDetails/MyDetails";
 
 
 
@@ -40,9 +40,9 @@ import DoctorProfile from "../../Pages/Doctors/DoctorsProfile/DoctorsProfile";
 import HealthPackages from "../../Pages/HealthPackages/HealthPackages/HealthPackages";
 import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails/PackagesDetails";
 import AddHealthPackage from "../../Pages/Dashboard/HealthPackage/AddHealthPackage";
-
-
-
+import ShowPackages from "../../Pages/Dashboard/ShowPackages/ShowPackages";
+import Payment from "../../Pages/Dashboard/Payment/Payment";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 ////// Kausarul end //////////////
 /////----------------------------------------
@@ -66,8 +66,7 @@ import AllServiceShow from "../../Pages/Specialities/seviceDashboard/AllServiceS
 import Diagnosis from "../../Pages/Diagnosis/Diagnosis/Diagnosis";
 import AddDiagnosis from "../../Pages/DashboardDiagnosis/AddDiagnosis/AddDiagnosis";
 import DiagnosisForm from "../../Pages/Diagnosis/DiagnosisBookFrom/DiagnosisForm/DiagnosisForm";
-
-
+import Meeting from "../../Pages/Meeting/Meeting";
 
 
 ///// Jahid import end //////////////
@@ -110,7 +109,10 @@ export const router = createBrowserRouter([
             {
                 path: '/specialities',
                 element: <Specialities></Specialities>,
-
+            },
+            {
+                path: '/meet',
+                element: <Meeting></Meeting>,
             },
 
             {
@@ -137,7 +139,7 @@ export const router = createBrowserRouter([
             {
                 path: '/doctors/:id',
                 loader: async ({ params }) => {
-                    return fetch(`https://server-new-rokibul-bd.vercel.app/doctors/${params.id}`)
+                    return fetch(`http://localhost:5000/docInfo/${params.id}`)
                 },
                 element: <DoctorProfile></DoctorProfile>
             },
@@ -199,7 +201,7 @@ export const router = createBrowserRouter([
             ////////////--------- Solyman aria is end ----------///////////////////
 
 
-            //////////--------- Jahid aria is 197-117 line----------- /////////////////////
+            //////////--------- Jahid aria is 197-217 line----------- /////////////////////
             {
                 path: '/blogs', element: <Blogs></Blogs>
             },
@@ -242,7 +244,9 @@ export const router = createBrowserRouter([
         path: '/dashboard',
         element: <DashboardLayout></DashboardLayout>, children: [
             ///// tanvir start 230-245 line //////////////////
-
+            { path: '/dashboard/add_doctors', element: <AddDoctors></AddDoctors> },
+            { path: '/dashboard/appointments', element: <MyAppointments></MyAppointments> },
+            { path: '/dashboard/details/:id', element: <MyDetails></MyDetails>, loader: ({ params }) => fetch(`http://localhost:5000/details/${params.id}`) },
 
 
 
@@ -322,10 +326,16 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/addPackage',
                 element: <AddHealthPackage></AddHealthPackage>
+            },
+            {
+                path: '/dashboard/showPackage',
+                element: <ShowPackages></ShowPackages>
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <Payment></Payment>,
+                loader: ({ params }) => fetch(`http://localhost:5000/booking/${params.id}`)
             }
-
-
-
 
 
 

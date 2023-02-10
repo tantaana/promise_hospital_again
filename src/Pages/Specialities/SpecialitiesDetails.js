@@ -3,9 +3,21 @@ import { useLoaderData } from 'react-router-dom';
 import DoctorBookingForm from '../Doctors/DoctorBookingForm/DoctorBookingForm';
 import bg1 from "../Specialities/SpecialitiesImg/spbg.jpg"
 import bg2 from "../Specialities/SpecialitiesImg/bg1.jpg"
+import Doctor from '../Doctors/Doctor/Doctor';
 
 const SpecialitiesDetails = () => {
     const detail = useLoaderData();
+    const [docInfo, setDocInfo] = useState([])
+    // console.log(specialities)
+    useEffect(() => {
+        fetch('http://localhost:5000/docInfo')
+            .then(res => res.json())
+            .then(data => setDocInfo(data))
+    }, []);
+
+    const result = docInfo.filter(info => info.category_id === detail.category_id)
+    console.log("info", result)
+
     return (
         <div style={
             {
@@ -20,28 +32,9 @@ const SpecialitiesDetails = () => {
                 <div className='justify-between flex'>
                     <p className='text-blue-600 font-bold text-3xl p-5  '>{detail.title}</p>
 
-                    <div className=" flex ">
-                        <p className='text-blue-600 font-bold text-3xl p-5'>Cost : {detail.amount} tk</p>
-                        <p className='p-5'><label htmlFor="doctor-book-modal" className="text-xl mt-10  bg-green-800   p-3 rounded-xl  w-48  hover hover:bg-sky-200 font-bold text-zinc-100">Confirm</label></p>
-                    </div>
-                </div>
-                <div className='flex gap-8  '>
-
-                    <div className=''>
-
-                        <p className='p-5'>
-                            <p className='text-xl'>Hello, I'm</p>
-                            <h4 className='text-3xl font-bold text-cyan-900'>Dr.{detail.docName}</h4>
-
-                            <h4 className='text-sm font-bold text-cyan-900 mt-7'>{detail.qualification}</h4>
-                            <p className='text-xl mt-2'>  Expart : {detail.name}</p>
-                            <p className='text-xl mt-2'>  @Email : {detail.email}</p>
-
-                        </p>
-                    </div>
-                    {/* <button htmlFor="doctor-book-modal" className='text-2xl bg-cyan-400 h-10 mt-60 mr-6 w-44 rounded-2xl hover hover:bg-sky-200 font-bold text-zinc-100'> Confirm</button> */}
 
                 </div>
+
             </div>
             <p className='text-blue-600  text-xl p-5 bg-slate-400'> {detail.det}</p>
 
@@ -51,6 +44,16 @@ const SpecialitiesDetails = () => {
                     <label htmlFor="doctor-book-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     {/* <DoctorBookingForm></DoctorBookingForm> */}
                 </div>
+            </div>
+            <div >
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 md:w-11/12 w-10/12 mx-auto mb-10'>
+
+                    {
+                        result.map(doctor => <Doctor key={doctor._id} doctor={doctor}></Doctor>)
+                    }
+
+                </div>
+
             </div>
         </div>
     );

@@ -5,15 +5,7 @@ import bg1 from '../Specialities/SpecialitiesImg/bg1.jpg'
 
 
 const OurSeciality = ({ imag }) => {
-  const { image, speciality, _id, category_id } = imag
-
-  // const [docInfo, setDocInfo] = useState([])
-  // console.log(docInfo)
-
-  // const uri = 'http://localhost:5000/docInfo'
-  // fetch(uri)
-  //   .then(res => res.json())
-  //   .then(data => setDocInfo(data))
+  const { image, speciality, _id } = imag
   // console.log(img)
   return (
     <Link to={`/specialitiesDetails/${_id}`}><div>
