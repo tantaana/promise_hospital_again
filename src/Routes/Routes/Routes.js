@@ -13,7 +13,6 @@ import MyDetails from "../../Pages/MyAppointments/MyDetails/MyDetails";
 
 
 
-
 ///// Tanvir import place end //////
 ////-----------------------------------------------------
 /////  Fouzia import place (18-27)--/////
