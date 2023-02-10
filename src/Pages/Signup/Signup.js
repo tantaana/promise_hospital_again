@@ -8,6 +8,7 @@ import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import circleLoading from '../../assets/loading-circle.gif'
+import useToken from '../../Hooks/useToken/useToken';
 
 const Signup = () => {
     const { user, createUser, updateUserProfile, providerLogin } = useContext(AuthContext);
@@ -26,8 +27,13 @@ const Signup = () => {
     //Loader to show while loading
     const [isLoading, setIsLoading] = useState(false);
 
-
-
+    //JWT 
+    // const [signUpUserEmail, setSiginUpUserEmail] = useState('')
+    // const [token] = useToken(signUpUserEmail)
+    
+    // if(token){
+        
+    // }
 
 
     const handleSignUp = event => {
@@ -67,6 +73,7 @@ const Signup = () => {
 
                         if (data.acknowledged) {
                             toast.success('Successfully signed up');
+                            // setSiginUpUserEmail(email)
                             setIsLoading(false);
                             setTimeout(() => {
                                 navigate(from, { replace: true });
