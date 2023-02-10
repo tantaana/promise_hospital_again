@@ -46,14 +46,14 @@ const SpecialitiesDetails = () => {
                 </div>
             </div>
             <div >
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 md:w-11/12 w-10/12 mx-auto mb-10'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 md:w-11/12 w-10/12 mx-auto mb-10'>
 
-{
-    result.map(doctor => <Doctor key={doctor._id} doctor={doctor}></Doctor>)
-}
+                    {
+                        result.map(doctor => <Doctor key={doctor._id} doctor={doctor}></Doctor>)
+                    }
 
-</div>
-               
+                </div>
+
             </div>
         </div>
     );

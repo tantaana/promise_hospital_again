@@ -66,6 +66,7 @@ const OurSpecialities = () => {
                     specialities.map(imag => <OurSeciality
                         key={imag._id}
                         imag={imag}
+
                     ></OurSeciality>)
 
                 }
