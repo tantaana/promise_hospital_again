@@ -62,14 +62,7 @@ const ShowPackages = () => {
                             <td>
                                 {packag.includes}
                             </td>
-                            <th>
-                                {
-                                    packag.price && !packag.paid && <Link to={`/dashboard/payment/${packag._id}`}><button className="btn btn-ghost btn-xs bg-green-500 text-white">pay</button></Link>
-                                }
-                                {
-                                    packag.price && packag.paid && <span className='text-green-500'>Paid</span>
-                                }
-                            </th>
+                            
                         </tr>)
                         }
                     </tbody>

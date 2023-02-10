@@ -11,18 +11,20 @@ const CheckoutForm = ({ data }) => {
 
     const stripe = useStripe()
     const elements = useElements()
-    const { price, email, name, _id } = data
+    const { fees, patientEmail, healthInfo, _id } = data
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
         fetch("http://localhost:5000/create-payment-intent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ price }),
+            body: JSON.stringify({ fees }),
         })
             .then((res) => res.json())
             .then((data) => setClientSecret(data.clientSecret));
-    }, [price]);
+    }, [fees]);
+
+    console.log(clientSecret)
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -60,8 +62,8 @@ const CheckoutForm = ({ data }) => {
                 payment_method: {
                     card: card,
                     billing_details: {
-                        name: name,
-                        email: email,
+                        name: healthInfo,
+                        email: patientEmail,
                     },
                 },
             },
@@ -76,9 +78,9 @@ const CheckoutForm = ({ data }) => {
 
             //store the payment in backend
             const payment = {
-                price,
+                fees,
                 transactionId: paymentIntent.id,
-                email,
+                patientEmail,
                 bookingId : _id
             }
             fetch('http://localhost:5000/payments', {
