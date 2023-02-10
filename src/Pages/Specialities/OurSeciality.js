@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import bg1 from '../Specialities/SpecialitiesImg/bg1.jpg'
 
 
 const OurSeciality = ({ imag }) => {
-  const { image, name, _id } = imag
+  const { image, speciality, _id, category_id } = imag
+
+  // const [docInfo, setDocInfo] = useState([])
+  // console.log(docInfo)
+
+  // const uri = 'http://localhost:5000/docInfo'
+  // fetch(uri)
+  //   .then(res => res.json())
+  //   .then(data => setDocInfo(data))
   // console.log(img)
   return (
     <Link to={`/specialitiesDetails/${_id}`}><div>
       <div className="hero  bg-base-500  border border-gray-500">
         <div className="hero-content flex-col ">
           <div className="hover:scale-110 transition duration-300 ease-in-out">
-            <h1 className="text-xl ">{name}</h1>
+            <h1 className="text-xl ">{speciality}</h1>
           </div>
           <div className="avatar justify-start text-start ">
             <div className="w-24 rounded hover:scale-110 transition duration-300 ease-in-out">

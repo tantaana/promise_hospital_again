@@ -29,7 +29,7 @@ const AddHealthPackage = () => {
                         price: data.price,
                         old_price: data.oldPrice,
                         save: data.save,
-                        img : imgData.data.url,
+                        img: imgData.data.url,
                         des: data.des
                     }
 

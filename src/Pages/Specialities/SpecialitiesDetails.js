@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import DoctorBookingForm from '../Doctors/DoctorBookingForm/DoctorBookingForm';
 import bg1 from "../Specialities/SpecialitiesImg/spbg.jpg"
@@ -19,14 +19,14 @@ const SpecialitiesDetails = () => {
                 <img src={bg2} className='w-full ' style={{ height: 400 }} alt="" />
                 <div className='justify-between flex'>
                     <p className='text-blue-600 font-bold text-3xl p-5  '>{detail.title}</p>
-                   
+
                     <div className=" flex ">
-                    <p className='text-blue-600 font-bold text-3xl p-5'>Cost : {detail.amount} tk</p>
-                     <p className='p-5'><label htmlFor="doctor-book-modal"  className="text-xl mt-10  bg-green-800   p-3 rounded-xl  w-48  hover hover:bg-sky-200 font-bold text-zinc-100">Confirm</label></p>   
+                        <p className='text-blue-600 font-bold text-3xl p-5'>Cost : {detail.amount} tk</p>
+                        <p className='p-5'><label htmlFor="doctor-book-modal" className="text-xl mt-10  bg-green-800   p-3 rounded-xl  w-48  hover hover:bg-sky-200 font-bold text-zinc-100">Confirm</label></p>
                     </div>
                 </div>
                 <div className='flex gap-8  '>
-                  
+
                     <div className=''>
 
                         <p className='p-5'>
@@ -40,7 +40,7 @@ const SpecialitiesDetails = () => {
                         </p>
                     </div>
                     {/* <button htmlFor="doctor-book-modal" className='text-2xl bg-cyan-400 h-10 mt-60 mr-6 w-44 rounded-2xl hover hover:bg-sky-200 font-bold text-zinc-100'> Confirm</button> */}
-                    
+
                 </div>
             </div>
             <p className='text-blue-600  text-xl p-5 bg-slate-400'> {detail.det}</p>
@@ -49,7 +49,7 @@ const SpecialitiesDetails = () => {
             <div className="modal">
                 <div className="modal-box w-11/12 max-w-5xl">
                     <label htmlFor="doctor-book-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <DoctorBookingForm></DoctorBookingForm>
+                    {/* <DoctorBookingForm></DoctorBookingForm> */}
                 </div>
             </div>
         </div>
