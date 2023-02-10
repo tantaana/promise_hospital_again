@@ -12,7 +12,7 @@ const Diagnosis = () => {
                 background: `url(${bg})`
             }}>
             <DiagnosisCards></DiagnosisCards>
-            <DiagnosisForm></DiagnosisForm>
+            {/* <DiagnosisForm></DiagnosisForm> */}
         </div>
     );
 };

@@ -65,6 +65,7 @@ import SpecialitiesAdd from "../../Pages/Specialities/seviceDashboard/Specialiti
 import AllServiceShow from "../../Pages/Specialities/seviceDashboard/AllServiceShow";
 import Diagnosis from "../../Pages/Diagnosis/Diagnosis/Diagnosis";
 import AddDiagnosis from "../../Pages/DashboardDiagnosis/AddDiagnosis/AddDiagnosis";
+import DiagnosisForm from "../../Pages/Diagnosis/DiagnosisBookFrom/DiagnosisForm/DiagnosisForm";
 
 
 
@@ -211,6 +212,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/diagnosis', element: <Diagnosis></Diagnosis>
+            },
+            {
+                path: '/diagnosis/:id', element: <DiagnosisForm></DiagnosisForm>,
+                loader: ({ params }) => fetch(`http://localhost:5000/diagnosis/${params.id}`)
+
             },
 
 
