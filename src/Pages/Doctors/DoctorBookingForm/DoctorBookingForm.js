@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './doctorBookingForm.css'
 import { DayPicker } from 'react-day-picker';
 import { format } from 'date-fns';
@@ -6,10 +6,14 @@ import 'react-day-picker/dist/style.css';
 import { useQuery } from '@tanstack/react-query';
 import { toast } from 'react-hot-toast';
 import imgCircle from '../../../assets/loading-circle.gif'
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 
 
 const DoctorBookingForm = ({ anotherLoader }) => {
+
+    const { user } = useContext(AuthContext);
+    console.log(user)
 
     const imageHostKey = process.env.REACT_APP_imgbb_key;
 
@@ -45,6 +49,8 @@ const DoctorBookingForm = ({ anotherLoader }) => {
         const healthInfo = allData.healthInfo.value;
         const imageMedical = allData.medicalReport.files[0];
         const appointDate = allData.appointDate.value;
+        const fees = anotherLoader?.fees;
+        const doctorImg = anotherLoader?.doctorImg;
 
         const formData = new FormData();
         formData.append('image', imageMedical);
@@ -56,6 +62,7 @@ const DoctorBookingForm = ({ anotherLoader }) => {
         })
             .then(res => res.json())
             .then(imgData => {
+                console.log(imgData)
                 if (imgData.success) {
 
                     const addPatient = {
@@ -65,10 +72,12 @@ const DoctorBookingForm = ({ anotherLoader }) => {
                         country: country,
                         language: language,
                         docName: docName,
+                        doctorImg: doctorImg,
                         docLocation: docLocation,
                         healthInfo: healthInfo,
                         imageMedical: imgData.data.url,
-                        appointDate: appointDate
+                        appointDate: appointDate,
+                        fees: fees
                     }
 
 
@@ -115,11 +124,11 @@ const DoctorBookingForm = ({ anotherLoader }) => {
                         <div className="fast-input-fild grid gap-10 lg:grid-cols-3 py-8">
                             <div className="mt-2">
                                 <span className="primary-color font-semibold">Patients Name</span>
-                                <input type="text" name='patientName' placeholder="Enter Name" className="block mt-2 input bg-white border-gray-400 border input-bordered input-sm w-full " required />
+                                <input type="text" name='patientName' placeholder="Enter Name" className="block mt-2 input bg-white border-gray-400 border input-bordered input-sm w-full " defaultValue={user?.displayName} readOnly />
                             </div>
                             <div className="mt-2">
                                 <span className="primary-color font-semibold">Patients Email ID</span>
-                                <input type="email" name='patientEmail' placeholder="Enter email ID" className="block mt-2 input bg-white border-gray-400 border input-bordered input-sm w-full " required />
+                                <input type="email" name='patientEmail' placeholder="Enter email ID" className="block mt-2 input bg-white border-gray-400 border input-bordered input-sm w-full " defaultValue={user?.email} readOnly />
                             </div>
                             <div className="mt-2">
                                 <span className="primary-color font-semibold">Patients Contact Number</span>
@@ -145,7 +154,7 @@ const DoctorBookingForm = ({ anotherLoader }) => {
                                 <select name='language' className="select select-bordered block bg-white mt-2 border-gray-400 border select-sm w-full" required>
                                     <option value="" disabled selected>Select a language</option>
                                     <option value="English">English</option>
-                                    <option value="France">France</option>
+                                    <option value="French">French</option>
                                     <option value="Hindi">Hindi</option>
                                     <option value="Bangla">Bangla</option>
                                 </select>
@@ -173,8 +182,8 @@ const DoctorBookingForm = ({ anotherLoader }) => {
                     </div>
 
                     <div className="py-8">
-                        <h2 className='ml-6 text-xl font-semibold text-black'>Documents Upload</h2>
-                        <div className="fast-input-fild grid gap-10 lg:grid-cols-3 py-8">
+                        <h2 className='ml-6 text-xl font-semibold text-black'>Documents Upload & Date Selection</h2>
+                        <div className="fast-input-fild grid gap-10 md:grid-cols-2 py-8">
                             {/* <div className="mt-2">
                                 <h2 className="primary-color font-semibold mb-2">Patients Passport</h2>
                                 <input name='passportPic' type="file" className="block w-full text-sm text-black border border-blue-900 rounded-lg
@@ -191,23 +200,29 @@ const DoctorBookingForm = ({ anotherLoader }) => {
       file:text-sm file:font-semibold
       file:bg-gradient-to-r file:from-blue-900 file:to-teal-500 hover:file:bg-gradient-to-r hover:file:from-teal-500 hover:file:to-teal-500 file:text-white" required />
                             </div>
+
+                            <div className='border border-black'>
+                                <h2 className='text-lg font-semibold text-white text-center bg-blue-900 p-2 mb-4'>Select your availability date *</h2>
+
+                                <div className='flex justify-center items-center'>
+                                    <input onChange={handleChange} type="date" name="appointDate" min="2023-02-03" max="2030-04-30" className='m-3' id="" required />
+                                </div>
+
+                                <div className='flex justify-center'>
+                                    <h2 className='text-xl font-semibold text-blue-900 mb-3'>{treatDate ? <p>You have selected <span className='font-bold text-black'>{treatDate}</span></p>
+                                        : <p className='text-xl font-semibold text-blue-900'>Please pick a date.</p>}</h2>
+                                </div>
+
+
+                            </div>
                         </div>
                     </div>
 
-                    <div className='border border-black'>
-                        <h2 className='text-lg font-semibold text-white text-center bg-blue-900 p-2 mb-4'>Select your availability date *</h2>
-
-                        <div className='flex justify-center items-center'>
-                            <input onChange={handleChange} type="date" name="appointDate" min="2023-02-03" max="2030-04-30" className='m-3' id="" required />
-                        </div>
-
-                        <div className='flex justify-center'>
-                            <h2 className='text-xl font-semibold text-blue-900 mb-3'>{treatDate ? <p>You have selected <span className='font-bold text-black'>{treatDate}</span></p>
-                                : <p className='text-xl font-semibold text-blue-900'>Please pick a date.</p>}</h2>
-                        </div>
-
-
+                    <div className='bg-blue-400 py-10 border border-blue-900 border-4'>
+                        <h2 className='text-2xl font-semibold text-center text-white'>Consultation fees <span className='text-4xl font-semibold text-black'>{anotherLoader?.fees}/-</span> only</h2>
                     </div>
+
+
 
                     <div>
 
