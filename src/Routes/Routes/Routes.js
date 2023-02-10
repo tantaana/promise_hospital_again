@@ -7,7 +7,8 @@ import errorImg from '../../assets/404Image/error.png'
 
 ///// Tanvir import place(8-16) -----//////////
 import Login from "../../Pages/Login/Login"; import Signup from "../../Pages/Signup/Signup"; import SuccessStories from "../../Pages/SuccessStories/SuccessStories"; import VisitPlan from "../../Pages/VisitPlan/VisitPlan"; import Insurance from "../../Pages/VisitPlan/Insurance/Insurance"; import Arrival from "../../Pages/VisitPlan/Arrival/Arrival"; import Discharge from "../../Pages/VisitPlan/Discharge/Discharge"; import AddDoctors from "../../Pages/Doctors/AddDoctors/AddDoctors";
-
+import MyAppointments from "../../Pages/MyAppointments/MyAppointments";
+import MyDetails from "../../Pages/MyAppointments/MyDetails/MyDetails";
 
 
 
@@ -63,8 +64,6 @@ import About from "../../Pages/About/About";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import SpecialitiesAdd from "../../Pages/Specialities/seviceDashboard/SpecialitiesAdd";
 import AllServiceShow from "../../Pages/Specialities/seviceDashboard/AllServiceShow";
-import MyAppointments from "../../Pages/MyAppointments/MyAppointments";
-import MyDetails from "../../Pages/MyAppointments/MyDetails/MyDetails";
 
 
 ///// Jahid import end //////////////
