@@ -5,7 +5,6 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import Loader from '../Shared/Loader/Loader';
 
 const MyAppointments = () => {
-
     const { user } = useContext(AuthContext);
 
     const url = `http://localhost:5000/appointmentData?patientEmail=${user?.email}`;
