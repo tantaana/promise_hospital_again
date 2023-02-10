@@ -10,7 +10,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import circleLoading from '../../assets/loading-circle.gif'
 
 const Signup = () => {
-    const { user, createUser, updateUserProfile, providerLogin } = useContext(AuthContext);
+    const { createUser, updateUserProfile, providerLogin } = useContext(AuthContext);
 
     const navigate = useNavigate();
     const location = useLocation();
