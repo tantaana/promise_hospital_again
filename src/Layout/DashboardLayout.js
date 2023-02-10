@@ -31,7 +31,12 @@ const DashboardLayout = () => {
 
 
                         <li> <Link to='/dashboard/addPackage'><li className='text-white'>Add Health Package</li></Link></li>
+<<<<<<< HEAD
                         <li> <Link to='/dashboard/showPackage'><li className='text-white'>Show Package</li></Link></li>
+=======
+                        <li> <Link to='/dashboard/add_doctors'><li className='text-white'>Add a Doctor</li></Link></li>
+                        <li> <Link to='/dashboard/appointments'><li className='text-white'>My Appointments</li></Link></li>
+>>>>>>> 49a6dccda767a77d401ea1e437a70997e3e2217b
                     </ul>
 
                 </div>
