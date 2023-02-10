@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { AuthContext } from '../context/AuthProvider/AuthProvider';
 import Advertise from '../Pages/Shared/Advertise/Advertise';
 import Footer from '../Pages/Shared/Footer/Footer';
 import Nav1 from '../Pages/Shared/Navber/Nav1/Nav1';
 import Nav2 from '../Pages/Shared/Navber/Nav2/Nav2';
 
 const DashboardLayout = () => {
+    const {user} = useContext(AuthContext)
     return (
         <div>
             <Advertise></Advertise>
@@ -29,6 +31,7 @@ const DashboardLayout = () => {
 
 
                         <li> <Link to='/dashboard/addPackage'><li className='text-white'>Add Health Package</li></Link></li>
+                        <li> <Link to='/dashboard/showPackage'><li className='text-white'>Show Package</li></Link></li>
                         <li> <Link to='/dashboard/add_doctors'><li className='text-white'>Add a Doctor</li></Link></li>
                         <li> <Link to='/dashboard/appointments'><li className='text-white'>My Appointments</li></Link></li>
                     </ul>

@@ -40,9 +40,9 @@ import DoctorProfile from "../../Pages/Doctors/DoctorsProfile/DoctorsProfile";
 import HealthPackages from "../../Pages/HealthPackages/HealthPackages/HealthPackages";
 import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails/PackagesDetails";
 import AddHealthPackage from "../../Pages/Dashboard/HealthPackage/AddHealthPackage";
-
-
-
+import ShowPackages from "../../Pages/Dashboard/ShowPackages/ShowPackages";
+import Payment from "../../Pages/Dashboard/Payment/Payment";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 ////// Kausarul end //////////////
 /////----------------------------------------
@@ -210,7 +210,7 @@ export const router = createBrowserRouter([
 
 
 
-
+            
 
 
 
@@ -301,6 +301,15 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/addPackage',
                 element: <AddHealthPackage></AddHealthPackage>
+            },
+            {
+                path: '/dashboard/showPackage',
+                element: <ShowPackages></ShowPackages>
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <Payment></Payment>,
+                loader: ({params}) => fetch(`http://localhost:5000/booking/${params.id}`)
             }
 
 
