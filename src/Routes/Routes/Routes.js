@@ -63,6 +63,9 @@ import About from "../../Pages/About/About";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import SpecialitiesAdd from "../../Pages/Specialities/seviceDashboard/SpecialitiesAdd";
 import AllServiceShow from "../../Pages/Specialities/seviceDashboard/AllServiceShow";
+import Diagnosis from "../../Pages/Diagnosis/Diagnosis/Diagnosis";
+import AddDiagnosis from "../../Pages/DashboardDiagnosis/AddDiagnosis/AddDiagnosis";
+import DiagnosisForm from "../../Pages/Diagnosis/DiagnosisBookFrom/DiagnosisForm/DiagnosisForm";
 import Meeting from "../../Pages/Meeting/Meeting";
 
 
@@ -104,11 +107,11 @@ export const router = createBrowserRouter([
 
             //////----------- Fouzia aria is 104-124 line ---------/////////////////////////
             {
-                 path: '/specialities',
+                path: '/specialities',
                 element: <Specialities></Specialities>,
             },
             {
-                 path: '/meet',
+                path: '/meet',
                 element: <Meeting></Meeting>,
             },
 
@@ -209,12 +212,21 @@ export const router = createBrowserRouter([
             {
                 path: '/about', element: <About></About>
             },
+            {
+                path: '/diagnosis', element: <Diagnosis></Diagnosis>
+            },
+            {
+                path: '/diagnosis/:id', element: <DiagnosisForm></DiagnosisForm>,
+                loader: ({ params }) => fetch(`http://localhost:5000/diagnosis/${params.id}`)
+
+            },
 
 
 
 
 
-            
+
+
 
 
 
@@ -267,10 +279,19 @@ export const router = createBrowserRouter([
 
 
 
+
+
+
+
+
+
+
             //////  fouzia end 264 line //////////////////
 
             /////// jahid aria 266-280 line //////
-
+            {
+                path: '/dashboard/addDiagnosis', element: <AddDiagnosis></AddDiagnosis>
+            },
 
 
 
@@ -313,7 +334,7 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/payment/:id',
                 element: <Payment></Payment>,
-                loader: ({params}) => fetch(`http://localhost:5000/booking/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/booking/${params.id}`)
             }
 
 
