@@ -8,7 +8,7 @@ const BlogsCards = () => {
     const { data: blogs = [], isLoading } = useQuery({
         queryKey: ['blogs'],
         queryFn: async () => {
-            const res = await fetch(`https://promise-hospoital-server.vercel.app/blogs`)
+            const res = await fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/blogs`)
             const data = await res.json()
             return data
         }

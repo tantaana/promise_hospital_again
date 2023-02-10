@@ -9,7 +9,7 @@ const OurSpecialities = () => {
 
     const [specialities, setSpecialities] = useState([]);
     useEffect(() => {
-        fetch('https://promise-hospoital-server.vercel.app/specialities')
+        fetch('https://promise-hospoital-server-jahid900pj.vercel.app/specialities')
             .then(res => res.json())
             .then(data => setSpecialities(data))
     }, []);
@@ -66,6 +66,7 @@ const OurSpecialities = () => {
                     specialities.map(imag => <OurSeciality
                         key={imag._id}
                         imag={imag}
+
                     ></OurSeciality>)
 
                 }

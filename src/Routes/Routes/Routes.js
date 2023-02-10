@@ -7,8 +7,8 @@ import errorImg from '../../assets/404Image/error.png'
 
 ///// Tanvir import place(8-16) -----//////////
 import Login from "../../Pages/Login/Login"; import Signup from "../../Pages/Signup/Signup"; import SuccessStories from "../../Pages/SuccessStories/SuccessStories"; import VisitPlan from "../../Pages/VisitPlan/VisitPlan"; import Insurance from "../../Pages/VisitPlan/Insurance/Insurance"; import Arrival from "../../Pages/VisitPlan/Arrival/Arrival"; import Discharge from "../../Pages/VisitPlan/Discharge/Discharge"; import AddDoctors from "../../Pages/Doctors/AddDoctors/AddDoctors";
-
-
+import MyAppointments from "../../Pages/MyAppointments/MyAppointments";
+import MyDetails from "../../Pages/MyAppointments/MyDetails/MyDetails";
 
 
 
@@ -40,9 +40,9 @@ import DoctorProfile from "../../Pages/Doctors/DoctorsProfile/DoctorsProfile";
 import HealthPackages from "../../Pages/HealthPackages/HealthPackages/HealthPackages";
 import PackagesDetails from "../../Pages/HealthPackages/PackagesDetails/PackagesDetails";
 import AddHealthPackage from "../../Pages/Dashboard/HealthPackage/AddHealthPackage";
-
-
-
+import ShowPackages from "../../Pages/Dashboard/ShowPackages/ShowPackages";
+import Payment from "../../Pages/Dashboard/Payment/Payment";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 ////// Kausarul end //////////////
 /////----------------------------------------
@@ -63,8 +63,10 @@ import About from "../../Pages/About/About";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import SpecialitiesAdd from "../../Pages/Specialities/seviceDashboard/SpecialitiesAdd";
 import AllServiceShow from "../../Pages/Specialities/seviceDashboard/AllServiceShow";
-import MyAppointments from "../../Pages/MyAppointments/MyAppointments";
-import MyDetails from "../../Pages/MyAppointments/MyDetails/MyDetails";
+import Diagnosis from "../../Pages/Diagnosis/Diagnosis/Diagnosis";
+import AddDiagnosis from "../../Pages/DashboardDiagnosis/AddDiagnosis/AddDiagnosis";
+import DiagnosisForm from "../../Pages/Diagnosis/DiagnosisBookFrom/DiagnosisForm/DiagnosisForm";
+import Meeting from "../../Pages/Meeting/Meeting";
 
 
 ///// Jahid import end //////////////
@@ -107,13 +109,16 @@ export const router = createBrowserRouter([
             {
                 path: '/specialities',
                 element: <Specialities></Specialities>,
-
+            },
+            {
+                path: '/meet',
+                element: <Meeting></Meeting>,
             },
 
             {
                 path: '/specialitiesDetails/:id',
                 element: <SpecialitiesDetails></SpecialitiesDetails>,
-                loader: ({ params }) => fetch(`https://promise-hospoital-server.vercel.app/specialities/${params.id}`),
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/specialities/${params.id}`),
 
             },
 
@@ -134,7 +139,7 @@ export const router = createBrowserRouter([
             {
                 path: '/doctors/:id',
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/docInfo/${params.id}`)
+                    return fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/docInfo/${params.id}`)
                 },
                 element: <DoctorProfile></DoctorProfile>
             },
@@ -158,7 +163,7 @@ export const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PackagesDetails></PackagesDetails>,
-                loader: ({ params }) => fetch(`https://promise-hospoital-server.vercel.app/details/${params.id}`)
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/details/${params.id}`)
             },
 
 
@@ -202,11 +207,20 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/blog/:id', element: <BlogDetails></BlogDetails>,
-                loader: ({ params }) => fetch(`https://promise-hospoital-server.vercel.app/blog/${params.id}`)
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/blog/${params.id}`)
             },
             {
                 path: '/about', element: <About></About>
             },
+            {
+                path: '/diagnosis', element: <Diagnosis></Diagnosis>
+            },
+            {
+                path: '/diagnosis/:id', element: <DiagnosisForm></DiagnosisForm>,
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/diagnosis/${params.id}`)
+
+            },
+
 
 
 
@@ -232,7 +246,7 @@ export const router = createBrowserRouter([
             ///// tanvir start 230-245 line //////////////////
             { path: '/dashboard/add_doctors', element: <AddDoctors></AddDoctors> },
             { path: '/dashboard/appointments', element: <MyAppointments></MyAppointments> },
-            { path: '/dashboard/details/:id', element: <MyDetails></MyDetails>, loader: ({ params }) => fetch(`http://localhost:5000/details/${params.id}`) },
+            { path: '/dashboard/details/:id', element: <MyDetails></MyDetails>, loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/details/${params.id}`) },
 
 
 
@@ -265,10 +279,19 @@ export const router = createBrowserRouter([
 
 
 
+
+
+
+
+
+
+
             //////  fouzia end 264 line //////////////////
 
             /////// jahid aria 266-280 line //////
-
+            {
+                path: '/dashboard/addDiagnosis', element: <AddDiagnosis></AddDiagnosis>
+            },
 
 
 
@@ -303,6 +326,15 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/addPackage',
                 element: <AddHealthPackage></AddHealthPackage>
+            },
+            {
+                path: '/dashboard/showPackage',
+                element: <ShowPackages></ShowPackages>
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <Payment></Payment>,
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/booking/${params.id}`)
             }
 
 

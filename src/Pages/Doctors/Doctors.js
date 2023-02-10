@@ -14,7 +14,7 @@ const Doctors = () => {
 
     useEffect(() => {
         setLoader(true);
-        fetch('http://localhost:5000/docInfo')
+        fetch('https://promise-hospoital-server-jahid900pj.vercel.app/docInfo')
             .then(res => res.json())
             .then(data => {
                 setDoctors(data);

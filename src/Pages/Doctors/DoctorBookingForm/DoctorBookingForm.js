@@ -14,8 +14,8 @@ const DoctorBookingForm = ({ anotherLoader }) => {
 
     const { user } = useContext(AuthContext);
     console.log(user)
-
-    const imageHostKey = process.env.REACT_APP_imgbb_key;
+    // REACT_APP_imgbb_key=e346ac8df76e30d9061204950128b025
+    const imageHostKey = `e346ac8df76e30d9061204950128b025`;
 
     const [treatDate, setTreatDate] = useState('');
 
@@ -84,7 +84,7 @@ const DoctorBookingForm = ({ anotherLoader }) => {
 
 
                     //save patient information to the database
-                    fetch('http://localhost:5000/createAppointment', {
+                    fetch('https://promise-hospoital-server-jahid900pj.vercel.app/createAppointment', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

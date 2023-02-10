@@ -83,7 +83,7 @@ const AddDoctors = () => {
 
 
                     //save doctor's information to the database
-                    fetch('http://localhost:5000/addDoctors', {
+                    fetch('https://promise-hospoital-server-jahid900pj.vercel.app/addDoctors', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

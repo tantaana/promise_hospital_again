@@ -5,10 +5,9 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import Loader from '../Shared/Loader/Loader';
 
 const MyAppointments = () => {
-
     const { user } = useContext(AuthContext);
 
-    const url = `http://localhost:5000/appointmentData?patientEmail=${user?.email}`;
+    const url = `https://promise-hospoital-server-jahid900pj.vercel.app/appointmentData?patientEmail=${user?.email}`;
 
     const { data: patientEmail = [], isLoading } = useQuery({
         queryKey: ['patientEmail', user?.email],
@@ -78,7 +77,14 @@ const MyAppointments = () => {
                                                 <Link to={`/dashboard/details/${patient?._id}`}><button className="btn btn-primary btn-md">Details</button></Link>
                                             </th>
                                             <th>
-                                                <button className="btn btn-secondary text-white btn-md font-bold">Proceed to Pay</button>
+                                                {
+                                                    patient.fees && !patient.paid && <Link to={`/dashboard/payment/${patient._id}`}><button className="btn btn-secondary text-white btn-md font-bold mr-2">Pay Card </button></Link>
+                                                }
+                                                {
+                                                    patient.fees && patient.paid && <span className='text-green-500'>Paid</span>
+                                                }
+
+                                                <button className="btn btn-secondary text-white btn-md font-bold">Pay SSL</button>
                                             </th>
                                         </tr>
                                         :
