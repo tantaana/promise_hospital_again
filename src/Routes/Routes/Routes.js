@@ -323,10 +323,6 @@ export const router = createBrowserRouter([
 
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 49a6dccda767a77d401ea1e437a70997e3e2217b
             ////  kausarul end 315 line ////////////
 
             //// solyman aria start 317-330 line //////////
