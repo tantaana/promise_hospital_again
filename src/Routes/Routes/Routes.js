@@ -63,6 +63,7 @@ import About from "../../Pages/About/About";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import SpecialitiesAdd from "../../Pages/Specialities/seviceDashboard/SpecialitiesAdd";
 import AllServiceShow from "../../Pages/Specialities/seviceDashboard/AllServiceShow";
+import Meeting from "../../Pages/Meeting/Meeting";
 
 
 ///// Jahid import end //////////////
@@ -103,9 +104,12 @@ export const router = createBrowserRouter([
 
             //////----------- Fouzia aria is 104-124 line ---------/////////////////////////
             {
-                path: '/specialities',
+                 path: '/specialities',
                 element: <Specialities></Specialities>,
-
+            },
+            {
+                 path: '/meet',
+                element: <Meeting></Meeting>,
             },
 
             {

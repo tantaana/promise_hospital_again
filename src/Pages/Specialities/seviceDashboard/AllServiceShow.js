@@ -31,9 +31,9 @@ const AllServiceShow = () => {
         }
       }
     return (
-        <div className='bg-slate-300'>
+        <div className=' bg-teal-500'>
              <div >
-                    <p className='text-2xl mb-4 font-bold text-cyan-600 border-b-4   border-spacing-6 text-center justify-center' >All Special Service Data</p>
+                    <p className='text-2xl mb-4 font-bold text-white border-b-4   border-spacing-6 text-center justify-center' >All Special Service Data</p>
                 </div>
                 <div className="overflow-x-auto">
                     <table className="table w-full">
@@ -54,7 +54,7 @@ const AllServiceShow = () => {
                     return <tr key={service._id}>
 
                         <th>{i + 1}</th>
-                        <td>{service.name}</td>
+                        <td>{service.speciality}</td>
                         <td>{service.amount}</td>
                         <td>{service.docName}</td>
                       <td><Link onClick={() => handleDelete(service._id)}><FaTimes></FaTimes></Link>  </td>
