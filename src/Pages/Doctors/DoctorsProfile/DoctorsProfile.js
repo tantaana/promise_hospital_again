@@ -12,7 +12,7 @@ import DoctorOpinionForm from './DoctorOpinionForm/DoctorOpinionForm';
 
 const DoctorsProfile = () => {
     const doctorData = useLoaderData()
-    const { name, location, sepecilaty, qualification, doctorImg, locationImg } = doctorData
+    const { name, location, speciality, qualification, doctorImg, locationImg } = doctorData
     return (
         <div className='lg:mb-40 mb-52'>
             <div className='h-screen'>
@@ -33,7 +33,7 @@ const DoctorsProfile = () => {
                                             <i className="fa-solid fa-user text-4xl primary-doctor-color"></i>
                                             <div className="ml-4">
                                                 <h2 className="primary-color font-bold text-xl flex items-center gap-2"><FaUserCircle />{name}</h2>
-                                                <p className="text-gray-500 text-sm">{sepecilaty}</p>
+                                                <p className="text-gray-500 text-sm">{speciality}</p>
                                             </div>
                                         </div>
                                         <div className="item flex items-center mt-8">

@@ -8,6 +8,7 @@ import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import circleLoading from '../../assets/loading-circle.gif'
+import useToken from '../../Hooks/useToken/useToken';
 
 const Signup = () => {
     const { user, createUser, updateUserProfile, providerLogin } = useContext(AuthContext);
@@ -26,8 +27,13 @@ const Signup = () => {
     //Loader to show while loading
     const [isLoading, setIsLoading] = useState(false);
 
+    //JWT 
+    // const [signUpUserEmail, setSiginUpUserEmail] = useState('')
+    // const [token] = useToken(signUpUserEmail)
 
+    // if(token){
 
+    // }
 
 
     const handleSignUp = event => {
@@ -51,11 +57,12 @@ const Signup = () => {
 
                 const addPatient = {
                     name: name,
-                    email: email
+                    email: email,
+                    userType: 'patient'
                 }
 
                 //save user information to the database
-                fetch('http://localhost:5000/userData', {
+                fetch('https://promise-hospoital-server-jahid900pj.vercel.app/userData', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -67,6 +74,7 @@ const Signup = () => {
 
                         if (data.acknowledged) {
                             toast.success('Successfully signed up');
+                            // setSiginUpUserEmail(email)
                             setIsLoading(false);
                             setTimeout(() => {
                                 navigate(from, { replace: true });
@@ -135,11 +143,13 @@ const Signup = () => {
 
                     const addPatient = {
                         name: user?.displayName,
-                        email: user?.email
+                        email: user?.email,
+                        userType: 'patient'
+
                     }
 
                     //save user information to the database
-                    fetch('http://localhost:5000/userData', {
+                    fetch('https://promise-hospoital-server-jahid900pj.vercel.app/userData', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -148,6 +158,7 @@ const Signup = () => {
                     })
                         .then(res => res.json())
                         .then(data => {
+                            console.log(data)
 
                             if (data.acknowledged) {
                                 toast.success('Successfully signed up');
@@ -157,6 +168,7 @@ const Signup = () => {
                                 }, 2000);
                             }
                         })
+                        .catch(err => console.error(err.message))
 
 
                 }
