@@ -49,13 +49,13 @@ const DashboardLayout = () => {
                         <li onClick={handleClick} className='text-white hover:bg-teal-600 hover:rounded-lg'><NavLink to='/dashboard/add_doctors' style={activeLinks} className="text-lg text-white font-semibold hover:rounded-lg p-2">Add a Doctor</NavLink></li>
                         <li onClick={handleClick} className='text-white hover:bg-teal-600 hover:rounded-lg'><NavLink to='/dashboard/appointments' style={activeLinks} className="text-lg text-white font-semibold hover:rounded-lg p-2">My Appointments</NavLink></li>
                         <li onClick={handleClick} className='text-white hover:bg-teal-600 hover:rounded-lg'><NavLink to='/dashboard/all_users' style={activeLinks} className="text-lg text-white font-semibold hover:rounded-lg p-2">All User Info</NavLink></li>
-                    </ul>
+                    </ul >
 
-                </div>
-            </div>
+                </div >
+            </div >
 
             <Footer></Footer>
-        </div>
+        </div >
     );
 };
 
