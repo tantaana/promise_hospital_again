@@ -14,7 +14,7 @@ const Doctors = () => {
 
     useEffect(() => {
         setLoader(true);
-        fetch('https://server-new-rokibul-bd.vercel.app/doctors')
+        fetch('http://localhost:5000/docInfo')
             .then(res => res.json())
             .then(data => {
                 setDoctors(data);
@@ -35,8 +35,19 @@ const Doctors = () => {
     return (
         <>
             <DoctorBanner doctors={doctors}></DoctorBanner>
-            <div className='flex justify-center my-8'>{loader ? <img src={circleImg} className="w-16" alt='' /> : ''}</div>
-            <div className='grid md:grid-cols-2 gap-8 mt-8 md:w-11/12 w-10/12 mx-auto'>
+            <div className='flex justify-center my-8'>
+                {
+                    loader ?
+                        <div class="flex flex-col">
+                            <div class="w-12 h-12 rounded-full animate-spin
+                        border-4 border-solid border-blue-900 border-t-transparent shadow-md"></div>
+
+
+                        </div>
+                        : ''
+                }
+            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 md:w-11/12 w-10/12 mx-auto mb-10'>
 
                 {
                     doctors.map(doctor => <Doctor key={doctor._id} doctor={doctor} setAnotherLoader={setAnotherLoader} checkLoader={checkLoader}></Doctor>)

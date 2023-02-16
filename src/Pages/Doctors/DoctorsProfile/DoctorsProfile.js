@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import DoctorBookingForm from '../DoctorBookingForm/DoctorBookingForm';
 // import DoctorFellowship from './DoctorFellowship/DoctorFellowship';
 import './doctorProfile.css'
@@ -12,7 +12,12 @@ import DoctorOpinionForm from './DoctorOpinionForm/DoctorOpinionForm';
 
 const DoctorsProfile = () => {
     const doctorData = useLoaderData()
-    const { name, location, sepecilaty, qualification, doctorImg, locationImg } = doctorData
+    const { name, location, speciality, qualification, doctorImg, locationImg } = doctorData;
+
+    const navigate = useNavigate();
+    const goBack = () => {
+        navigate(-1);
+    }
     return (
         <div className='lg:mb-40 mb-52'>
             <div className='h-screen'>
@@ -20,7 +25,7 @@ const DoctorsProfile = () => {
                     backgroundImage: `url(${locationImg})`
                 }} className="xl:p-20 lg:p-16 md:p-10 sm:p-8 p-4 bg-center bg-cover">
                     <div className="back-btn  ">
-                        <Link to="/doctors" className="bg-teal-500 hover:bg-teal-400 font-semibold px-4 py-2 rounded flex items-center w-32 gap-2 "><AiOutlineArrowLeft /> <span>Go back</span></Link>
+                        <button onClick={goBack} className="bg-teal-500 hover:bg-teal-400 font-semibold px-4 py-2 rounded flex items-center w-32 gap-2 "><AiOutlineArrowLeft /> <span>Go back</span></button>
                     </div>
 
                     <div id="doctors-profile" className="xl:m-20 lg:m-10 sm:mt-8 mb-16">
@@ -33,7 +38,7 @@ const DoctorsProfile = () => {
                                             <i className="fa-solid fa-user text-4xl primary-doctor-color"></i>
                                             <div className="ml-4">
                                                 <h2 className="primary-color font-bold text-xl flex items-center gap-2"><FaUserCircle />{name}</h2>
-                                                <p className="text-gray-500 text-sm">{sepecilaty}</p>
+                                                <p className="text-gray-500 text-sm">{speciality}</p>
                                             </div>
                                         </div>
                                         <div className="item flex items-center mt-8">

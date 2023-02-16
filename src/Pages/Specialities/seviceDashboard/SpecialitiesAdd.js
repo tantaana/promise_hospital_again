@@ -43,7 +43,7 @@ const SpecialitiesAdd = () => {
 
                     }
 
-                    fetch('http://localhost:5000/specialities', {
+                    fetch('https://promise-hospoital-server-jahid900pj.vercel.app/specialities', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -110,7 +110,7 @@ const SpecialitiesAdd = () => {
 
                             </div>
                             <div className='ml-52'>
-                            <label ><b className='text-cyan-700 font-bold ml-2'>Service Image</b></label><br></br>
+                                <label ><b className='text-cyan-700 font-bold ml-2'>Service Image</b></label><br></br>
                                 <input name="image" type="file"  {...register("image", {
                                     required: "image is required"
                                 })} className="form-control-file p-3 input input-bordered input-accent w-80  h-36  mt-3 text-lg" id="exampleFormControlFile1" />
@@ -146,7 +146,7 @@ const SpecialitiesAdd = () => {
 
 
 
-                            <label ><b  className='text-cyan-700 font-bold ml-2'>Service Description</b></label><br></br>
+                            <label ><b className='text-cyan-700 font-bold ml-2'>Service Description</b></label><br></br>
                             <textarea  {...register("det", {
                                 required: "Description is Required"
                             })} name="det" placeholder='Description' className='input input-bordered input-accent w-full h-28 mt-3 text-lg' id="exampleFormControlTextarea1" rows="3" ></textarea>
