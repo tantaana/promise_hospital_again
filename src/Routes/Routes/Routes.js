@@ -67,6 +67,10 @@ import Diagnosis from "../../Pages/Diagnosis/Diagnosis/Diagnosis";
 import AddDiagnosis from "../../Pages/DashboardDiagnosis/AddDiagnosis/AddDiagnosis";
 import DiagnosisForm from "../../Pages/Diagnosis/DiagnosisBookFrom/DiagnosisForm/DiagnosisForm";
 import Meeting from "../../Pages/Meeting/Meeting";
+import PatientsChart from "../../Pages/Dashboard/Patients-Chart/PatientsChart";
+import ViewAllGallery from "../../Pages/Dashboard/Gallery/ViewAllGallery";
+
+
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import AllUser from "../../Pages/Dashboard/AllUser/AllUser";
 
@@ -116,6 +120,11 @@ export const router = createBrowserRouter([
                 path: '/meet',
                 element: <Meeting></Meeting>,
             },
+            {
+                path: '/gallery',
+                element: <ViewAllGallery></ViewAllGallery>,
+            },
+
 
             {
                 path: '/specialities/:speciality_id',
@@ -274,6 +283,12 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard', element: <Dashboard></Dashboard>
             },
+            {
+                path: '/dashboard/chart',
+                element: <PatientsChart></PatientsChart>,
+
+            },
+
 
             {
                 path: '/dashboard/show_services', element: <AllServiceShow></AllServiceShow>
