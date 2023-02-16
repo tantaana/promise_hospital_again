@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useId } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { BiMenu } from "react-icons/bi";
 import { FaUserMd, FaClipboardList, FaHome, FaHospitalUser } from "react-icons/fa";
@@ -6,14 +6,17 @@ import { MdContactPage } from "react-icons/md";
 import { GiFallingStar } from "react-icons/gi";
 import { BiHappyBeaming } from "react-icons/bi";
 import { BsNewspaper } from "react-icons/bs";
-import { TfiGallery } from "react-icons/tfi";
+import { GrGallery } from "react-icons/gr";
 import { RiContactsBookLine } from "react-icons/ri";
 import { ImAirplane } from "react-icons/im";
 import { AuthContext } from '../../../../context/AuthProvider/AuthProvider';
 
 const Nav1 = () => {
     const { user, logOut } = useContext(AuthContext);
-
+    const utcTime = "" + Math.floor((new Date()).getTime() / 1000);
+    var parts = utcTime.match(/.{1,3}/g);
+    const meetID = parts.join("-");
+    console.log("mmmmmm: " + meetID)
     const activeLinks = ({ isActive }) => {
         return {
             backgroundColor: isActive ? 'white' : '',
@@ -68,12 +71,15 @@ const Nav1 = () => {
                                             </div>
                                         </div>
                                         <h2 className='text-xl font-semibold'>{user.displayName}</h2>
+                                        <Link to={`/meet?id=${meetID}`}><button className='btn glass bg-teal-500 hover:bg-teal-600 text-black btn-outline'>Join meet</button></Link>
                                         <button onClick={handleLogOut} className='btn glass bg-red-500 hover:bg-red-600 text-black btn-outline'>Sign Out</button>
                                     </div>
                                     :
                                     <div className='hidden xl:flex justify-end items-center gap-4 p-2'>
+
                                         <Link to='/login'><button className='btn glass bg-blue-500 hover:bg-blue-600 text-black btn-outline'>Log In</button></Link>
                                         <Link to='/signup'><button className='btn glass bg-teal-500 hover:bg-teal-600 text-black btn-outline'>Sign Up</button></Link>
+
 
                                     </div>
                             }
@@ -93,6 +99,7 @@ const Nav1 = () => {
                             <li onClick={handleClick}><NavLink to='/about' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaUserMd />About Us</NavLink></li>
                             <li onClick={handleClick}><NavLink to='/blogs' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><MdContactPage />Blogs</NavLink></li>
                             <li onClick={handleClick}><NavLink to='/news' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><BsNewspaper />News & Media</NavLink></li>
+                            <li onClick={handleClick}><NavLink to='/gallery' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'>< GrGallery/>Gallery</NavLink></li>
                             <li onClick={handleClick}><NavLink to='/contact' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><RiContactsBookLine />Contact Us</NavLink></li>
 
                         </ul>

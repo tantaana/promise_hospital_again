@@ -12,6 +12,8 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const DoctorBookingForm = ({ anotherLoader }) => {
 
+    console.log(anotherLoader)
+
     const { user } = useContext(AuthContext);
     console.log(user)
     // REACT_APP_imgbb_key=e346ac8df76e30d9061204950128b025
@@ -30,7 +32,7 @@ const DoctorBookingForm = ({ anotherLoader }) => {
     const modalClose = () => {
         const elem = document.activeElement;
         if (elem) {
-            elem?.blur();
+            elem.blur();
         }
     };
 
@@ -84,7 +86,7 @@ const DoctorBookingForm = ({ anotherLoader }) => {
 
 
                     //save patient information to the database
-                    fetch('http://localhost:5000/createAppointment', {
+                    fetch('https://promise-hospoital-server-jahid900pj.vercel.app/createAppointment', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -96,7 +98,7 @@ const DoctorBookingForm = ({ anotherLoader }) => {
 
                             if (data.acknowledged) {
                                 setLoader(false);
-                                toast.success('Appointment has been booked successfully')
+                                toast.success('Appointment has been booked successfully');
                                 setTimeout(() => {
                                     window.location.reload()
                                 }, 2000);

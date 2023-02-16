@@ -4,24 +4,29 @@ import { useNavigate } from 'react-router-dom';
 
 const AddDoctors = () => {
     const specialityList = [
-        { _id: '1', speciality: 'Bariatric Surgery' },
-        { _id: '2', speciality: 'Cardiology & Cardiac Surgery' },
-        { _id: '3', speciality: 'Cardiothoracic Vascular Surgery' },
-        { _id: '4', speciality: 'Comprehensive Cancer Care' },
-        { _id: '5', speciality: 'Dermatology' },
-        { _id: '6', speciality: 'Diabetes & Endocrinology' },
-        { _id: '7', speciality: 'Ear, Nose & Throat' },
-        { _id: '8', speciality: 'Gastrointestinal Sciences' },
-        { _id: '9', speciality: 'General Surgery' },
-        { _id: '10', speciality: 'Internal Medicine' },
-        { _id: '11', speciality: 'Laparoscopic Surgery' },
-        { _id: '12', speciality: 'Liver Transplantation Surgery' },
-        { _id: '13', speciality: 'Nephrology' },
-        { _id: '14', speciality: 'Neurology & Neurosurgery' },
-        { _id: '15', speciality: 'Ophthalmology' },
-        { _id: '16', speciality: 'Orthopaedics' },
-        { _id: '17', speciality: 'Plastic & Cosmetic Surgery' },
-        { _id: '18', speciality: 'Urology' },
+        { category_id: '01', speciality: 'Bariatric Surgery' },
+        { category_id: '02', speciality: 'Cardiology & Cardiac Surgery' },
+        { category_id: '03', speciality: 'Cardiothoracic Vascular Surgery' },
+        { category_id: '04', speciality: 'Comprehensive Cancer Care' },
+        { category_id: '05', speciality: 'Dermatology' },
+        { category_id: '06', speciality: 'Diabetes & Endocrinology' },
+        { category_id: '07', speciality: 'Ear, Nose & Throat' },
+        { category_id: '08', speciality: 'Gastrointestinal Sciences' },
+        { category_id: '09', speciality: 'General Surgery' },
+        { category_id: '10', speciality: 'Internal Medicine' },
+        { category_id: '11', speciality: 'Laparoscopic Surgery' },
+        { category_id: '12', speciality: 'Liver Transplantation Surgery' },
+        { category_id: '13', speciality: 'Nephrology' },
+        { category_id: '14', speciality: 'Neurology & Neurosurgery' },
+        { category_id: '15', speciality: 'Ophthalmology' },
+        { category_id: '16', speciality: 'Organ Transplants' },
+        { category_id: '17', speciality: 'Orthopaedics' },
+        { category_id: '18', speciality: 'Plastic & Cosmetic Surgery' },
+        { category_id: '19', speciality: 'Psychiatry' },
+        { category_id: '20', speciality: 'Pulmonology' },
+        { category_id: '21', speciality: 'Rheumatology' },
+        { category_id: '22', speciality: 'Spine Care' },
+        { category_id: '23', speciality: 'Urology' },
     ];
 
     const locationList = [
@@ -83,7 +88,7 @@ const AddDoctors = () => {
 
 
                     //save doctor's information to the database
-                    fetch('http://localhost:5000/addDoctors', {
+                    fetch('https://promise-hospoital-server-jahid900pj.vercel.app/addDoctors', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -131,7 +136,7 @@ const AddDoctors = () => {
 
                                     {
                                         specialityList.map(speciality =>
-                                            <option key={speciality._id} value={speciality.speciality}>{speciality.speciality}</option>)
+                                            <option key={speciality.category_id} value={speciality.speciality}>{speciality.speciality}</option>)
                                     }
                                 </select>
                             </div>

@@ -1,16 +1,19 @@
-.card{
-    background-color: aqua;
+.card {
+    /* background-color: aqua; */
 }
 
 
 @media screen and (max-width: 600px) {
-    .pa{padding: 300px;
-       
+    .pa {
+        padding: 300px;
+
 
     }
 }
+
 @media screen and (min-width: 600px) {
-    .ro{margin-top: 4%;
+    .ro {
+        margin-top: 4%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-Column-gap: 2%;
@@ -18,15 +21,12 @@
         margin-right: 10%;
 
     }
-    .pa{
+
+    .pa {
         padding: 10px;
     }
 }
 
-.ho :hover{
+.ho :hover {
     height: 10px;
 }
-
-
-
-
