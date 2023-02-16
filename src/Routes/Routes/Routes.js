@@ -63,6 +63,10 @@ import About from "../../Pages/About/About";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import SpecialitiesAdd from "../../Pages/Specialities/seviceDashboard/SpecialitiesAdd";
 import AllServiceShow from "../../Pages/Specialities/seviceDashboard/AllServiceShow";
+import SslSuccess from "../../Pages/MyAppointments/SslSuccess/SslSuccess";
+import ConnectUs from "../../Pages/ConnectUs/ConnectUs";
+import UserProfile from "../../Pages/UserProfile/UserProfile";
+import EditeUserProfile from "../../Pages/UserProfile/EditeUserProfile/EditeUserProfile";
 
 
 ///// Jahid import end //////////////
@@ -178,8 +182,22 @@ export const router = createBrowserRouter([
             {
                 path: '/social', element: <SocilaMediya></SocilaMediya>
             },
-
-
+            {
+                path:'/success',
+                element:<SslSuccess></SslSuccess>
+            },
+            {
+                path:'/connectus',
+                element : <ConnectUs></ConnectUs>
+            },
+{
+path:'/userprofile',
+element:<UserProfile></UserProfile>
+},
+{
+    path:'/EditeUserProfile',
+    element:<EditeUserProfile/>
+},
 
 
 

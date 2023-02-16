@@ -25,6 +25,39 @@ const MyAppointments = () => {
         return <Loader></Loader>
     }
 
+
+    const ta =(id)=>{
+
+
+
+
+        const data = { id };
+
+        fetch('http://localhost:5000/ssl', {
+          method: 'POST', // or 'PUT'
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            window.location.replace(data.uri)
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+
+
+
+
+
+
+
+
+        console.log(id)
+    }
+
     return (
         <div>
             <div className='flex gap-6 my-10 mx-4'>
@@ -79,7 +112,7 @@ const MyAppointments = () => {
                                             </th>
                                             <th>
                                                 <button className="btn btn-secondary text-white btn-md font-bold mr-2">Pay Card </button>
-                                                <button className="btn btn-secondary text-white btn-md font-bold">Pay SSL</button>
+                                                <button className="btn btn-secondary text-white btn-md font-bold" onClick={()=>ta(patient?._id)}>Pay SSL</button>
                                             </th>
                                         </tr>
                                         :
