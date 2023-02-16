@@ -64,6 +64,8 @@ import DashboardLayout from "../../Layout/DashboardLayout";
 import SpecialitiesAdd from "../../Pages/Specialities/seviceDashboard/SpecialitiesAdd";
 import AllServiceShow from "../../Pages/Specialities/seviceDashboard/AllServiceShow";
 import Meeting from "../../Pages/Meeting/Meeting";
+import PatientsChart from "../../Pages/Dashboard/Patients-Chart/PatientsChart";
+import ViewAllGallery from "../../Pages/Dashboard/Gallery/ViewAllGallery";
 
 
 
@@ -113,6 +115,11 @@ export const router = createBrowserRouter([
                  path: '/meet',
                 element: <Meeting></Meeting>,
             },
+            {
+                 path: '/gallery',
+                element: <ViewAllGallery></ViewAllGallery>,
+            },
+           
 
             {
                 path: '/specialitiesDetails/:id',
@@ -260,7 +267,12 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/show', element: <AllServiceShow></AllServiceShow>
             },
-           
+            {
+                path: '/dashboard/chart',
+               element: <PatientsChart></PatientsChart>,
+              
+           },
+            
 
 
 

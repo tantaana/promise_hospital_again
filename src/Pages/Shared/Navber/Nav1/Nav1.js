@@ -6,7 +6,7 @@ import { MdContactPage } from "react-icons/md";
 import { GiFallingStar } from "react-icons/gi";
 import { BiHappyBeaming } from "react-icons/bi";
 import { BsNewspaper } from "react-icons/bs";
-import { TfiGallery } from "react-icons/tfi";
+import { GrGallery } from "react-icons/gr";
 import { RiContactsBookLine } from "react-icons/ri";
 import { ImAirplane } from "react-icons/im";
 import { AuthContext } from '../../../../context/AuthProvider/AuthProvider';
@@ -99,6 +99,7 @@ const Nav1 = () => {
                             <li onClick={handleClick}><NavLink to='/about' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaUserMd />About Us</NavLink></li>
                             <li onClick={handleClick}><NavLink to='/blogs' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><MdContactPage />Blogs</NavLink></li>
                             <li onClick={handleClick}><NavLink to='/news' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><BsNewspaper />News & Media</NavLink></li>
+                            <li onClick={handleClick}><NavLink to='/gallery' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'>< GrGallery/>Gallery</NavLink></li>
                             <li onClick={handleClick}><NavLink to='/contact' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><RiContactsBookLine />Contact Us</NavLink></li>
 
                         </ul>
