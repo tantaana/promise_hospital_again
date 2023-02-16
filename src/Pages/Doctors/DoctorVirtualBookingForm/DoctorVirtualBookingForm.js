@@ -1,16 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
-import './doctorBookingForm.css'
-import { DayPicker } from 'react-day-picker';
-import { format } from 'date-fns';
-import 'react-day-picker/dist/style.css';
-import { useQuery } from '@tanstack/react-query';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
-import imgCircle from '../../../assets/loading-circle.gif'
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+// import imgCircle from '../../../assets/loading-circle.gif'
+import imgCircle from '../../../assets/loading-circle.gif'
 
-
-
-const DoctorBookingForm = ({ anotherLoader }) => {
+const DoctorVirtualBookingForm = ({ anotherLoader }) => {
 
     const { user } = useContext(AuthContext);
     console.log(user)
@@ -106,23 +100,14 @@ const DoctorBookingForm = ({ anotherLoader }) => {
                 }
             })
     }
-
-    // onClick={() => setAnotherLoader(doctor)}
-
     return (
         <div className="cardbg-white mx-8">
-
-            <input type="checkbox" id="doctor-book-modal" className="modal-toggle" />
+            <input type="checkbox" id="doctor-virtual-book-modal" className="modal-toggle" />
             <form onSubmit={handlePatient} className="modal">
                 <div className="modal-box relative w-11/12 max-w-6xl rounded-sm  border border-l-blue-900 border-t-blue-900 border-r-teal-500 border-b-teal-500 border-4">
-                    <label htmlFor="doctor-book-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label htmlFor="doctor-virtual-book-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 
-                    <h2 className='text-3xl font-semibold text-blue-900 text-center mb-10'>Appointment Form</h2>
-
-                    <div className='mx-4 xl:mx-0'>
-                        <label className='btn btn-link text-xl' htmlFor="doctor-virtual-book-modal">Virtual Appointment Form
-                        </label>
-                    </div>
+                    <h2 className='text-3xl font-semibold text-blue-900 text-center mb-10'>Virtual Appointment Form</h2>
 
                     <div className="">
 
@@ -191,20 +176,20 @@ const DoctorBookingForm = ({ anotherLoader }) => {
                         <h2 className='ml-6 text-xl font-semibold text-black'>Documents Upload & Date Selection</h2>
                         <div className="fast-input-fild grid gap-10 md:grid-cols-2 py-8">
                             {/* <div className="mt-2">
-                                <h2 className="primary-color font-semibold mb-2">Patients Passport</h2>
-                                <input name='passportPic' type="file" className="block w-full text-sm text-black border border-blue-900 rounded-lg
-      file:mr-4 file:py-2 file:px-4
-      file:rounded-lg file:border-0
-      file:text-sm file:font-semibold
-      file:bg-gradient-to-r file:from-blue-900 file:to-teal-500 hover:file:bg-gradient-to-r hover:file:from-teal-500 hover:file:to-teal-500 file:text-white" required />
-                            </div> */}
+                            <h2 className="primary-color font-semibold mb-2">Patients Passport</h2>
+                            <input name='passportPic' type="file" className="block w-full text-sm text-black border border-blue-900 rounded-lg
+  file:mr-4 file:py-2 file:px-4
+  file:rounded-lg file:border-0
+  file:text-sm file:font-semibold
+  file:bg-gradient-to-r file:from-blue-900 file:to-teal-500 hover:file:bg-gradient-to-r hover:file:from-teal-500 hover:file:to-teal-500 file:text-white" required />
+                        </div> */}
                             <div className="mt-2">
                                 <h2 className="primary-color font-semibold mb-2">Recent Medical Reports</h2>
                                 <input name='medicalReport' type="file" className="block w-full text-sm text-black border border-blue-900 rounded-lg
-      file:mr-4 file:py-2 file:px-4
-      file:rounded-lg file:border-0
-      file:text-sm file:font-semibold
-      file:bg-gradient-to-r file:from-blue-900 file:to-teal-500 hover:file:bg-gradient-to-r hover:file:from-teal-500 hover:file:to-teal-500 file:text-white" required />
+  file:mr-4 file:py-2 file:px-4
+  file:rounded-lg file:border-0
+  file:text-sm file:font-semibold
+  file:bg-gradient-to-r file:from-blue-900 file:to-teal-500 hover:file:bg-gradient-to-r hover:file:from-teal-500 hover:file:to-teal-500 file:text-white" required />
                             </div>
 
                             <div className='border border-black'>
@@ -244,4 +229,4 @@ const DoctorBookingForm = ({ anotherLoader }) => {
     );
 };
 
-export default DoctorBookingForm;
+export default DoctorVirtualBookingForm;

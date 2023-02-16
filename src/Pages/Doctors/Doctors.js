@@ -5,6 +5,7 @@ import DoctorBanner from './DoctorBanner/DoctorBanner';
 import circleImg from '../../assets/loading-circle.gif'
 import { Link } from 'react-router-dom';
 import DoctorBookingForm from './DoctorBookingForm/DoctorBookingForm';
+import DoctorVirtualBookingForm from './DoctorVirtualBookingForm/DoctorVirtualBookingForm';
 
 const Doctors = () => {
     AllTitle('Doctors')
@@ -48,6 +49,12 @@ const Doctors = () => {
                 {
                     anotherLoader &&
                     <DoctorBookingForm key={anotherLoader._id} anotherLoader={anotherLoader}></DoctorBookingForm>
+                }
+            </div>
+            <div>
+                {
+                    anotherLoader &&
+                    <DoctorVirtualBookingForm key={anotherLoader._id} anotherLoader={anotherLoader}></DoctorVirtualBookingForm>
                 }
             </div>
 
