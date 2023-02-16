@@ -1,16 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-import './doctorBookingForm.css'
-import { DayPicker } from 'react-day-picker';
-import { format } from 'date-fns';
-import 'react-day-picker/dist/style.css';
-import { useQuery } from '@tanstack/react-query';
-import { toast } from 'react-hot-toast';
-import imgCircle from '../../../assets/loading-circle.gif'
+import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+import imgCircle from '../../../assets/loading-circle.gif'
 
-
-
-const DoctorBookingForm = ({ anotherLoader }) => {
+const AnotherDoctorBookingForm = ({ anotherLoader }) => {
 
     console.log(anotherLoader)
 
@@ -32,7 +25,7 @@ const DoctorBookingForm = ({ anotherLoader }) => {
     const modalClose = () => {
         const elem = document.activeElement;
         if (elem) {
-            elem.blur();
+            elem?.blur();
         }
     };
 
@@ -98,7 +91,7 @@ const DoctorBookingForm = ({ anotherLoader }) => {
 
                             if (data.acknowledged) {
                                 setLoader(false);
-                                toast.success('Appointment has been booked successfully');
+                                toast.success('Appointment has been booked successfully')
                                 setTimeout(() => {
                                     window.location.reload()
                                 }, 2000);
@@ -109,14 +102,12 @@ const DoctorBookingForm = ({ anotherLoader }) => {
             })
     }
 
-
-
     return (
         <div className="cardbg-white mx-8">
-            <input type="checkbox" id="doctor-book-modal" className="modal-toggle" />
+            <input type="checkbox" id="anotherdoctor-book-modal" className="modal-toggle" />
             <form onSubmit={handlePatient} className="modal">
                 <div className="modal-box relative w-11/12 max-w-6xl rounded-sm  border border-l-blue-900 border-t-blue-900 border-r-teal-500 border-b-teal-500 border-4">
-                    <label htmlFor="doctor-book-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label htmlFor="anotherdoctor-book-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 
                     <h2 className='text-3xl font-semibold text-blue-900 text-center mb-10'>Appointment Form</h2>
 
@@ -240,4 +231,4 @@ const DoctorBookingForm = ({ anotherLoader }) => {
     );
 };
 
-export default DoctorBookingForm;
+export default AnotherDoctorBookingForm;

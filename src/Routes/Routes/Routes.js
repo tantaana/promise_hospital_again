@@ -67,6 +67,8 @@ import Diagnosis from "../../Pages/Diagnosis/Diagnosis/Diagnosis";
 import AddDiagnosis from "../../Pages/DashboardDiagnosis/AddDiagnosis/AddDiagnosis";
 import DiagnosisForm from "../../Pages/Diagnosis/DiagnosisBookFrom/DiagnosisForm/DiagnosisForm";
 import Meeting from "../../Pages/Meeting/Meeting";
+import Dashboard from "../../Pages/Dashboard/Dashboard";
+import AllUser from "../../Pages/Dashboard/AllUser/AllUser";
 
 
 ///// Jahid import end //////////////
@@ -116,9 +118,9 @@ export const router = createBrowserRouter([
             },
 
             {
-                path: '/specialitiesDetails/:id',
+                path: '/specialities/:speciality_id',
                 element: <SpecialitiesDetails></SpecialitiesDetails>,
-                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/specialities/${params.id}`),
+                loader: ({ params }) => fetch(`http://localhost:5000/specialities/${params.speciality_id}`),
 
             },
 
@@ -247,6 +249,7 @@ export const router = createBrowserRouter([
             { path: '/dashboard/add_doctors', element: <AddDoctors></AddDoctors> },
             { path: '/dashboard/appointments', element: <MyAppointments></MyAppointments> },
             { path: '/dashboard/details/:id', element: <MyDetails></MyDetails>, loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/details/${params.id}`) },
+            { path: '/dashboard/all_users', element: <AllUser></AllUser> },
 
 
 
@@ -266,11 +269,14 @@ export const router = createBrowserRouter([
 
 
             {
-                path: '/dashboard', element: <SpecialitiesAdd></SpecialitiesAdd>
+                path: '/dashboard/add_services', element: <SpecialitiesAdd></SpecialitiesAdd>
+            },
+            {
+                path: '/dashboard', element: <Dashboard></Dashboard>
             },
 
             {
-                path: '/dashboard/show', element: <AllServiceShow></AllServiceShow>
+                path: '/dashboard/show_services', element: <AllServiceShow></AllServiceShow>
             },
 
 
@@ -290,7 +296,7 @@ export const router = createBrowserRouter([
 
             /////// jahid aria 266-280 line //////
             {
-                path: '/dashboard/addDiagnosis', element: <AddDiagnosis></AddDiagnosis>
+                path: '/dashboard/add_diagnosis', element: <AddDiagnosis></AddDiagnosis>
             },
 
 
@@ -324,11 +330,11 @@ export const router = createBrowserRouter([
 
             //////  kausarul aria start 298-315 line //////////
             {
-                path: '/dashboard/addPackage',
+                path: '/dashboard/add_package',
                 element: <AddHealthPackage></AddHealthPackage>
             },
             {
-                path: '/dashboard/showPackage',
+                path: '/dashboard/show_package',
                 element: <ShowPackages></ShowPackages>
             },
             {

@@ -11,7 +11,7 @@ import circleLoading from '../../assets/loading-circle.gif'
 import useToken from '../../Hooks/useToken/useToken';
 
 const Signup = () => {
-    const { user, createUser, updateUserProfile, providerLogin } = useContext(AuthContext);
+    const { createUser, updateUserProfile, providerLogin } = useContext(AuthContext);
 
     const navigate = useNavigate();
     const location = useLocation();
