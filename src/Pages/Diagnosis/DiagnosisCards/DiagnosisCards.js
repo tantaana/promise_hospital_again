@@ -12,7 +12,7 @@ const DiagnosisCards = () => {
             return data
         }
     })
-    console.log(diagnosis)
+    // console.log(diagnosis)
     return (
         <div>
             <div className='w-full md:w-11/12	mx-auto ' >

@@ -5,35 +5,17 @@ import bg1 from '../Specialities/SpecialitiesImg/bg1.jpg'
 
 
 const OurSeciality = ({ imag }) => {
-  const { image, speciality, _id } = imag
+  const { img, speciality, _id, speciality_id } = imag
   // console.log(img)
   return (
-    <Link to={`/specialitiesDetails/${_id}`}><div>
-      <div className="hero  bg-base-500  border border-gray-500">
-        <div className="hero-content flex-col ">
-          <div className="hover:scale-110 transition duration-300 ease-in-out">
-            <h1 className="text-xl ">{speciality}</h1>
-          </div>
-          <div className="avatar justify-start text-start ">
-            <div className="w-24 rounded hover:scale-110 transition duration-300 ease-in-out">
-              <img src={image} />
+    <Link to={`/specialities/${speciality_id}`}>
 
-            </div>
-
-          </div>
-          <div className='ml-10 md:ml-20 xl:ml-24 2xl:ml-28 '>
-            <div className="avatar justify-end ml-11">
-              <div className="w-8 rounded">
-                {/* <Link ><button ><FaArrowAltCircleRight color='#034ea1' ></FaArrowAltCircleRight></button></Link>  */}
-              </div>
-            </div>
-          </div>
-
-        </div>
-
+      <div className='flex items-center hover:bg-blue-200 scale-100 hover:scale-105  ease-in-out duration-200 gap-4 border border-teal-500 border-4 rounded-xl p-2'>
+        <img src={img} alt="" srcset="" />
+        <h2 className='text-blue-900 font-semibold text-lg'>{speciality}</h2>
       </div>
 
-    </div></Link>
+    </Link>
   );
 };
 

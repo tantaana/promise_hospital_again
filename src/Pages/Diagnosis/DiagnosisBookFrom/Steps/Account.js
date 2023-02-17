@@ -14,7 +14,7 @@ const Account = () => {
                     Username
                 </div>
                 <div className="my-2 flex rounded border border-gray-200 bg-white p-1">
-                    <input
+                    <input required
                         onChange={handleChange}
                         value={userData["username"] || ""}
                         name="username"
@@ -28,7 +28,7 @@ const Account = () => {
                     Password
                 </div>
                 <div className="my-2 flex rounded border border-gray-200 bg-white p-1">
-                    <input
+                    <input required
                         onChange={handleChange}
                         value={userData["password"] || ""}
                         name="password"
