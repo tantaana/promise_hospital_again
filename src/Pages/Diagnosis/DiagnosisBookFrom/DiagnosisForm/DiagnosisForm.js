@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { StepFormContext } from '../../../../context/StepperFormContext/StepperFormContext';
 import Stepper from '../Stepper/Stepper';
 import StepperControl from '../StepperControl/StepperControl';
@@ -7,9 +8,12 @@ import Details from '../Steps/Details';
 import Final from '../Steps/Final';
 
 const DiagnosisForm = () => {
+    const testDetails = useLoaderData()
     const [currentStep, setCurrentStep] = useState(1)
     const [userData, setUserData] = useState('')
     const [finalData, setFinalData] = useState([])
+
+    // console.log(testDetails)
 
     const steps = [
         'Account information',
