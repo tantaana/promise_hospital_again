@@ -1,5 +1,6 @@
 import React from 'react';
 import AllTitle from '../../../Hooks/AllTitle';
+import Book from '../../Book/Book';
 import AllGallery from '../Gallery/AllGallery';
 import HomeCarousel from '../HomeCarousel/HomeCarousel';
 import InternationalCenters from '../InternationalCenters/InternationalCenters';
@@ -15,7 +16,7 @@ const Home = () => {
             <AllGallery></AllGallery>
             <InternationalCenters></InternationalCenters>
             <MedicalValue></MedicalValue>
-
+            <Book></Book>
         </div>
     );
 };
