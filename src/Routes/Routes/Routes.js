@@ -77,6 +77,10 @@ import ViewAllGallery from "../../Pages/Dashboard/Gallery/ViewAllGallery";
 
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import AllUser from "../../Pages/Dashboard/AllUser/AllUser";
+import AdminRoute from "../AdminRoute/AdminRoute";
+import VirtualAppointment from "../../Pages/Dashboard/VirtualAppointment/VirtualAppointment";
+import DoctorVirtualAppointments from "../../Pages/Dashboard/DoctorVirtualAppointments/DoctorVirtualAppointments";
+import DoctorRoute from "../DoctorRoute/DoctorRoute";
 
 
 ///// Jahid import end //////////////
@@ -201,21 +205,14 @@ export const router = createBrowserRouter([
                 path: '/social', element: <SocilaMediya></SocilaMediya>
             },
             {
-                path:'/success',
-                element:<SslSuccess></SslSuccess>
+                path: '/success',
+                element: <SslSuccess></SslSuccess>
             },
             {
-                path:'/connectus',
-                element : <ConnectUs></ConnectUs>
+                path: '/contact',
+                element: <ConnectUs></ConnectUs>
             },
-{
-path:'/userprofile',
-element:<UserProfile></UserProfile>
-},
-{
-    path:'/EditeUserProfile',
-    element:<EditeUserProfile/>
-},
+
 
 
 
@@ -271,12 +268,16 @@ element:<UserProfile></UserProfile>
     },
     {
         path: '/dashboard',
-        element: <DashboardLayout></DashboardLayout>, children: [
+        element:
+            <PrivateRoute>
+                <DashboardLayout></DashboardLayout>
+            </PrivateRoute>
+        , children: [
             ///// tanvir start 230-245 line //////////////////
             { path: '/dashboard/add_doctors', element: <AddDoctors></AddDoctors> },
             { path: '/dashboard/appointments', element: <MyAppointments></MyAppointments> },
             { path: '/dashboard/details/:id', element: <MyDetails></MyDetails>, loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/details/${params.id}`) },
-            { path: '/dashboard/all_users', element: <AllUser></AllUser> },
+            { path: '/dashboard/all_users', element: <AdminRoute> <AllUser></AllUser> </AdminRoute> },
 
 
 
@@ -331,6 +332,13 @@ element:<UserProfile></UserProfile>
             {
                 path: '/dashboard/add_diagnosis', element: <AddDiagnosis></AddDiagnosis>
             },
+            {
+                path: '/dashboard/VirtualAppointment', element: <VirtualAppointment></VirtualAppointment>
+            },
+            {
+                path: '/dashboard/doctorVirtualAppointment',
+                element: <DoctorRoute> <DoctorVirtualAppointments></DoctorVirtualAppointments></DoctorRoute>
+            },
 
 
 
@@ -374,7 +382,7 @@ element:<UserProfile></UserProfile>
                 path: '/dashboard/payment/:id',
                 element: <Payment></Payment>,
                 loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/booking/${params.id}`)
-            }
+            },
 
 
 
@@ -391,7 +399,14 @@ element:<UserProfile></UserProfile>
 
             //// solyman aria start 317-330 line //////////
 
-
+            // {
+            //     path: '/userprofile',
+            //     element: <UserProfile></UserProfile>
+            // },
+            // {
+            //     path: '/EditeUserProfile',
+            //     element: <EditeUserProfile />
+            // },
 
 
 
