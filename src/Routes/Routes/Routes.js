@@ -137,7 +137,7 @@ export const router = createBrowserRouter([
             {
                 path: '/specialities/:speciality_id',
                 element: <SpecialitiesDetails></SpecialitiesDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/specialities/${params.speciality_id}`),
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/specialities/${params.speciality_id}`),
 
             },
 

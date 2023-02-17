@@ -130,7 +130,7 @@ const PatientsChart = () => {
     const [appointment, setappointment] = useState([])
     const [appdatas, setappdatas] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/createAppointment')
+        fetch('https://promise-hospoital-server-jahid900pj.vercel.app/createAppointment')
             .then(res => res.json())
             .then(data => setappdatas(data))
     }, []);
@@ -139,7 +139,7 @@ const PatientsChart = () => {
         const process = window.confirm('Are you sure . You want to delete yous review');
 
         if (process) {
-            fetch(`http://localhost:5000/createAppointment/${id}`, {
+            fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/createAppointment/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

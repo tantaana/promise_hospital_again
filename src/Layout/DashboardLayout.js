@@ -10,6 +10,8 @@ import Nav2 from '../Pages/Shared/Navber/Nav2/Nav2';
 
 const DashboardLayout = () => {
     const { user, loading } = useContext(AuthContext)
+    const [isAdmin, isAdminLoading] = useAdmin(user?.email)
+    const [isDoctor, isDoctorLoading] = useDoctor(user?.email)
 
 
     const activeLinks = ({ isActive }) => {
