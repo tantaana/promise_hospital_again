@@ -12,7 +12,7 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const DoctorBookingForm = ({ anotherLoader }) => {
 
-    console.log(anotherLoader)
+    // console.log(anotherLoader)
 
     const { user } = useContext(AuthContext);
     console.log(user)

@@ -73,6 +73,10 @@ import ViewAllGallery from "../../Pages/Dashboard/Gallery/ViewAllGallery";
 
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import AllUser from "../../Pages/Dashboard/AllUser/AllUser";
+import AdminRoute from "../AdminRoute/AdminRoute";
+import VirtualAppointment from "../../Pages/Dashboard/VirtualAppointment/VirtualAppointment";
+import DoctorVirtualAppointments from "../../Pages/Dashboard/DoctorVirtualAppointments/DoctorVirtualAppointments";
+import DoctorRoute from "../DoctorRoute/DoctorRoute";
 
 
 ///// Jahid import end //////////////
@@ -253,12 +257,16 @@ export const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashboardLayout></DashboardLayout>, children: [
+        element:
+            <PrivateRoute>
+                <DashboardLayout></DashboardLayout>
+            </PrivateRoute>
+        , children: [
             ///// tanvir start 230-245 line //////////////////
             { path: '/dashboard/add_doctors', element: <AddDoctors></AddDoctors> },
             { path: '/dashboard/appointments', element: <MyAppointments></MyAppointments> },
             { path: '/dashboard/details/:id', element: <MyDetails></MyDetails>, loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/details/${params.id}`) },
-            { path: '/dashboard/all_users', element: <AllUser></AllUser> },
+            { path: '/dashboard/all_users', element: <AdminRoute> <AllUser></AllUser> </AdminRoute> },
 
 
 
@@ -312,6 +320,13 @@ export const router = createBrowserRouter([
             /////// jahid aria 266-280 line //////
             {
                 path: '/dashboard/add_diagnosis', element: <AddDiagnosis></AddDiagnosis>
+            },
+            {
+                path: '/dashboard/VirtualAppointment', element: <VirtualAppointment></VirtualAppointment>
+            },
+            {
+                path: '/dashboard/doctorVirtualAppointment',
+                element: <DoctorRoute> <DoctorVirtualAppointments></DoctorVirtualAppointments></DoctorRoute>
             },
 
 

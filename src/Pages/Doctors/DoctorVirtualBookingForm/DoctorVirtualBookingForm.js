@@ -5,7 +5,7 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import imgCircle from '../../../assets/loading-circle.gif'
 
 const DoctorVirtualBookingForm = ({ anotherLoader }) => {
-
+    console.log(anotherLoader.doctor_email)
     const { user } = useContext(AuthContext);
     console.log(user)
     // REACT_APP_imgbb_key=e346ac8df76e30d9061204950128b025
@@ -71,14 +71,15 @@ const DoctorVirtualBookingForm = ({ anotherLoader }) => {
                         healthInfo: healthInfo,
                         imageMedical: imgData.data.url,
                         appointDate: appointDate,
-                        fees: fees
+                        fees: fees,
+                        doctor_email: anotherLoader.doctor_email
                     }
 
 
 
 
                     //save patient information to the database
-                    fetch('https://promise-hospoital-server-jahid900pj.vercel.app/createAppointment', {
+                    fetch('http://localhost:5000/virtualAppointmentData', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
