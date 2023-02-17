@@ -1,0 +1,140 @@
+[
+    {
+        "category_id": "01",
+        "speciality": "Bariatric Surgery",
+        "speciality_id": "bariatric_surgery",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/Bariatric%20surgery.png"
+    },
+    {
+        "category_id": "02",
+        "speciality": "Cardiology & Cardiac Surgery",
+        "speciality_id": "cardio_cardiac_surgery",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/cardiology-and-cardiac-surgery-icon.png"
+    },
+    {
+        "category_id": "03",
+        "speciality": "Cardiothoracic Vascular Surgery",
+        "speciality_id": "cardiothoracic_vascular_surgery",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/cardithoraic-vascular-surgery-icon.png"
+    },
+    {
+        "category_id": "04",
+        "speciality": "Comprehensive Cancer Care",
+        "speciality_id": "comprehensive_cancer_care",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/comprehensive-cancer-care-icon.png"
+    },
+    {
+        "category_id": "05",
+        "speciality": "Dermatology",
+        "speciality_id": "dermatology",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/dermatology-icon.png"
+    },
+    {
+        "category_id": "06",
+        "speciality": "Diabetes & Endocrinology",
+        "speciality_id": "diabetes_endocrinology",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/diabetesandendocrinology.png"
+    },
+    {
+        "category_id": "07",
+        "speciality": "Ear, Nose & Throat",
+        "speciality_id": "ear_nose_throat",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/ENT-icon.png"
+    },
+    {
+        "category_id": "08",
+        "speciality": "Gastrointestinal Sciences",
+        "speciality_id": "gastrointestinal_sciences",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/gastrointestinal-sciences-icon.png"
+    },
+    {
+        "category_id": "09",
+        "speciality": "General Surgery",
+        "speciality_id": "general_surgery",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/general-surgery-icon.png"
+    },
+    {
+        "category_id": "10",
+        "speciality": "Internal Medicine",
+        "speciality_id": "internal_medicine",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/internal-medicine-icon.png"
+    },
+    {
+        "category_id": "11",
+        "speciality": "Laparoscopic Surgery",
+        "speciality_id": "laparoscopic_surgery",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/laparoscopic-surgery-icon.png"
+    },
+    {
+        "category_id": "12",
+        "speciality": "Liver Transplantation Surgery",
+        "speciality_id": "liver_transplantation_surgery",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/liver-transplantation-Surgery-icon.png"
+    },
+    {
+        "category_id": "13",
+        "speciality": "Nephrology",
+        "speciality_id": "nephrology",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/nephrology-icon.png"
+    },
+    {
+        "category_id": "14",
+        "speciality": "Neurology & Neurosurgery",
+        "speciality_id": "neurology_neurosurgery",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/neurology-and-neurosurgery-icon.png"
+    },
+    {
+        "category_id": "15",
+        "speciality": "Ophthalmology",
+        "speciality_id": "ophthalmology",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/ophthalmology.png"
+    },
+    {
+        "category_id": "16",
+        "speciality": "Organ Transplants",
+        "speciality_id": "organ_transplants",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/Organ-Transplants-icon.png"
+    },
+    {
+        "category_id": "17",
+        "speciality": "Orthopaedics",
+        "speciality_id": "orthopaedics",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/Orthopedic-icon.png"
+    },
+    {
+        "category_id": "18",
+        "speciality": "Plastic & Cosmetic Surgery",
+        "speciality_id": "plastic_cosmetic_surgery",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/plasticandcosmetic%20surgery.png"
+    },
+    {
+        "category_id": "19",
+        "speciality": "Psychiatry",
+        "speciality_id": "psychiatry",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/psychiatry.png"
+    },
+    {
+        "category_id": "20",
+        "speciality": "Pulmonology",
+        "speciality_id": "pulmonology",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/Pulmonology-(Respiratory-and-Sleep-Medicine)-icon.png"
+    },
+    {
+        "category_id": "21",
+        "speciality": "Rheumatology",
+        "speciality_id": "rheumatology",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/rheumatology-icon.png"
+    },
+    {
+        "category_id": "22",
+        "speciality": "Spine Care",
+        "speciality_id": "spine_care",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/spine-care-icon-icon.png"
+    },
+    {
+        "category_id": "23",
+        "speciality": "Urology",
+        "speciality_id": "urology",
+        "img": "https://www.manipalhospitalsglobal.com/assets/frontend-assets/images/specialities/colorIcon/urology-icon-icon.png"
+    }
+]

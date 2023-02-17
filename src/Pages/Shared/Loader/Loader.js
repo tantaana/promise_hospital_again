@@ -1,10 +1,17 @@
 import React from 'react';
-import imgCircle from '../../../assets/loading-circle.gif'
+
 
 const Loader = () => {
     return (
-        <div className='flex justify-center'>
-            <img src={imgCircle} className='w-[50px] h-[50px]' alt="" />
+        <div className='flex justify-center mt-4'>
+            <div class="flex flex-col">
+                <div class="w-12 h-12 rounded-full animate-spin
+                        border-4 border-solid border-blue-900 border-t-transparent shadow-md">
+
+                </div>
+
+
+            </div>
         </div>
     );
 };

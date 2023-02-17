@@ -15,6 +15,10 @@ const DiagnosisForm = () => {
 
     // console.log(testDetails)
 
+    const handleTest = event => {
+        console.log(userData)
+    }
+
     const steps = [
         'Account information',
         'personal Details',
@@ -61,11 +65,13 @@ const DiagnosisForm = () => {
 
             {currentStep !== steps.length && (
                 <StepperControl
+                    handleTest={handleTest}
                     handleClick={handleClick}
                     steps={steps}
                     currentStep={currentStep}
                 ></StepperControl>
             )}
+
 
         </div>
     );
