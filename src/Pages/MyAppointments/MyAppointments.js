@@ -30,6 +30,39 @@ const MyAppointments = () => {
         return <Loader></Loader>
     }
 
+
+    const ta =(id)=>{
+
+
+
+
+        const data = { id };
+
+        fetch('http://localhost:5000/ssl', {
+          method: 'POST', // or 'PUT'
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            window.location.replace(data.uri)
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+
+
+
+
+
+
+
+
+        console.log(id)
+    }
+
     return (
         <div>
             <div className='flex flex-col gap-2 xl:flex-row items-center xl:gap-6 my-10 mx-4 bg-gray-300 p-2'>
@@ -100,14 +133,8 @@ const MyAppointments = () => {
                                                 <Link to={`/dashboard/details/${patient?._id}`}><button onClick={startLoader} className="btn btn-primary btn-md">Details</button></Link>
                                             </th>
                                             <th>
-                                                {
-                                                    patient.fees && !patient.paid && <Link to={`/dashboard/payment/${patient._id}`}><button onClick={startLoader} className="btn btn-secondary text-white btn-md font-bold mr-2">Pay Card </button></Link>
-                                                }
-                                                {
-                                                    patient.fees && patient.paid && <span className='text-green-500'>Paid</span>
-                                                }
-
-                                                <button onClick={startLoader} className="btn btn-secondary text-white btn-md font-bold">Pay SSL</button>
+                                                <button className="btn btn-secondary text-white btn-md font-bold mr-2">Pay Card </button>
+                                                <button className="btn btn-secondary text-white btn-md font-bold" onClick={()=>ta(patient?._id)}>Pay SSL</button>
                                             </th>
                                         </tr>
                                         :
