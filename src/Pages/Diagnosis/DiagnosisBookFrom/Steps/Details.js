@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { StepFormContext } from '../../../../context/StepperFormContext/StepperFormContext';
 
 const Details = () => {
-    // const { userData, setUserData } = useStepperContext();
+    const { userData, setUserData } = useContext(StepFormContext)
 
-    // const handleChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setUserData({ ...userData, [name]: value });
-    // };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setUserData({ ...userData, [name]: value });
+    };
     return (
         <div className="flex flex-col ">
             <div className="w-full mx-2 flex-1">
@@ -15,8 +16,8 @@ const Details = () => {
                 </div>
                 <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
                     <input
-                        // onChange={handleChange}
-                        // value={userData["address"] || ""}
+                        onChange={handleChange}
+                        value={userData["address"] || ""}
                         name="address"
                         placeholder="Address"
                         className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
@@ -29,8 +30,8 @@ const Details = () => {
                 </div>
                 <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
                     <input
-                        // onChange={handleChange}
-                        // value={userData["city"] || ""}
+                        onChange={handleChange}
+                        value={userData["city"] || ""}
                         name="city"
                         placeholder="City"
                         type="text"
