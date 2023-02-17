@@ -1,11 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import Loader from '../../Shared/Loader/Loader';
+import EditVirtualAppointments from './EditVirtualAppointments';
 
 const DoctorVirtualAppointments = () => {
     const { user } = useContext(AuthContext);
-    console.log(user)
+    const [editData, setEditData] = useState(null)
+    // console.log(user)
+    console.log(editData)
 
     const url = `http://localhost:5000/doctor/virtualAppointmentData?doctor_email=${user?.email}`;
 
@@ -73,7 +76,7 @@ const DoctorVirtualAppointments = () => {
                                                 <a className='btn glass bg-teal-500 hover:bg-teal-600 text-black btn-outline ' disabled href="w">Join meet</a>
                                             </th>
                                             <th>
-                                                <button>EDIT</button>
+                                                <label onClick={() => setEditData(data)} htmlFor="edit-virtual-appointment" className="btn glass bg-red-500 hover:bg-red-600 text-black btn-outline btn-sm">Edit</label>
                                             </th>
                                         </tr>
                                         :
@@ -85,6 +88,11 @@ const DoctorVirtualAppointments = () => {
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div>
+                {
+                    <EditVirtualAppointments key={editData?._id} editData={editData}></EditVirtualAppointments>
+                }
             </div>
         </div>
     );

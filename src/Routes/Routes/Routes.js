@@ -205,21 +205,14 @@ export const router = createBrowserRouter([
                 path: '/social', element: <SocilaMediya></SocilaMediya>
             },
             {
-                path:'/success',
-                element:<SslSuccess></SslSuccess>
+                path: '/success',
+                element: <SslSuccess></SslSuccess>
             },
             {
-                path:'/connectus',
-                element : <ConnectUs></ConnectUs>
+                path: '/contact',
+                element: <ConnectUs></ConnectUs>
             },
-{
-path:'/userprofile',
-element:<UserProfile></UserProfile>
-},
-{
-    path:'/EditeUserProfile',
-    element:<EditeUserProfile/>
-},
+
 
 
 
@@ -389,7 +382,7 @@ element:<UserProfile></UserProfile>
                 path: '/dashboard/payment/:id',
                 element: <Payment></Payment>,
                 loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/booking/${params.id}`)
-            }
+            },
 
 
 
@@ -406,7 +399,14 @@ element:<UserProfile></UserProfile>
 
             //// solyman aria start 317-330 line //////////
 
-
+            // {
+            //     path: '/userprofile',
+            //     element: <UserProfile></UserProfile>
+            // },
+            // {
+            //     path: '/EditeUserProfile',
+            //     element: <EditeUserProfile />
+            // },
 
 
 

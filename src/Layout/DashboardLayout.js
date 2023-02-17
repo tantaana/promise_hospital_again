@@ -1,13 +1,16 @@
 import React, { useContext } from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider/AuthProvider';
+import useAdmin from '../Hooks/useAdmin/useAdmin';
+import useDoctor from '../Hooks/useDoctor/useDoctor';
 import Advertise from '../Pages/Shared/Advertise/Advertise';
 import Footer from '../Pages/Shared/Footer/Footer';
 import Nav1 from '../Pages/Shared/Navber/Nav1/Nav1';
 import Nav2 from '../Pages/Shared/Navber/Nav2/Nav2';
 
 const DashboardLayout = () => {
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext)
+
 
     const activeLinks = ({ isActive }) => {
         return {
@@ -51,6 +54,8 @@ const DashboardLayout = () => {
                         <li onClick={handleClick} className='text-white hover:bg-teal-600 hover:rounded-lg'><NavLink to='/dashboard/all_users' style={activeLinks} className="text-lg text-white font-semibold hover:rounded-lg p-2">All User Info</NavLink></li>
                         <li onClick={handleClick} className='text-white hover:bg-teal-600 hover:rounded-lg'><NavLink to='/dashboard/VirtualAppointment' style={activeLinks} className="text-lg text-white font-semibold hover:rounded-lg p-2">Virtual Appointment</NavLink></li>
                         <li onClick={handleClick} className='text-white hover:bg-teal-600 hover:rounded-lg'><NavLink to='/dashboard/doctorVirtualAppointment' style={activeLinks} className="text-lg text-white font-semibold hover:rounded-lg p-2">Doctor Virtual Appointment</NavLink></li>
+                        <li onClick={handleClick} className='text-white hover:bg-teal-600 hover:rounded-lg'><NavLink to='/dashboard/chart' style={activeLinks} className="text-lg text-white font-semibold hover:rounded-lg p-2">Chart</NavLink></li>
+
                     </ul >
 
                 </div >
