@@ -73,7 +73,7 @@ const DoctorVirtualAppointments = () => {
                                             <td className='text-lg font-semibold'>{data?.appointDate}</td>
                                             <td className='text-xl font-bold'>{data?.fees}/-</td>
                                             <th>
-                                                <a className='btn glass bg-teal-500 hover:bg-teal-600 text-black btn-outline ' disabled href="w">Join meet</a>
+                                                <a className='btn glass bg-teal-500 hover:bg-teal-600 text-black btn-outline ' href="https://meet.google.com/vwi-znvr-gvg">Join meet</a>
                                             </th>
                                             <th>
                                                 <label onClick={() => setEditData(data)} htmlFor="edit-virtual-appointment" className="btn glass bg-red-500 hover:bg-red-600 text-black btn-outline btn-sm">Edit</label>

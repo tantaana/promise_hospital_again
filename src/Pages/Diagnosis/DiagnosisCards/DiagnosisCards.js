@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import Loader from '../../Shared/Loader/Loader';
 import DiagnosisCard from '../DiagnosisCard/DiagnosisCard';
 
 const DiagnosisCards = () => {
@@ -12,6 +13,10 @@ const DiagnosisCards = () => {
             return data
         }
     })
+
+    if (isLoading) {
+        <Loader></Loader>
+    }
     // console.log(diagnosis)
     return (
         <div>

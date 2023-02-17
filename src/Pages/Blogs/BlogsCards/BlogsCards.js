@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query'
 import BlogCard from '../BlogsCard/BlogCard';
 import blogBg from '../BlogBg/bg.jpeg'
+import Loader from '../../Shared/Loader/Loader';
 
 const BlogsCards = () => {
 
@@ -14,6 +15,9 @@ const BlogsCards = () => {
         }
     })
 
+    if (isLoading) {
+        <Loader></Loader>
+    }
 
 
 
