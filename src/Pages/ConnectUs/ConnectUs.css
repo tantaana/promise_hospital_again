@@ -1,0 +1,15 @@
+.one{
+
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+.three{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+}
+.br{
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 10px;
+}

@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const Stepper = ({ steps, currentStep }) => {
     const [newStep, setNewStep] = useState([]);
-    console.log(newStep)
+    // console.log(newStep)
     const stepRef = useRef()
 
     const updateStep = (stepNumber, steps) => {

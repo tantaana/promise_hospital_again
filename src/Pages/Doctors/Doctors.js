@@ -5,6 +5,7 @@ import DoctorBanner from './DoctorBanner/DoctorBanner';
 import circleImg from '../../assets/loading-circle.gif'
 import { Link } from 'react-router-dom';
 import DoctorBookingForm from './DoctorBookingForm/DoctorBookingForm';
+import DoctorVirtualBookingForm from './DoctorVirtualBookingForm/DoctorVirtualBookingForm';
 
 const Doctors = () => {
     AllTitle('Doctors')
@@ -35,7 +36,18 @@ const Doctors = () => {
     return (
         <>
             <DoctorBanner doctors={doctors}></DoctorBanner>
-            <div className='flex justify-center my-8'>{loader ? <img src={circleImg} className="w-16" alt='' /> : ''}</div>
+            <div className='flex justify-center my-8'>
+                {
+                    loader ?
+                        <div class="flex flex-col">
+                            <div class="w-12 h-12 rounded-full animate-spin
+                        border-4 border-solid border-blue-900 border-t-transparent shadow-md"></div>
+
+
+                        </div>
+                        : ''
+                }
+            </div>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 md:w-11/12 w-10/12 mx-auto mb-10'>
 
                 {
@@ -48,6 +60,12 @@ const Doctors = () => {
                 {
                     anotherLoader &&
                     <DoctorBookingForm key={anotherLoader._id} anotherLoader={anotherLoader}></DoctorBookingForm>
+                }
+            </div>
+            <div>
+                {
+                    anotherLoader &&
+                    <DoctorVirtualBookingForm key={anotherLoader._id} anotherLoader={anotherLoader}></DoctorVirtualBookingForm>
                 }
             </div>
 
