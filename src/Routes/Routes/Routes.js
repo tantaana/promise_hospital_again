@@ -81,6 +81,7 @@ import AdminRoute from "../AdminRoute/AdminRoute";
 import VirtualAppointment from "../../Pages/Dashboard/VirtualAppointment/VirtualAppointment";
 import DoctorVirtualAppointments from "../../Pages/Dashboard/DoctorVirtualAppointments/DoctorVirtualAppointments";
 import DoctorRoute from "../DoctorRoute/DoctorRoute";
+import OurLeader from "../../Pages/About/OurLeader";
 
 
 ///// Jahid import end //////////////
@@ -132,8 +133,7 @@ export const router = createBrowserRouter([
                 path: '/gallery',
                 element: <ViewAllGallery></ViewAllGallery>,
             },
-
-
+          
             {
                 path: '/specialities/:speciality_id',
                 element: <SpecialitiesDetails></SpecialitiesDetails>,
@@ -237,6 +237,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/about', element: <About></About>
+            },
+            {
+                path: '/lead', element: <OurLeader></OurLeader>
             },
             {
                 path: '/diagnosis', element: <Diagnosis></Diagnosis>
