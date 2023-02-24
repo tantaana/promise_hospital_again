@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 
 const EditVirtualAppointments = ({ editData, user }) => {
+    console.log(editData)
 
     const uri = `http://localhost:5000/edit/virtualAppointment/${user?.email}`
 
@@ -11,15 +12,23 @@ const EditVirtualAppointments = ({ editData, user }) => {
         const meet_link = form.meet_link.value
         console.log(meet_link)
 
-        const Meet_link = [
+
+
+        const Meet_link = {
             meet_link
-        ]
+        }
+
+        // const link = {
+        //     meet_link
+        // }
+
 
         fetch(uri, {
             method: 'PUT', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
             },
+            // body: JSON.stringify(link),
             body: JSON.stringify(Meet_link),
         })
             .then((response) => response.json())
