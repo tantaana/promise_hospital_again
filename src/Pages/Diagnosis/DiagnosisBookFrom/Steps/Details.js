@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { StepFormContext } from '../../../../context/StepperFormContext/StepperFormContext';
 
-const Details = () => {
-    const { userData, setUserData } = useContext(StepFormContext);
+const Details = ({userInfo, setUserInfo}) => {
+    // const { userData, setUserData } = useContext(StepFormContext);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setUserData({ ...userData, [name]: value });
+        setUserInfo({ ...userInfo, [name]: value });
     };
 
     // console.log(userData)
@@ -20,7 +20,7 @@ const Details = () => {
                 <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
                     <input
                         onChange={handleChange}
-                        value={userData["address"] || ""}
+                        value={userInfo["address"] || ""}
                         name="address"
                         placeholder="Address"
                         className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
@@ -35,7 +35,7 @@ const Details = () => {
                     <select
                         className="select p-1 px-2 appearance-none outline-none w-full text-gray-800"
                         onChange={handleChange}
-                        value={userData["gander"] || ""}
+                        value={userInfo["gander"] || ""}
                         name="gander"
                     >
                         <option disabled selected>Gander</option>
@@ -53,7 +53,7 @@ const Details = () => {
                 <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
                     <input
                         onChange={handleChange}
-                        value={userData["mobileNumber"] || ""}
+                        value={userInfo["mobileNumber"] || ""}
                         name="mobileNumber"
                         placeholder="Mobile Number"
                         className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
@@ -67,7 +67,7 @@ const Details = () => {
                 <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
                     <input
                         onChange={handleChange}
-                        value={userData["email"] || ""}
+                        value={userInfo["email"] || ""}
                         name="email"
                         placeholder="Contact E-mail"
                         className="p-1 px-2 appearance-none outline-none w-full text-gray-800"

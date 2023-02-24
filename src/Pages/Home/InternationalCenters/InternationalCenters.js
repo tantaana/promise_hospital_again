@@ -22,7 +22,7 @@ const InternationalCenters = () => {
                 </div>
                 <div className='lg:flex sm:grid justify-around mt-4 text-whtie'>
                     <div className='text-white text-2xl flex justify-center items-center gap-5 mb-4'>
-                        <HiClock className='text-3xl bg-white text-black rounded-lg'></HiClock>
+                        <HiClock className='text-3xl bg-white text-black rounded-lg text-blue-500'></HiClock>
                         <div>
                             <h2>68+</h2>
                             <p>years of experience</p>
