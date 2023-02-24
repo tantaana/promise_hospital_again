@@ -12,6 +12,9 @@ const DashboardLayout = () => {
     const { user, loading } = useContext(AuthContext)
     const [isAdmin, isAdminLoading] = useAdmin(user?.email)
     const [isDoctor, isDoctorLoading] = useDoctor(user?.email)
+    console.log('isadmin,', isAdmin)
+    console.log('isdoctor,', isDoctor)
+    console.log(user)
 
 
     const activeLinks = ({ isActive }) => {

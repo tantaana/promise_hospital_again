@@ -23,6 +23,8 @@ const DoctorVirtualAppointments = () => {
 
     })
 
+
+
     if (isLoading) {
         <Loader></Loader>
     }
@@ -91,7 +93,7 @@ const DoctorVirtualAppointments = () => {
             </div>
             <div>
                 {
-                    <EditVirtualAppointments key={editData?._id} editData={editData}></EditVirtualAppointments>
+                    <EditVirtualAppointments key={editData?._id} editData={editData} user={user}></EditVirtualAppointments>
                 }
             </div>
         </div>

@@ -135,7 +135,7 @@ const AllUser = () => {
                                                 {user?.email}
                                             </td>
                                             <td className='text-lg font-semibold'>{user?.userType}</td>
-                                            <td>{user?.userType === "patient" ?
+                                            <td>{user?.userType === "Patient" ?
                                                 <label onClick={() => setGetData(user)} htmlFor="make-doctor-modal" className="btn glass bg-blue-500 hover:bg-blue-700 text-black btn-outline btn-sm">Make Doctor</label>
                                                 :
                                                 <h2 className="text-md font-semibold">Already a doctor</h2>}</td>
