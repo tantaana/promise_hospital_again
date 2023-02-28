@@ -5,7 +5,7 @@ import { toast } from 'react-hot-toast';
 const EditVirtualAppointments = ({ editData, user, setEditData }) => {
     console.log(editData)
 
-    const uri = `http://localhost:5000/edit/virtualAppointment/${user?.email}`
+    const uri = `https://promise-hospoital-server-jahid900pj.vercel.app/edit/virtualAppointment/${user?.email}`
 
     const handleSubmit = event => {
         event.preventDefault();

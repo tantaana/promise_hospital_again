@@ -13,7 +13,7 @@ const UserProfileOne = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/edite/${user?.email}`)
+        fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/users/edite/${user?.email}`)
             .then((response) => response.json())
             .then((data) => setData(data));
 

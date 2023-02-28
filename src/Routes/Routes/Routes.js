@@ -135,7 +135,7 @@ export const router = createBrowserRouter([
                 path: '/gallery',
                 element: <ViewAllGallery></ViewAllGallery>,
             },
-          
+
             {
                 path: '/specialities/:speciality_id',
                 element: <SpecialitiesDetails></SpecialitiesDetails>,
@@ -412,7 +412,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/editeuserprofile/:email',
-                loader: ({ params }) => fetch(`http://localhost:5000/users/edite/${params.email}`),
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/users/edite/${params.email}`),
                 element: <EditeUserProfileOne />
             }
 

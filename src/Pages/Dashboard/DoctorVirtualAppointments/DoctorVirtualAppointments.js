@@ -11,7 +11,7 @@ const DoctorVirtualAppointments = () => {
     // console.log(user)
     console.log(editData)
 
-    const url = `http://localhost:5000/doctor/virtualAppointmentData?doctor_email=${user?.email}`;
+    const url = `https://promise-hospoital-server-jahid900pj.vercel.app/doctor/virtualAppointmentData?doctor_email=${user?.email}`;
 
     const { data: DoctorVirtualData = [], isLoading } = useQuery({
         queryKey: ['virtualAppointments', user?.email],
