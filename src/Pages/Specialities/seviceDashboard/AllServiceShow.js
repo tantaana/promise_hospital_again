@@ -13,7 +13,7 @@ const AllServiceShow = () => {
   }, []);
 
   const handleDelete = id => {
-    const process = window.confirm('Are you sure . You want to delete yous review');
+    const process = window.confirm('Are you sure . You want to delete Service');
 
     if (process) {
       fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/specialities/${id}`, {
@@ -42,8 +42,8 @@ const AllServiceShow = () => {
             <tr>
               <th className='bg-cyan-600 text-white text-xl'></th>
               <th className='bg-cyan-600 text-white text-xl' >Service Name</th>
-              <th className='bg-cyan-600 text-white text-xl'>Cost</th>
-              <th className='bg-cyan-600 text-white text-xl'>Doctor</th>
+              {/* <th className='bg-cyan-600 text-white text-xl'>Cost</th>
+              <th className='bg-cyan-600 text-white text-xl'>Doctor</th> */}
               <th className='bg-cyan-600 text-white text-xl'>Delete</th>
             </tr>
           </thead>
@@ -55,8 +55,8 @@ const AllServiceShow = () => {
 
                   <th>{i + 1}</th>
                   <td>{service.speciality}</td>
-                  <td>{service.amount}</td>
-                  <td>{service.docName}</td>
+                  {/* <td>{service.amount}</td>
+                  <td>{service.docName}</td> */}
                   <td><Link onClick={() => handleDelete(service._id)}><FaTimes></FaTimes></Link>  </td>
                   {/* <td><button  onClick={() => handleOrder('Cancel')}></button></td> */}
 
