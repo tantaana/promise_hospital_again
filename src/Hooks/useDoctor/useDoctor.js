@@ -12,7 +12,7 @@ const useDoctor = (email) => {
                 .then(res => res.json())
                 .then(data => {
                     // console.log(data)
-                    setIsDoctor(data.isDoctor)
+                    setIsDoctor(data?.isDoctor)
                     setIsDoctorLoading(false)
 
                 })
