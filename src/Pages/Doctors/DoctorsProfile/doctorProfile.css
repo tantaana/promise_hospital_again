@@ -5,6 +5,13 @@
     width: 100%;
 }
 
+#background-bd {
+    background-size: cover;
+    height: 60vh;
+    width: 100%;
+    object-fit: cover;
+}
+
 
 /* doctors img margin bottom==== */
 .bottom-margin {

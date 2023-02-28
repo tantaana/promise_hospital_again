@@ -69,6 +69,7 @@ import DiagnosisForm from "../../Pages/Diagnosis/DiagnosisBookFrom/DiagnosisForm
 import Meeting from "../../Pages/Meeting/Meeting";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import AllUser from "../../Pages/Dashboard/AllUser/AllUser";
+import Fellowship from "../../Pages/Doctors/DoctorsProfile/Fellowship/Fellowship";
 
 
 ///// Jahid import end //////////////
@@ -144,6 +145,10 @@ export const router = createBrowserRouter([
                     return fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/docInfo/${params.id}`)
                 },
                 element: <DoctorProfile></DoctorProfile>
+            },
+            {
+                path: '/doctors/fellowship',
+                element: <Fellowship></Fellowship>
             },
 
 

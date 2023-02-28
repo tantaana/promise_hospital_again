@@ -53,7 +53,7 @@ const Insurance = () => {
                 <div>
                     <p className='text-lg font-semibold text-center mx-6 my-8'>Manipal has official tie-ups with several major international medical insurance companies and thus provides a hassle-free, straight forward medical journey for our patients.</p>
 
-                    <div className='flex flex-wrap gap-10 justify-center mx-4'>
+                    <div className='flex flex-wrap gap-10 justify-center mx-4 mb-10'>
                         {
                             insuranceData.map(insurance =>
                                 <div className=''>

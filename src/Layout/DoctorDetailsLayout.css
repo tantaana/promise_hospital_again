@@ -1,0 +1,9 @@
+.changeBg {
+    /* background: #466368; */
+    background: linear-gradient(to right, #1e3a8a, #14b8a6)
+}
+
+
+.changeWhite {
+    background: white;
+}

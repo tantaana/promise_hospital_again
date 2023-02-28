@@ -43,9 +43,8 @@ const SpecialitiesDetails = () => {
 
 
 
-
-
     const doctor = doctors.filter(info => info.speciality === details.speciality);
+
 
 
     const goBack = () => {
@@ -73,12 +72,20 @@ const SpecialitiesDetails = () => {
                 </div>
             </div>
 
-            <input type="checkbox" id="doctor-book-modal" className="modal-toggle" />
-            <div className="modal">
+            {/* <div className="modal">
                 <div className="modal-box w-11/12 max-w-5xl">
                     <label htmlFor="doctor-book-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    {/* <DoctorBookingForm></DoctorBookingForm> */}
+                    <DoctorBookingForm></DoctorBookingForm>
                 </div>
+            </div> */}
+
+            <div className='bg-teal-500 flex flex-col-reverse lg:flex-row items-center justify-center gap-10 p-10 lg:p-10 xl:p-14 2xl:p-14'>
+                <div className='lg:w-[600px] xl:w-[800px] 2xl:w-[800px]'>
+                    <h2 className='text-4xl font-semibold text-white mb-6'>Why Promise Hospital?</h2>
+                    <p className='text-xl font-semibold text-white text-justify'>The numerous purposes of research, services, and the highest standard of patient care are all pursued by Promise Hospital as it works to achieve excellence. We provide therapeutic therapy with the goal of promoting not only preventative care but also lifestyle modification through the integration of patient-centered care, the knowledge of specialists, and cutting-edge medical technology.</p>
+                </div>
+
+                <figure><img src="https://cdn.cfr.org/sites/default/files/styles/open_graph_article/public/image/2019/06/5Z8A2172.JPG" className='lg:w-[600px] xl:w-[800px] 2xl:w-[800px]' alt="" /></figure>
             </div>
 
             <div className='mx-4 my-4'>

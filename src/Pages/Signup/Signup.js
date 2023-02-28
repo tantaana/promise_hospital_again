@@ -13,6 +13,9 @@ import useToken from '../../Hooks/useToken/useToken';
 const Signup = () => {
     const { createUser, updateUserProfile, providerLogin } = useContext(AuthContext);
 
+    const [userData, setUserData] = useState([]);
+    console.log(userData)
+
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -34,6 +37,17 @@ const Signup = () => {
     // if(token){
 
     // }
+
+    useEffect(() => {
+
+        fetch('http://localhost:5000/userData')
+            .then(res => res.json())
+            .then(data => {
+
+                setUserData(data)
+            })
+    }, []);
+
 
 
     const handleSignUp = event => {
@@ -58,7 +72,8 @@ const Signup = () => {
                 const addPatient = {
                     name: name,
                     email: email,
-                    userType: 'patient'
+                    userType: 'Patient',
+                    role: ''
                 }
 
                 //save user information to the database
@@ -138,40 +153,52 @@ const Signup = () => {
         providerLogin(googleLogIn)
             .then(result => {
                 const user = result.user;
-                console.log(user)
-                if (user.uid) {
+                const getData = userData.filter(users => users?.email === user?.email);
+                if (getData.length > 0) {
+                    toast.success('User exists already. Redirecting.....');
+                    setTimeout(() => {
+                        // navigate(from, { replace: true });
+                        navigate(-1);
+                    }, 2000);
+                }
+                else if (getData.length === 0) {
+                    if (user.uid) {
 
-                    const addPatient = {
-                        name: user?.displayName,
-                        email: user?.email,
-                        userType: 'patient'
+                        const addPatient = {
+                            name: user?.displayName,
+                            email: user?.email,
+                            userType: 'Patient',
+                            role: ''
+
+                        }
+
+                        //save user information to the database
+                        fetch('https://promise-hospoital-server-jahid900pj.vercel.app/userData', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(addPatient)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                console.log(data)
+
+                                if (data.acknowledged) {
+                                    toast.success('Successfully signed up');
+                                    setIsLoading(false);
+                                    setTimeout(() => {
+                                        navigate(-1);
+                                        // navigate(from, { replace: true });
+                                    }, 2000);
+                                }
+                            })
+                            .catch(err => console.error(err.message))
+
 
                     }
-
-                    //save user information to the database
-                    fetch('https://promise-hospoital-server-jahid900pj.vercel.app/userData', {
-                        method: 'POST',
-                        headers: {
-                            'content-type': 'application/json'
-                        },
-                        body: JSON.stringify(addPatient)
-                    })
-                        .then(res => res.json())
-                        .then(data => {
-                            console.log(data)
-
-                            if (data.acknowledged) {
-                                toast.success('Successfully signed up');
-                                setIsLoading(false);
-                                setTimeout(() => {
-                                    navigate(from, { replace: true });
-                                }, 2000);
-                            }
-                        })
-                        .catch(err => console.error(err.message))
-
-
                 }
+
             })
             .catch(err => {
                 console.error(err.message);

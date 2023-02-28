@@ -1,24 +1,24 @@
 import React from 'react';
-import { Link, useLoaderData, useNavigate } from 'react-router-dom';
-import './doctorProfile.css'
+import { Link, Outlet, useLoaderData, useNavigate } from 'react-router-dom';
+import '../doctorProfile.css'
 import { FaUserCircle } from 'react-icons/fa';
 import { MdLocationPin } from 'react-icons/md';
 import { BiBookReader } from 'react-icons/bi';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
-import bgImg from '../../../assets/promise.jpg'
-import DoctorDetailsLayout from '../../../Layout/DoctorDetailsLayout';
+import bgImg from '../../../../assets/promise.jpg'
+import DoctorDetailsLayout from '../../../../Layout/DoctorDetailsLayout';
 
-const DoctorsProfile = () => {
-    const doctorData = useLoaderData()
-    const { name, location, speciality, qualification, doctorImg, locationImg, position } = doctorData;
+const Fellowship = () => {
+    // const doctorData = useLoaderData()
+    // const { name, location, speciality, qualification, doctorImg, locationImg, position } = doctorData;
 
-    const navigate = useNavigate();
-    const goBack = () => {
-        navigate(-1);
-    }
+    // const navigate = useNavigate();
+    // const goBack = () => {
+    //     navigate(-1);
+    // }
     return (
         <div className='lg:mb-40 mb-52'>
-            <div className='h-screen mb-20'>
+            {/* <div className='h-screen'>
                 <div id="doctors-view-page" style={{
                     backgroundImage: `url(${bgImg})`
                 }} className="xl:p-20 lg:p-16 md:p-10 sm:p-8 p-4 bg-center bg-cover">
@@ -29,7 +29,7 @@ const DoctorsProfile = () => {
                     <div id="doctors-profile" className="xl:m-20 lg:m-10 sm:mt-8 mb-16">
                         <div className="row mt-44">
                             <div className="col">
-                                <img className="w-[400px] lg:w-[500px] lg:h-[350px] border-4 xl:ml-8 md:ml-40 sm:ml-32 bottom-margin shadow-md rounded object-cover" src={doctorImg} alt="" />
+                                <img className="w-[400px] lg:w-[500px] border-4 xl:ml-8 md:ml-40 sm:ml-32 bottom-margin shadow-md rounded" src={doctorImg} alt="" />
                                 <div className=" grid xl:grid-cols-2 lg:grid-cols-1 border-4 bg-white py-20 px-8 rounded-2xl shadow-2xl ">
                                     <div className="left ">
                                         <div className="item flex items-center mt-8">
@@ -60,13 +60,13 @@ const DoctorsProfile = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
+
+            <DoctorDetailsLayout></DoctorDetailsLayout>
 
 
-
-            <DoctorDetailsLayout doctorData={doctorData}></DoctorDetailsLayout>
         </div>
     );
 };
 
-export default DoctorsProfile;
+export default Fellowship;
