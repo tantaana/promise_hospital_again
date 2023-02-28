@@ -84,6 +84,7 @@ import VirtualAppointment from "../../Pages/Dashboard/VirtualAppointment/Virtual
 import DoctorVirtualAppointments from "../../Pages/Dashboard/DoctorVirtualAppointments/DoctorVirtualAppointments";
 import DoctorRoute from "../DoctorRoute/DoctorRoute";
 import OurLeader from "../../Pages/About/OurLeader";
+import Fellowship from "../../Pages/Doctors/DoctorsProfile/Fellowship/Fellowship";
 
 
 ///// Jahid import end //////////////
@@ -163,6 +164,10 @@ export const router = createBrowserRouter([
                     return fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/docInfo/${params.id}`)
                 },
                 element: <DoctorProfile></DoctorProfile>
+            },
+            {
+                path: '/doctors/fellowship',
+                element: <Fellowship></Fellowship>
             },
 
 

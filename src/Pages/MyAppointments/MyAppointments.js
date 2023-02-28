@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import Loader from '../Shared/Loader/Loader';
+import '../Dashboard/Dashboard.css'
 
 const MyAppointments = () => {
     const { user } = useContext(AuthContext);
@@ -20,6 +21,7 @@ const MyAppointments = () => {
         queryFn: async () => {
             const res = await fetch(url);
             const data = await res.json();
+            console.log(patientEmail)
             return data;
 
         }
@@ -64,7 +66,7 @@ const MyAppointments = () => {
     }
 
     return (
-        <div>
+        <div className='dashboardBg py-20'>
             <div className='flex flex-col gap-2 xl:flex-row items-center xl:gap-6 my-10 mx-4 bg-gray-300 p-2'>
                 <h2 className='text-2xl font-semibold text-blue-900'>Logged In User: <span className='text-black font-normal'>{user?.displayName}</span></h2>
                 <h2 className='text-2xl font-semibold text-teal-600'>User Email: <span className='text-black font-normal'>{user?.email}</span></h2>
@@ -108,43 +110,53 @@ const MyAppointments = () => {
                         <tbody>
 
                             {
-                                patientEmail.map((patient, i) =>
-                                    patient._id ?
-                                        <tr className='hover'>
-                                            <td className='text-xl font-bold'>{i + 1}</td>
-                                            <td className='p-1'>
-                                                <div className="avatar">
-                                                    <div className="mask w-14 h-14">
-                                                        <img src={patient?.doctorImg} alt="" />
-                                                    </div>
+                                patientEmail?.map((patient, i) =>
+                                    <tr className='hover'>
+                                        <td className='text-xl font-bold'>{i + 1}</td>
+                                        <td className='p-1'>
+                                            <div className="avatar">
+                                                <div className="mask w-14 h-14">
+                                                    <img src={patient?.doctorImg} alt="" />
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <div>
-                                                    <div className="font-bold text-lg">{patient?.docName}</div>
-                                                </div>
-                                            </td>
-                                            <td className='text-lg font-semibold'>
-                                                {patient?.docLocation}
-                                            </td>
-                                            <td className='text-lg font-semibold'>{patient?.appointDate}</td>
-                                            <td className='text-xl font-bold'>{patient?.fees}/-</td>
-                                            <th>
-                                                <Link to={`/dashboard/details/${patient?._id}`}><button onClick={startLoader} className="btn btn-primary btn-md">Details</button></Link>
-                                            </th>
-                                            <th>
-                                                <button className="btn btn-secondary text-white btn-md font-bold mr-2">Pay Card </button>
-                                                <button className="btn btn-secondary text-white btn-md font-bold" onClick={() => ta(patient?._id)}>Pay SSL</button>
-                                            </th>
-                                        </tr>
-                                        :
-                                        <p>No appointment found</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div className="font-bold text-lg">{patient?.docName}</div>
+                                            </div>
+                                        </td>
+                                        <td className='text-lg font-semibold'>
+                                            {patient?.docLocation}
+                                        </td>
+                                        <td className='text-lg font-semibold'>{patient?.appointDate}</td>
+                                        <td className='text-xl font-bold'>{patient?.fees}/-</td>
+                                        <th>
+                                            <Link to={`/dashboard/details/${patient?._id}`}><button onClick={startLoader} className="btn btn-primary btn-md">Details</button></Link>
+                                        </th>
+                                        <th>
+                                            {
+                                                patient.fees && !patient.paid && <Link to={`/dashboard/payment/${patient._id}`}><button onClick={startLoader} className="btn btn-secondary text-white btn-md font-bold mr-2">Pay Card </button></Link>
+                                            }
+                                            {
+                                                patient.fees && patient.paid && <span className='text-green-500'>Paid</span>
+                                            }
 
+                                            <button onClick={startLoader} className="btn btn-secondary text-white btn-md font-bold">Pay SSL</button>
+                                        </th>
+                                    </tr>
                                 )
                             }
 
                         </tbody>
                     </table>
+                </div>
+            </div>
+
+            <div className='flex justify-center mx-4 my-10'>
+                <div>
+                    {
+                        patientEmail?.length ? '' : <p className='text-3xl lg:text-4xl font-semibold text-red-700'>No Appointment Found</p>
+                    }
                 </div>
             </div>
         </div>

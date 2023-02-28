@@ -50,7 +50,8 @@ const Login = () => {
                     setIsLoading(false);
                     // setLoginUserEmail(email)
                     toast.success('Successfully Logged In')
-                    navigate(from, { replace: true })
+                    navigate(-1)
+                    // navigate(from, { replace: true })
 
                 }
                 form.reset();
@@ -91,7 +92,8 @@ const Login = () => {
                 console.log(user)
                 toast.success('Successfully Logged In');
                 setIsLoading(false);
-                navigate(from, { replace: true })
+                // navigate(from, { replace: true })
+                navigate(-1)
             })
             .catch(err => {
                 console.error(err);
