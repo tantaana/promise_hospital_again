@@ -77,6 +77,8 @@ import ViewAllGallery from "../../Pages/Dashboard/Gallery/ViewAllGallery";
 
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import AllUser from "../../Pages/Dashboard/AllUser/AllUser";
+import UserProfileOne from "../../Pages/Dashboard/UserProfileOne/UserProfileOne";
+import EditeUserProfileOne from "../../Pages/Dashboard/EditeUserProfileOne/EditeUserProfileOne";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import VirtualAppointment from "../../Pages/Dashboard/VirtualAppointment/VirtualAppointment";
 import DoctorVirtualAppointments from "../../Pages/Dashboard/DoctorVirtualAppointments/DoctorVirtualAppointments";
@@ -399,14 +401,17 @@ export const router = createBrowserRouter([
 
             //// solyman aria start 317-330 line //////////
 
-            // {
-            //     path: '/userprofile',
-            //     element: <UserProfile></UserProfile>
-            // },
-            // {
-            //     path: '/EditeUserProfile',
-            //     element: <EditeUserProfile />
-            // },
+
+            {
+                path: '/dashboard/useprofile',
+                element: <UserProfileOne></UserProfileOne>
+
+            },
+            {
+                path: '/dashboard/editeuserprofile/:email',
+                loader: ({ params }) => fetch(`http://localhost:5000/users/edite/${params.email}`),
+                element: <EditeUserProfileOne />
+            }
 
 
 
