@@ -31,7 +31,11 @@ const UserProfileOne = () => {
                     <div className='text-center'>
                         <div className="avatar text-center ">
                             <div className="w-40 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                <img src={user?.photoURL} />
+
+                                {data?.photoURL ? <img src={data?.photoURL} /> : <> <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/HrithikRoshan29.jpg" />  </>
+                                }
+
+
                             </div>
                         </div>
                         <div className='text-center '>
