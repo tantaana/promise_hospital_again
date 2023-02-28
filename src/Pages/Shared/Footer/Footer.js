@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -6,58 +7,47 @@ const Footer = () => {
             <footer className="footer p-10 ">
                 <div>
                     <span className="footer-title">About Promise Hospital</span>
-                    <a href="/" className="link link-hover">About Us</a>
-                    <a href="/" className="link link-hover">Leadership</a>
-                    <a href="/" className="link link-hover">Doctors</a>
-                    <a href="/" className="link link-hover">Specialities</a>
+                    <Link to="/about" className="link link-hover">About Us</Link>
+                    <Link to="/doctors" className="link link-hover">Doctors</Link>
+                    <Link to="/specialities" className="link link-hover">Specialities</Link> 
+                    <Link to="/lead" className="link link-hover">Leadership</Link>
                 </div>
                 <div>
                     <span className="footer-title">Our Offerings</span>
-                    <a href="/" className="link link-hover">Health Packages</a>
-                    <a href="/" className="link link-hover">Visa Assistance</a>
-                    <a href="/" className="link link-hover">Discharge and Departure</a>
-                    <a href="/" className="link link-hover">Worldwide Insurance Partners</a>
-                    <a href="/" className="link link-hover">Accommodation and Transport</a>
-                    <a href="/" className="link link-hover">Arrival Processes</a>
+                    <Link to="/packages" className="link link-hover">Health Packages</Link>
+                    <Link to="/" className="link link-hover">Visa Assistance</Link>
+                    <Link to="/" className="link link-hover">Discharge and Departure</Link>
+                    <Link to="/" className="link link-hover">Worldwide Insurance Partners</Link>
+                    <Link to="/" className="link link-hover">Accommodation and Transport</Link>
+                    <Link to="/" className="link link-hover">Arrival Processes</Link>
                 </div>
                 <div>
                     <span className="footer-title">Our Locations</span>
-                    <a href="/" className="link link-hover">Old Airport Road - Dhaka</a>
-                    <a href="/" className="link link-hover">Chittagong</a>
-                    <a href="/" className="link link-hover">Rajshahi</a>
-                    <a href="/" className="link link-hover">Khulna</a>
-                    <a href="/" className="link link-hover">Barishal</a>
-                    <a href="/" className="link link-hover">Sylhet</a>
+                    <Link to="/" className="link link-hover">Old Airport Road - Dhaka</Link>
+                    <Link to="/" className="link link-hover">Chittagong</Link>
+                    <Link to="/" className="link link-hover">Rajshahi</Link>
+                    <Link to="/" className="link link-hover">Khulna</Link>
+                    <Link to="/" className="link link-hover">Barishal</Link>
+                    <Link to="/" className="link link-hover">Sylhet</Link>
                 </div>
                 <div>
                     <span className="footer-title">Centre of Excellence</span>
-                    <a href="/" className="link link-hover">Cardiology and Cardiac Surgery</a>
-                    <a href="/" className="link link-hover">Cardiothoracic Vascular Surgery</a>
-                    <a href="/" className="link link-hover">Comprehensive Cancer Care</a>
-                    <a href="/" className="link link-hover">Gastrointestinal Sciences</a>
-                    <a href="/" className="link link-hover">Laparoscopic Surgery</a>
-                    <a href="/" className="link link-hover">Liver Transplantation Surgery</a>
-                    <a href="/" className="link link-hover">Nephrology</a>
-                    <a href="/" className="link link-hover">Neurology and Neurosurgery</a>
-                    <a href="/" className="link link-hover">Organ Transplants</a>
-                    <a href="/" className="link link-hover">Orthopaedics (Joints & Trauma)</a>
-                    <a href="/" className="link link-hover">Rheumatology</a>
-                    <a href="/" className="link link-hover">Spine Care</a>
-                    <a href="/" className="link link-hover">Urology</a>
+                    <Link to="/specialities/bariatric_surgery" className="link link-hover">Bariatric Surgery</Link>
+                    <Link to="/specialities/bariatric_surgery" className="link link-hover">Cardiology and Cardiac Surgery</Link>
+                    <Link to="/specialities/cardiothoracic_vascular_surgery" className="link link-hover">Cardiothoracic Vascular Surgery</Link>
+                    <Link to="/specialities/comprehensive_cancer_care" className="link link-hover">Comprehensive Cancer Care</Link>
+                    <Link to="/specialities/gastrointestinal_sciences" className="link link-hover">Gastrointestinal Sciences</Link>
+                    <Link to="/specialities/laparoscopic_surgery" className="link link-hover">Laparoscopic Surgery</Link>
+                    <Link to="/specialities/dermatology" className="link link-hover">Dermatology</Link>
+                    <Link to="/specialities/nephrology" className="link link-hover">Nephrology</Link>
+                    <Link to="/specialities/neurology_neurosurgery" className="link link-hover">Neurology and Neurosurgery</Link>
+                    <Link to="/specialities/organ_transplants" className="link link-hover">Organ Transplants</Link>
+                    <Link to="/specialities/orthopaedics" className="link link-hover">Orthopaedics (Joints & Trauma)</Link>
+                    <Link to="/specialities/rheumatology" className="link link-hover">Rheumatology</Link>
+                    <Link to="/specialities/spine_care" className="link link-hover">Spine Care</Link>
+                    <Link to="/specialities/urology" className="link link-hover">Urology</Link>
                 </div>
-                <div>
-                    <span className="footer-title">International Contact Centers</span>
-                    <a href="/" className="link link-hover">India</a>
-                    <a href="/" className="link link-hover">Nigeria</a>
-                    <a href="/" className="link link-hover">Burundi</a>
-                    <a href="/" className="link link-hover">Tanzania</a>
-                    <a href="/" className="link link-hover">Uganda</a>
-                    <span className="footer-title">Talk to us</span>
-                    <a href="/" className="link link-hover">Send Enquiry</a>
-                    <a href="/" className="link link-hover">Request A Callback</a>
-                    <a href="/" className="link link-hover">Talk to our COO/Feedback</a>
-                    <a href="/" className="link link-hover">Contact Us</a>
-                </div>
+              
             </footer>
             <footer className="footer px-10 py-4">
                 <div className="items-center md:grid-flow-col grid-cols-1">

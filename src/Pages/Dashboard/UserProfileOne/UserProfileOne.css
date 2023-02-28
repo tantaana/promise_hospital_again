@@ -1,0 +1,29 @@
+@media screen and (min-width: 600px) {
+
+
+    .fl {
+        display: grid;
+        grid-template-columns: 25% 75%;
+
+    }
+}
+
+@media (min-width: 20px) and (max-width: 559px) {
+
+    .mr {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+
+
+    .mrltwo {
+        margin-left: 23%;
+    }
+
+    .w {
+        width: 90%;
+    }
+
+    /* … */
+}
