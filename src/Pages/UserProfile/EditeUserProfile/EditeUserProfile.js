@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const EditeUserProfile = () => {
-    const { updateUserProfile} = useContext(AuthContext);
+
 
 
     const handleSubmit = event => {
@@ -23,16 +23,7 @@ const EditeUserProfile = () => {
         };
 
 
-        updateUserProfile( displayName,photoURL)
-        .then((data) => {
-            console.log(data)
-            // Profile updated!
-            // ...
-          }).catch((error) => {
-            // An error occurred
-            // ...
-            console.log(error)
-          });
+        
 
 
 

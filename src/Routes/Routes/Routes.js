@@ -77,6 +77,8 @@ import ViewAllGallery from "../../Pages/Dashboard/Gallery/ViewAllGallery";
 
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import AllUser from "../../Pages/Dashboard/AllUser/AllUser";
+import UserProfileOne from "../../Pages/Dashboard/UserProfileOne/UserProfileOne";
+import EditeUserProfileOne from "../../Pages/Dashboard/EditeUserProfileOne/EditeUserProfileOne";
 
 
 ///// Jahid import end //////////////
@@ -201,21 +203,21 @@ export const router = createBrowserRouter([
                 path: '/social', element: <SocilaMediya></SocilaMediya>
             },
             {
-                path:'/success',
-                element:<SslSuccess></SslSuccess>
+                path: '/success',
+                element: <SslSuccess></SslSuccess>
             },
             {
-                path:'/connectus',
-                element : <ConnectUs></ConnectUs>
+                path: '/connectus',
+                element: <ConnectUs></ConnectUs>
             },
-{
-path:'/userprofile',
-element:<UserProfile></UserProfile>
-},
-{
-    path:'/EditeUserProfile',
-    element:<EditeUserProfile/>
-},
+            {
+                path: '/userprofile',
+                element: <UserProfile></UserProfile>
+            },
+            {
+                path: '/EditeUserProfile',
+                element: <EditeUserProfile />
+            },
 
 
 
@@ -374,7 +376,9 @@ element:<UserProfile></UserProfile>
                 path: '/dashboard/payment/:id',
                 element: <Payment></Payment>,
                 loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/booking/${params.id}`)
-            }
+            },
+
+
 
 
 
@@ -392,6 +396,16 @@ element:<UserProfile></UserProfile>
             //// solyman aria start 317-330 line //////////
 
 
+            {
+                path: '/dashboard/useprofile',
+                element: <UserProfileOne></UserProfileOne>
+
+            },
+            {
+                path: '/dashboard/editeuserprofile/:email',
+                loader: ({ params }) => fetch(`http://localhost:5000/users/edite/${params.email}`),
+                element: <EditeUserProfileOne />
+            }
 
 
 
