@@ -1,7 +1,8 @@
 import React from 'react';
 import { useEffect } from 'react';
+import { toast } from 'react-hot-toast';
 
-const EditVirtualAppointments = ({ editData, user }) => {
+const EditVirtualAppointments = ({ editData, user, setEditData }) => {
     console.log(editData)
 
     const uri = `http://localhost:5000/edit/virtualAppointment/${user?.email}`
@@ -10,13 +11,13 @@ const EditVirtualAppointments = ({ editData, user }) => {
         event.preventDefault();
         const form = event.target;
         const meet_link = form.meet_link.value
-        console.log(meet_link)
+        // console.log(meet_link)
 
 
 
-        const Meet_link = {
+        const Meet_link = [
             meet_link
-        }
+        ]
 
         // const link = {
         //     meet_link
@@ -34,6 +35,10 @@ const EditVirtualAppointments = ({ editData, user }) => {
             .then((response) => response.json())
             .then((data) => {
                 console.log('Success:', data);
+                toast.success('Meet link provided successfully')
+                form.reset();
+                setEditData(null)
+
 
 
             })

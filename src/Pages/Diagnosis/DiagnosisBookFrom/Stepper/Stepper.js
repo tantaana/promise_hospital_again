@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 
 
-const Stepper = ({ steps, currentStep }) => {
+const Stepper = ({ steps, currentStep, hh }) => {
     const [newStep, setNewStep] = useState([]);
     // console.log(newStep)
     const stepRef = useRef()
@@ -76,9 +76,12 @@ const Stepper = ({ steps, currentStep }) => {
                         {step.description}
                     </div>
                 </div>
-                <div className={`flex-auto border-t-2 transition duration-500 ease-in-out ${step.completed ? 'border-green-600' : 'border-gray-300'} `}>
+                {
+                    hh === true && <div className={`flex-auto border-t-2 transition duration-500 ease-in-out ${step.completed ? 'border-green-600' : 'border-gray-300'} `}>
 
-                </div>
+                    </div>
+                }
+
             </div>
         )
     })
