@@ -25,12 +25,11 @@ const DiagnosisForm = () => {
         'personal Details',
         'Complete'
     ]
-    const hh = false
     const displayStep = (step) => {
         switch (step) {
             case 1: return <Account key={testDetails._id} price={testDetails?.price} testName={testDetails?.title}></Account>
             case 2: return <Details></Details>
-            case 3: if (hh === true) { return <Final></Final> } else { }
+            case 3: return <Final></Final>
             default:
         }
     }
@@ -52,7 +51,6 @@ const DiagnosisForm = () => {
                 <div className=''>
                     <div className='container horizontal '>
                         <Stepper
-                            hh={hh}
                             steps={steps}
                             currentStep={currentStep}
                         ></Stepper>
