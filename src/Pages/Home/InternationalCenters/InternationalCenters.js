@@ -9,7 +9,7 @@ const InternationalCenters = () => {
                 <div className='w-full text-white'>
                     <div className='lg:w-2/3 text-center mx-auto'>
                         <div>
-                            <p className='text-3xl sm:text-2xl font-semibold'>Choose Manipal</p>
+                            <p className='text-3xl sm:text-2xl font-semibold'>Choose Promise Hospital</p>
                             <p className='text-3xl font-semibold'>Choose a world of good health.</p>
                         </div>
                         <div className='mt-5'>
