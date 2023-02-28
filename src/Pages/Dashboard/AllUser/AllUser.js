@@ -271,21 +271,28 @@ const AllUser = () => {
                                                             <h2 className="text-md font-semibold">Already a doctor</h2>
                                                 }
                                             </td>
+                                            <td>
+                                                {
+                                                    user?.role === "" ?
+                                                        <label onClick={() => setGetDataAdmin(user)} htmlFor="make-admin-modal" className="btn glass bg-green-500 hover:bg-green-700 text-black btn-outline btn-sm">Make Admin</label>
+                                                        :
+                                                        <h2 className="text-md font-bold">Admin</h2>
+                                                }
+                                            </td>
                                             <td>{
-                                                user?.userType === 'Admin' ? '' :
-                                                    <label onClick={() => setRemoveData(user)} htmlFor="remove-doctor-modal" className="btn glass bg-red-500 hover:bg-red-600 text-black btn-outline btn-sm">Remove User</label>
+                                                <label onClick={() => setRemoveData(user)} htmlFor="remove-doctor-modal" className="btn glass bg-red-500 hover:bg-red-600 text-black btn-outline btn-sm">Remove User</label>
                                             }</td>
 
                                             {/* <th>
-                                                {
-                                                    patient.fees && !patient.paid && <Link to={`/dashboard/payment/${patient._id}`}><button onClick={startLoader} className="btn btn-secondary text-white btn-md font-bold mr-2">Pay Card </button></Link>
-                                                }
-                                                {
-                                                    patient.fees && patient.paid && <span className='text-green-500'>Paid</span>
-                                                }
+                                        {
+                                            patient.fees && !patient.paid && <Link to={`/dashboard/payment/${patient._id}`}><button onClick={startLoader} className="btn btn-secondary text-white btn-md font-bold mr-2">Pay Card </button></Link>
+                                        }
+                                        {
+                                            patient.fees && patient.paid && <span className='text-green-500'>Paid</span>
+                                        }
 
-                                                <button onClick={startLoader} className="btn btn-secondary text-white btn-md font-bold">Pay SSL</button>
-                                            </th> */}
+                                        <button onClick={startLoader} className="btn btn-secondary text-white btn-md font-bold">Pay SSL</button>
+                                    </th> */}
                                         </tr>
                                     )
                             }
