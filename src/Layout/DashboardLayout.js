@@ -47,6 +47,7 @@ const DashboardLayout = () => {
 
                         <NavLink to='/dashboard' className="text-xl text-white text-center font-semibold bg-blue-900 border-teal-500 border-4 pb-2 mb-10">Dashboard <span className='text-4xl'>💼</span></NavLink>
 
+                        <li onClick={handleClick} className='text-white hover:bg-teal-600 hover:rounded-lg'><NavLink to='/dashboard/useprofile' style={activeLinks} className="text-lg text-white font-semibold hover:rounded-lg p-2">My Profile</NavLink></li>
                         <li onClick={handleClick} className='text-white hover:bg-teal-600 hover:rounded-lg'><NavLink to='/dashboard/appointments' style={activeLinks} className="text-lg text-white font-semibold hover:rounded-lg p-2">My Appointments</NavLink></li>
 
                         <li onClick={handleClick} className='text-white hover:bg-teal-600 hover:rounded-lg'><NavLink to='/dashboard/VirtualAppointment' style={activeLinks} className="text-lg text-white font-semibold hover:rounded-lg p-2">Virtual Appointment</NavLink></li>
