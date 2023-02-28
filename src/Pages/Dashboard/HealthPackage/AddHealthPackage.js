@@ -62,43 +62,43 @@ const AddHealthPackage = () => {
     return (
         <div className='w-full dashboardBg h-full'>
             <div className='w-3/5 mx-auto pt-5 pb-5'>
-                <form onSubmit={handleSubmit(handleAddPackage)} className='formBg p-5 shadow-2xl mt-3 rounded-lg h-full'>
-                    <h2 className='text-2xl text-center text-white font-semibold'>Add Your Health Package</h2>
+                <form onSubmit={handleSubmit(handleAddPackage)} className='bg-slate-100 p-5 shadow-2xl mt-3 rounded-lg h-full'>
+                    <h2 className='text-2xl text-center text-black font-semibold'>Add Your Health Package</h2>
                     <div className='w-full mb-5'>
-                        <h3 className='text-lg text-white font-medium mb-1'>Package Name</h3>
-                        <input type="text" {...register("packageName")} className='border w-full bg-gray-100 outline-none rounded-sm px-3' />
+                        <h3 className='text-lg text-black font-medium mb-1'>Package Name</h3>
+                        <input type="text" {...register("packageName")} className='input input-bordered input-info w-full text-lg' />
                     </div>
                     <div className='mb-5'>
-                        <h3 className='text-lg text-white font-medium mb-1'>Location</h3>
-                        <input type="text" {...register("location")} className='border w-full bg-gray-100 outline-none rounded-sm px-3' />
+                        <h3 className='text-lg text-black font-medium mb-1'>Location</h3>
+                        <input type="text" {...register("location")} className='input input-bordered input-info w-full text-lg' />
                     </div>
                     <div className='mb-5'>
-                        <h3 className='text-lg text-white font-medium mb-1'>Includ Test</h3>
-                        <input type="text" {...register("test")} className='border w-full bg-gray-100 outline-none rounded-sm px-3' />
+                        <h3 className='text-lg text-black font-medium mb-1'>Includ Test</h3>
+                        <input type="text" {...register("test")} className='input input-bordered input-info w-full text-lg' />
                     </div>
                     <div className='flex justify-between gap-5'>
                         <div className='mb-5 w-full'>
-                            <h3 className='text-lg text-white font-medium mb-1'>Price</h3>
-                            <input type="text" {...register("price")} className='border w-full bg-gray-100 outline-none rounded-sm px-3' />
+                            <h3 className='text-lg text-black font-medium mb-1'>Price</h3>
+                            <input type="text" {...register("price")} className='input input-bordered input-info w-full text-lg' />
                         </div>
                         <div className='mb-5 w-full'>
-                            <h3 className='text-lg text-white font-medium mb-1'>Old Price</h3>
-                            <input type="text" {...register("oldPrice")} className='border w-full bg-gray-100 outline-none rounded-sm px-3' />
+                            <h3 className='text-lg text-black font-medium mb-1'>Old Price</h3>
+                            <input type="text" {...register("oldPrice")} className='input input-bordered input-info w-full text-lg' />
                         </div>
                     </div>
                     <div className='flex justify-between gap-5'>
                         <div className='mb-5 w-full'>
-                            <h3 className='text-lg text-white font-medium mb-1'>Save</h3>
-                            <input type="text" {...register("save")} className='border w-full bg-gray-100 outline-none rounded-sm px-3' />
+                            <h3 className='text-lg text-black font-medium mb-1'>Save</h3>
+                            <input type="text" {...register("save")} className='input input-bordered input-info w-full text-lg' />
                         </div>
                         <div className='w-full'>
-                            <h3 className='text-lg text-white font-medium mb-1'>Add Image</h3>
-                            <input type="file" {...register("image")} className='border w-full bg-gray-100 outline-none rounded-sm' />
+                            <h3 className='text-lg text-black font-medium mb-1'>Add Image</h3>
+                            <input type="file" {...register("image")} className='input input-bordered input-info w-full text-lg' />
                         </div>
                     </div>
                     <div className='mb-5'>
-                        <h3 className='text-lg text-white font-medium mb-1'>Package Description</h3>
-                        <textarea {...register("des")} id="" cols="30" rows="3" className='border w-full bg-gray-100 outline-none rounded-sm px-3'></textarea>
+                        <h3 className='text-lg text-black font-medium mb-1'>Package Description</h3>
+                        <textarea {...register("des")} id="" cols="30" rows="3" className='input input-bordered input-info w-full text-lg'></textarea>
                     </div>
                     <div className='text-center'>
                         <button className='btn btn-primary shadow-xl text-white'>Submit</button>

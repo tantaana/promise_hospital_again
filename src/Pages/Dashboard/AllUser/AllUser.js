@@ -19,7 +19,7 @@ const AllUser = () => {
         setLoader(true);
     }
 
-    const url = `http://localhost:5000/userData`;
+    const url = `https://promise-hospoital-server-jahid900pj.vercel.app/userData`;
 
     const { data: userData = [], isLoading, refetch } = useQuery({
         queryKey: ['userData'],
@@ -41,7 +41,7 @@ const AllUser = () => {
 
 
     const handleMakeDoctor = (id) => {
-        fetch(`http://localhost:5000/userData/${id}`, {
+        fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/userData/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())
@@ -55,7 +55,7 @@ const AllUser = () => {
     }
 
     const handleDeleteUser = (id) => {
-        fetch(`http://localhost:5000/userData/deletedData/${id}`, {
+        fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/userData/deletedData/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

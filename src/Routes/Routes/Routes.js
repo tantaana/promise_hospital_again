@@ -79,6 +79,10 @@ import Dashboard from "../../Pages/Dashboard/Dashboard";
 import AllUser from "../../Pages/Dashboard/AllUser/AllUser";
 import UserProfileOne from "../../Pages/Dashboard/UserProfileOne/UserProfileOne";
 import EditeUserProfileOne from "../../Pages/Dashboard/EditeUserProfileOne/EditeUserProfileOne";
+import AdminRoute from "../AdminRoute/AdminRoute";
+import VirtualAppointment from "../../Pages/Dashboard/VirtualAppointment/VirtualAppointment";
+import DoctorVirtualAppointments from "../../Pages/Dashboard/DoctorVirtualAppointments/DoctorVirtualAppointments";
+import DoctorRoute from "../DoctorRoute/DoctorRoute";
 
 
 ///// Jahid import end //////////////
@@ -135,7 +139,7 @@ export const router = createBrowserRouter([
             {
                 path: '/specialities/:speciality_id',
                 element: <SpecialitiesDetails></SpecialitiesDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/specialities/${params.speciality_id}`),
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/specialities/${params.speciality_id}`),
 
             },
 
@@ -207,17 +211,10 @@ export const router = createBrowserRouter([
                 element: <SslSuccess></SslSuccess>
             },
             {
-                path: '/connectus',
+                path: '/contact',
                 element: <ConnectUs></ConnectUs>
             },
-            {
-                path: '/userprofile',
-                element: <UserProfile></UserProfile>
-            },
-            {
-                path: '/EditeUserProfile',
-                element: <EditeUserProfile />
-            },
+
 
 
 
@@ -273,12 +270,16 @@ export const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashboardLayout></DashboardLayout>, children: [
+        element:
+            <PrivateRoute>
+                <DashboardLayout></DashboardLayout>
+            </PrivateRoute>
+        , children: [
             ///// tanvir start 230-245 line //////////////////
             { path: '/dashboard/add_doctors', element: <AddDoctors></AddDoctors> },
             { path: '/dashboard/appointments', element: <MyAppointments></MyAppointments> },
             { path: '/dashboard/details/:id', element: <MyDetails></MyDetails>, loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/details/${params.id}`) },
-            { path: '/dashboard/all_users', element: <AllUser></AllUser> },
+            { path: '/dashboard/all_users', element: <AdminRoute> <AllUser></AllUser> </AdminRoute> },
 
 
 
@@ -333,6 +334,13 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/add_diagnosis', element: <AddDiagnosis></AddDiagnosis>
             },
+            {
+                path: '/dashboard/VirtualAppointment', element: <VirtualAppointment></VirtualAppointment>
+            },
+            {
+                path: '/dashboard/doctorVirtualAppointment',
+                element: <DoctorRoute> <DoctorVirtualAppointments></DoctorVirtualAppointments></DoctorRoute>
+            },
 
 
 
@@ -377,8 +385,6 @@ export const router = createBrowserRouter([
                 element: <Payment></Payment>,
                 loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/booking/${params.id}`)
             },
-
-
 
 
 

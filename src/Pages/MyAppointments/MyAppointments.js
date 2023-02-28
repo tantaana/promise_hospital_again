@@ -13,7 +13,7 @@ const MyAppointments = () => {
         setLoader(true);
     }
 
-    const url = `http://localhost:5000/appointmentData?patientEmail=${user?.email}`;
+    const url = `https://promise-hospoital-server-jahid900pj.vercel.app/appointmentData?patientEmail=${user?.email}`;
 
     const { data: patientEmail = [], isLoading } = useQuery({
         queryKey: ['patientEmail', user?.email],
@@ -31,27 +31,27 @@ const MyAppointments = () => {
     }
 
 
-    const ta =(id)=>{
+    const ta = (id) => {
 
 
 
 
         const data = { id };
 
-        fetch('http://localhost:5000/ssl', {
-          method: 'POST', // or 'PUT'
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
+        fetch('https://promise-hospoital-server-jahid900pj.vercel.app/ssl', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
         })
-          .then((response) => response.json())
-          .then((data) => {
-            window.location.replace(data.uri)
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
+            .then((response) => response.json())
+            .then((data) => {
+                window.location.replace(data.uri)
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
 
 
 
@@ -134,7 +134,7 @@ const MyAppointments = () => {
                                             </th>
                                             <th>
                                                 <button className="btn btn-secondary text-white btn-md font-bold mr-2">Pay Card </button>
-                                                <button className="btn btn-secondary text-white btn-md font-bold" onClick={()=>ta(patient?._id)}>Pay SSL</button>
+                                                <button className="btn btn-secondary text-white btn-md font-bold" onClick={() => ta(patient?._id)}>Pay SSL</button>
                                             </th>
                                         </tr>
                                         :

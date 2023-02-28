@@ -130,7 +130,7 @@ const PatientsChart = () => {
     const [appointment, setappointment] = useState([])
     const [appdatas, setappdatas] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/appointmentData')
+        fetch('https://promise-hospoital-server-jahid900pj.vercel.app/createAppointment')
             .then(res => res.json())
             .then(data => setappdatas(data))
     }, []);
@@ -139,7 +139,7 @@ const PatientsChart = () => {
         const process = window.confirm('Are you sure . You want to delete yous review');
 
         if (process) {
-            fetch(`http://localhost:5000/appointmentData/${id}`, {
+            fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/createAppointment/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -213,9 +213,9 @@ const PatientsChart = () => {
                     <Line type="monotone" dataKey="Patients 2022" stroke="#82ca9d" />
                 </LineChart>
             </div>
-             <p className='text-xl mt-9 mb-5 text-center'>Income in current week</p>
+            <p className='text-xl mt-9 mb-5 text-center'>Income in current week</p>
             <div className='text-center ml-64'>
-               
+
                 <ComposedChart
                     width={800}
                     height={400}

@@ -58,7 +58,10 @@ const Signup = () => {
                 const addPatient = {
                     name: name,
                     email: email,
-                    userType: 'patient'
+                    userType: 'patient',
+                    ABC: [
+
+                    ]
                 }
 
                 //save user information to the database

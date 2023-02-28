@@ -22,7 +22,7 @@ const OurSpecialities = () => {
     const [specialities, setSpecialities] = useState([]);
     useEffect(() => {
         setLoader(true);
-        fetch('http://localhost:5000/specialities')
+        fetch('https://promise-hospoital-server-jahid900pj.vercel.app/specialities')
             .then(res => res.json())
             .then(data => {
                 setLoader(false);

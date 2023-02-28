@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Final = () => {
     return (
@@ -31,11 +32,11 @@ const Final = () => {
                 <div className="text-lg font-semibold text-gray-500">
                     Your Account has been created.
                 </div>
-                <a className="mt-10" href="/user/dashboard">
+                <Link className="mt-10" to="/Diagnosis">
                     <button className="h-10 px-5 text-green-700 transition-colors duration-150 border border-gray-300 rounded-lg focus:shadow-outline hover:bg-green-500 hover:text-green-100">
                         Close
                     </button>
-                </a>
+                </Link>
             </div>
         </div>
     );

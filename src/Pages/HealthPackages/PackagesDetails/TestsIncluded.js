@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TestsIncluded = ({ packagesDetails }) => {
-    
+
     return (
         <div className='bg-blue-500 lg:p-16 sm:p-5 pt-0'>
             {

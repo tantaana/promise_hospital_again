@@ -12,7 +12,7 @@ const SslSuccess = () => {
     const transectionId = query.get('transectionId');
     const [order, setOrder] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/ssl/${transectionId}`)
+        fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/ssl/${transectionId}`)
             .then(res => res.json())
             .then(data => setOrder(data))
     }, [transectionId])

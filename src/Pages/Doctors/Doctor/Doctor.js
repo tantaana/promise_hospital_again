@@ -6,7 +6,7 @@ import circleImg from '../../../assets/loading-circle.gif'
 import { MdLocationPin } from 'react-icons/md';
 
 const Doctor = ({ doctor, setAnotherLoader }) => {
-    const { doctorImg, location, speciality, position, name, _id } = doctor;
+    const { doctorImg, location, speciality, position, name, _id, doctor_email } = doctor;
     const [loader, setLoader] = useState(false);
 
 
