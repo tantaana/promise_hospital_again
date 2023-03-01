@@ -53,6 +53,7 @@ const AddDoctors = () => {
         setLoader(true);
         const allData = event.target;
         const name = allData.name.value;
+        const docURL = allData.docURL.value;
         const speciality = allData.speciality.value;
         const position = allData.position.value;
         const qualification = allData.qualification.value;
@@ -83,6 +84,7 @@ const AddDoctors = () => {
 
                     const addDoctors = {
                         name: name,
+                        docURL: docURL,
                         speciality: speciality,
                         position: position,
                         qualification: qualification,
@@ -198,6 +200,13 @@ const AddDoctors = () => {
                             <div className=''>
                                 <h2 className='text-xl font-semibold mb-2'>Consultation Fees<span className='text-red-500'>*</span> 💰</h2>
                                 <input type="number" name="fees" placeholder="Type doctor's fees" className="input input-bordered input-primary w-full max-w-xs" required />
+
+                            </div>
+
+                            <div className=''>
+                                <h2 className='text-xl font-semibold mb-2'>Doctor's URL<span className='text-red-500'>*</span> 🖋️</h2>
+                                <textarea name="docURL" placeholder="Write doctor's URL for website view (Ex: manik_mia, sanjoy_sen)" className="textarea textarea-primary w-full max-w-xs h-[70px]" required></textarea>
+                                <h2 className='w-full max-w-xs text-center text-sm'>Use <span className='font-bold text-xl'>__</span> instead space</h2>
 
                             </div>
                         </div>
