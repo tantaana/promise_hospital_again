@@ -20,7 +20,7 @@ const DoctorDetailsLayout = ({ doctorData }) => {
     }
 
     return (
-        <div className='flex justify-center mx-4'>
+        <div className='flex justify-center mx-6 mb-20'>
             <div className='w-full md:w-5/6 lg:w-2/3'>
                 <div className='flex flex-col gap-1'>
                     <div className="collapse">

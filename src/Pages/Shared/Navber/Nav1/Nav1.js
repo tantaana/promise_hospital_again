@@ -9,14 +9,15 @@ import { BsNewspaper } from "react-icons/bs";
 import { TfiGallery } from "react-icons/tfi";
 import { RiContactsBookLine } from "react-icons/ri";
 import { ImAirplane } from "react-icons/im";
+import { BiAbacus } from "react-icons/bi";
 import { AuthContext } from '../../../../context/AuthProvider/AuthProvider';
 
 const Nav1 = () => {
     const { user, logOut } = useContext(AuthContext);
     const utcTime = "" + Math.floor((new Date()).getTime() / 1000);
     var parts = utcTime.match(/.{1,3}/g);
+
     const meetID = parts.join("-");
-    console.log("mmmmmm: " + meetID)
     const activeLinks = ({ isActive }) => {
         return {
             backgroundColor: isActive ? 'white' : '',
@@ -93,12 +94,11 @@ const Nav1 = () => {
                             {/* <label htmlFor="dashboard-drawer" className="">
                                 
                             </label> */}
-                            <li onClick={handleClick}><NavLink to='/dashboard' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><BiHappyBeaming />Dashboard</NavLink></li>
-
-                            <li onClick={handleClick}><NavLink to='/stories' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><BiHappyBeaming />Success Stories</NavLink></li>
-                            <li onClick={handleClick}><NavLink to='/about' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaUserMd />About Us</NavLink></li>
-                            <li onClick={handleClick}><NavLink to='/blogs' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><MdContactPage />Blogs</NavLink></li>
-                            <li onClick={handleClick}><NavLink to='/news' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><BsNewspaper />News & Media</NavLink></li>
+                            {user?.uid && <li onClick={handleClick}><NavLink to='/dashboard' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-1'><BiAbacus />Dashboard</NavLink></li>}
+                            <li onClick={handleClick}><NavLink to='/stories' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-1'><BiHappyBeaming />Success Stories</NavLink></li>
+                            <li onClick={handleClick}><NavLink to='/about' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-1'><FaUserMd />About Us</NavLink></li>
+                            <li onClick={handleClick}><NavLink to='/blogs' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-1'><MdContactPage />Blogs</NavLink></li>
+                            <li onClick={handleClick}><NavLink to='/news' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-1'><BsNewspaper />News & Media</NavLink></li>
                             <li onClick={handleClick}><NavLink to='/contact' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><RiContactsBookLine />Contact Us</NavLink></li>
 
                         </ul>
@@ -112,16 +112,16 @@ const Nav1 = () => {
                            
                         </label> */}
 
-                        <li onClick={handleClick}><Link to='/' className='flex justify-center text-3xl'><FaHome /></Link></li>
-                        <li onClick={handleClick}><NavLink to='/doctors' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaHospitalUser />Doctors</NavLink></li>
-                        <li onClick={handleClick}><NavLink to='/dashboard' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaHospitalUser />Dashboard</NavLink></li>
-                        <li onClick={handleClick}><NavLink to='/specialities' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><GiFallingStar />Specialities</NavLink></li>
-                        <li onClick={handleClick}><NavLink to='/packages' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaClipboardList />Health Packages</NavLink></li>
-                        <li onClick={handleClick}><NavLink to='/plan' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><ImAirplane />Plan Your Visit</NavLink></li>
-                        <li onClick={handleClick}><NavLink to='/stories' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><BiHappyBeaming />Success Stories</NavLink></li>
-                        <li onClick={handleClick}><NavLink to='/about' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><FaUserMd />About Us</NavLink></li>
-                        <li onClick={handleClick}><NavLink to='/blogs' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><MdContactPage />Blogs</NavLink></li>
-                        <li onClick={handleClick}><NavLink to='/news' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900'><BsNewspaper />News & Media</NavLink></li>
+                        <li onClick={handleClick}><Link to='/' className='flex justify-center text-3xl mb-1'><FaHome /></Link></li>
+                        {user?.uid && <li onClick={handleClick}><NavLink to='/dashboard' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-1'><BiAbacus />Dashboard</NavLink></li>}
+                        <li onClick={handleClick}><NavLink to='/doctors' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-1'><FaHospitalUser />Doctors</NavLink></li>
+                        <li onClick={handleClick}><NavLink to='/specialities' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-1'><GiFallingStar />Specialities</NavLink></li>
+                        <li onClick={handleClick}><NavLink to='/packages' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-1'><FaClipboardList />Health Packages</NavLink></li>
+                        <li onClick={handleClick}><NavLink to='/plan' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-1'><ImAirplane />Plan Your Visit</NavLink></li>
+                        <li onClick={handleClick}><NavLink to='/stories' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-1'><BiHappyBeaming />Success Stories</NavLink></li>
+                        <li onClick={handleClick}><NavLink to='/about' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-1'><FaUserMd />About Us</NavLink></li>
+                        <li onClick={handleClick}><NavLink to='/blogs' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-1'><MdContactPage />Blogs</NavLink></li>
+                        <li onClick={handleClick}><NavLink to='/news' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-1'><BsNewspaper />News & Media</NavLink></li>
 
                         <li onClick={handleClick}><NavLink to='/contact' style={activeLinks} className='text-black hover:bg-white hover:text-blue-900 mb-2'><RiContactsBookLine />Contact Us</NavLink></li>
                         <input type="text" placeholder="🔍 Search Here" className="input input-bordered input-success rounded-full input-sm" />
