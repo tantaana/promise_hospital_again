@@ -6,7 +6,8 @@ import circleImg from '../../../assets/loading-circle.gif'
 import { MdLocationPin } from 'react-icons/md';
 
 const Doctor = ({ doctor, setAnotherLoader }) => {
-    const { doctorImg, location, speciality, position, name, _id, doctor_email } = doctor;
+    const { doctorImg, location, speciality, position, name, _id, docURL } = doctor;
+    console.log(docURL)
     const [loader, setLoader] = useState(false);
 
 
@@ -70,7 +71,7 @@ const Doctor = ({ doctor, setAnotherLoader }) => {
 
                             <div className="mt-8 mb-2 flex-col xl:flex-row flex gap-2 ">
 
-                                <Link className='mx-4 xl:mx-0' to={`/doctors/${_id}`} onClick={checkLoader}><button className='btn btn-md rounded btn-secondary hover:text-white w-full'>View profile</button></Link>
+                                <Link className='mx-4 xl:mx-0' to={`/doctors/${docURL}`} onClick={checkLoader}><button className='btn btn-md rounded btn-secondary hover:text-white w-full'>View profile</button></Link>
 
 
                                 <div className='mx-4 xl:mx-0'>

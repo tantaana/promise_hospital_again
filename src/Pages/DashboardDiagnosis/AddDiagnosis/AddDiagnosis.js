@@ -9,7 +9,7 @@ const AddDiagnosis = () => {
     const imgHostKey = "7bd087226ccbe42290452a157f175e5f"
 
     const handleAddTest = (data) => {
-
+        const imgHostKey = "7bd087226ccbe42290452a157f175e5f"
         const image = data.image[0]
         const formData = new FormData()
         formData.append("image", image)

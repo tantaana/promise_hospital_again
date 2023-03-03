@@ -72,7 +72,13 @@ const VirtualAppointment = () => {
                                             <td className='text-lg font-semibold'>{data?.appointDate}</td>
                                             <td className='text-xl font-bold'>{data?.fees}/-</td>
                                             <th>
-                                                <a className='btn glass bg-teal-500 hover:bg-teal-600 text-black btn-outline ' href="https://meet.google.com/vwi-znvr-gvg">Join meet</a>
+                                                {
+                                                    data?.Meet_Link?.[0] ?
+
+                                                        <a className='btn glass bg-teal-500 hover:bg-teal-600 text-black btn-outline ' href={data?.Meet_Link?.[0]}>Join meet</a>
+
+                                                        : <button className='btn glass bg-teal-500 hover:bg-teal-600 text-black btn-outline ' disabled>Join meet</button>
+                                                }
                                             </th>
                                             <th>
                                                 {/* <button className="btn btn-secondary text-white btn-md font-bold"> </button> */}

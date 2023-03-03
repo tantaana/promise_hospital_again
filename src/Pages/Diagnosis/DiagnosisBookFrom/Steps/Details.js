@@ -3,7 +3,7 @@ import { StepFormContext } from '../../../../context/StepperFormContext/StepperF
 
 const Details = () => {
     const { userData, setUserData } = useContext(StepFormContext)
-
+    // console.log(userData)
     const handleChange = (e) => {
         const { name, value } = e.target;
         setUserData({ ...userData, [name]: value });

@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import Loader from '../../Shared/Loader/Loader';
 import EditVirtualAppointments from './EditVirtualAppointments';
@@ -22,6 +23,10 @@ const DoctorVirtualAppointments = () => {
         }
 
     })
+
+    console.log(DoctorVirtualData)
+
+
 
     if (isLoading) {
         <Loader></Loader>
@@ -73,7 +78,9 @@ const DoctorVirtualAppointments = () => {
                                             <td className='text-lg font-semibold'>{data?.appointDate}</td>
                                             <td className='text-xl font-bold'>{data?.fees}/-</td>
                                             <th>
-                                                <a className='btn glass bg-teal-500 hover:bg-teal-600 text-black btn-outline ' href="https://meet.google.com/vwi-znvr-gvg">Join meet</a>
+                                                <a className='btn glass bg-teal-500 hover:bg-teal-600 text-black btn-outline ' href={data?.Meet_Link?.[0]
+                                                }>Join meet</a>
+                                                {/* <Link to={``}>meet</Link> */}
                                             </th>
                                             <th>
                                                 <label onClick={() => setEditData(data)} htmlFor="edit-virtual-appointment" className="btn glass bg-red-500 hover:bg-red-600 text-black btn-outline btn-sm">Edit</label>
@@ -91,7 +98,7 @@ const DoctorVirtualAppointments = () => {
             </div>
             <div>
                 {
-                    <EditVirtualAppointments key={editData?._id} editData={editData}></EditVirtualAppointments>
+                    editData && <EditVirtualAppointments key={editData?._id} editData={editData} user={user} setEditData={setEditData}></EditVirtualAppointments>
                 }
             </div>
         </div>

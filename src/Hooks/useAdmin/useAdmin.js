@@ -9,7 +9,7 @@ const useAdmin = (email) => {
         fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/user/admin/${email}`)
             .then(res => res.json())
             .then(data => {
-                setIsAdmin(data.isAdmin)
+                setIsAdmin(data?.isAdmin)
                 setIsAdminLoading(false)
             })
     }, [email])
