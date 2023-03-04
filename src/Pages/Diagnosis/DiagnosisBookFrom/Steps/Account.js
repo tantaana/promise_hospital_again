@@ -15,12 +15,13 @@ const Account = ({ price, testName }) => {
                     First Name
                 </div>
                 <div className="my-2 flex rounded border border-gray-200 bg-white p-1">
-                    <input required
+                    <input
                         onChange={handleChange}
                         value={userData["FirstName"] || ""}
                         name="FirstName"
                         placeholder="First Name"
                         className="w-full appearance-none p-1 px-2 text-gray-800 outline-none"
+                        required
                     />
                 </div>
             </div>
@@ -29,7 +30,7 @@ const Account = ({ price, testName }) => {
                     Last Name
                 </div>
                 <div className="my-2 flex rounded border border-gray-200 bg-white p-1">
-                    <input required
+                    <input
                         onChange={handleChange}
                         value={userData["LastName"] || ""}
                         name="LastName"
@@ -74,7 +75,7 @@ const Account = ({ price, testName }) => {
                     Age
                 </div>
                 <div className="my-2 flex rounded border border-gray-200 bg-white p-1">
-                    <input required
+                    <input
                         onChange={handleChange}
                         value={userData["age"] || ""}
                         name="age"

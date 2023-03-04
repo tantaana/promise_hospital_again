@@ -13,11 +13,30 @@ const DiagnosisForm = () => {
     const [currentStep, setCurrentStep] = useState(1)
     const [userData, setUserData] = useState('')
     const [finalData, setFinalData] = useState([])
+    const [success, setSuccess] = useState(true)
 
-    console.log(testDetails)
+    // console.log(testDetails)
     // console.log(userData)
     const handleTest = event => {
         console.log(userData)
+
+        fetch(`http://localhost:5000/diagnosisAppointments`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (!data.acknowledged) {
+                    setSuccess(false)
+                }
+                else {
+                    setSuccess(false)
+                }
+
+            })
     }
 
     const steps = [
@@ -51,6 +70,7 @@ const DiagnosisForm = () => {
                 <div className=''>
                     <div className='container horizontal '>
                         <Stepper
+                            success={success}
                             steps={steps}
                             currentStep={currentStep}
                         ></Stepper>
