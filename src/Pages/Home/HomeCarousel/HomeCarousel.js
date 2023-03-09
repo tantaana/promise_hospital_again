@@ -1,58 +1,138 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import './HomeCarousel.css'
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
+
+
+
 
 const HomeCarousel = () => {
+    const colors = [
+        { id: 1, src: 'https://storage.googleapis.com/jacksonh/1/JHS_International-2.jpg' },
+        { id: 2, src: 'https://www.aamc.org/sites/default/files/Treatment%20at%20MHS_1200x666.jpg' },
+        { id: 3, src: 'https://www.evercarebd.com/wp-content/uploads/2022/08/PhotoGhor_067122-1024x683.jpeg' },
+        { id: 4, src: 'https://cloudfront-us-east-1.images.arcpublishing.com/pmn/FTAPUQUL2RBQRFCHK6LFQ44NAI.jpg' },
+    ];
+    const delay = 3500;
+
+    const [index, setIndex] = useState(0);
+    const timeoutRef = useRef(null);
+
+    function resetTimeout() {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+    }
+
+    const handlePrevious = () => {
+        const newIndex = index - 1;
+        setIndex(newIndex < 0 ? colors.length - 1 : newIndex);
+    };
+
+    const handleNext = () => {
+        const newIndex = index + 1;
+        setIndex(newIndex >= colors.length ? 0 : newIndex);
+    };
+
+    useEffect(() => {
+        resetTimeout();
+        timeoutRef.current = setTimeout(
+            () =>
+                setIndex((prevIndex) =>
+                    prevIndex === colors.length - 1 ? 0 : prevIndex + 1
+                ),
+            delay
+        );
+
+        return () => {
+            resetTimeout();
+        };
+    }, [index]);
+
+
+
+
+
     return (
-        <div className=''>
-            <div className="carousel w-full">
-                <div id="slide1" className="carousel-item relative w-full">
-                    <img src="https://storage.googleapis.com/jacksonh/1/JHS_International-2.jpg" className="h-[400px] md:h-[600px] w-full object-cover brightness-50" />
-                    <div className="absolute flex justify-between items-center transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide4" className="btn btn-circle border-none bg-transparent">❮</a>
-                        <div className='flex flex-col justify-center items-center gap-8'>
-                            <h2 className='text-center font-bold text-2xl md:text-3xl text-white'>Welcome to <span className='text-blue-500'>promise</span><span className='text-teal-500'>hospital</span> !</h2>
-                            <h2 className='text-center text-white text-sm md:text-xl'>You've come the right place to get the best treatment available on the country.</h2>
-                            <Link to='/plan'><button className='btn btn-success btn-sm md:btn-md btn-outline font-bold text-lg'>Plan Your Visit !</button></Link>
-                        </div>
-                        <a href="#slide2" className="btn btn-circle border-none bg-transparent">❯</a>
+        <div className="slideshow">
+            <div className="slideshowSlider" style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}>
+
+                <div className="slide relative">
+                    <div className='bg-black absolute h-full w-full bg-opacity-50'>
+
                     </div>
-                </div>
-                <div id="slide2" className="carousel-item relative w-full">
-                    <img src="https://www.aamc.org/sites/default/files/Treatment%20at%20MHS_1200x666.jpg" className="h-[400px] md:h-[600px] w-full object-cover brightness-50" />
-                    <div className="absolute flex justify-between items-center transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide1" className="btn btn-circle border-none bg-transparent">❮</a>
-                        <div className='flex flex-col justify-center items-center gap-8'>
-                            <h2 className='text-center font-bold text-2xl md:text-3xl text-white'>Pick Your <span className='text-blue-500'>Favourite</span> <span className='text-teal-500'>Doctor</span> !</h2>
-                            <h2 className='text-center text-white text-sm md:text-xl'>Best doctor of the country are available in our hospital. Just make an appointment and get them on your desired time.</h2>
-                            <Link to='/doctors'><button className='btn btn-info btn-sm md:btn-md btn-outline font-bold text-lg'>Pick Your Doctor !</button></Link>
-                        </div>
-                        <a href="#slide3" className="btn btn-circle border-none bg-transparent">❯</a>
+                    <div className='w-full h-full flex flex-col justify-center items-center absolute'>
+                        <h2 className='text-white font-semibold text-2xl xl:text-4xl mb-4'>Welcome to <span className='text-blue-300'>Promise</span> <span className='text-teal-400'>Hospital</span></h2>
+                        <h2 className='text-white text-md md:text-lg text-center'>For your best treatment<br />❤️ We are beside you forever ❤️</h2>
                     </div>
-                </div>
-                <div id="slide3" className="carousel-item relative w-full">
-                    <img src="https://www.evercarebd.com/wp-content/uploads/2022/08/PhotoGhor_067122-1024x683.jpeg" className="h-[400px] md:h-[600px] w-full object-cover brightness-50" />
-                    <div className="absolute flex justify-between items-center transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide2" className="btn btn-circle border-none bg-transparent">❮</a>
-                        <div className='flex flex-col justify-center items-center gap-8'>
-                            <h2 className='text-center font-bold text-2xl md:text-3xl text-white'>Special <span className='text-blue-500'>Doctors</span> Are <span className='text-teal-500'>Here</span> !</h2>
-                            <h2 className='text-center text-white text-sm md:text-xl'>We have the award winning doctors in our hospital who are specialized in various fields.</h2>
-                            <Link to='/specialities'><button className='btn btn-success btn-sm md:btn-md btn-outline font-bold text-lg'>Specialities</button></Link>
-                        </div>
-                        <a href="#slide4" className="btn btn-circle border-none bg-transparent">❯</a>
+
+                    <div className='w-full h-full flex justify-between items-center absolute'>
+                        <h2 className='text-4xl md:text-5xl font-bold rounded-full bg-teal-500 bg-opacity-30 hover:bg-opacity-100 text-black hover:text-white ml-4 md:ml-10 lg:ml-20' onClick={handlePrevious}><MdKeyboardArrowLeft /></h2>
+                        <h2 className='text-4xl md:text-5xl font-bold rounded-full bg-teal-500 bg-opacity-30 hover:bg-opacity-100 text-black hover:text-white mr-4 md:mr-10 lg:mr-20' onClick={handleNext}><MdKeyboardArrowRight /></h2>
                     </div>
+
+                    <img src="https://storage.googleapis.com/jacksonh/1/JHS_International-2.jpg" className="w-full h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] object-cover" alt="" srcset="" />
                 </div>
-                <div id="slide4" className="carousel-item relative w-full">
-                    <img src="https://cloudfront-us-east-1.images.arcpublishing.com/pmn/FTAPUQUL2RBQRFCHK6LFQ44NAI.jpg" className="h-[400px] md:h-[600px] w-full object-cover brightness-50" />
-                    <div className="absolute flex justify-between items-center transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide3" className="btn btn-circle border-none bg-transparent">❮</a>
-                        <div className='flex flex-col justify-center items-center gap-8'>
-                            <h2 className='text-center font-bold text-2xl md:text-3xl text-white'>We have the best <span className='text-blue-500'>Emergency</span> <span className='text-teal-500'>Support</span> !</h2>
-                            <h2 className='text-center text-white text-sm md:text-xl'>A massive number of nurses and assistants are working hard 24X7 to give you the best treatment for your emergency patients.</h2>
-                            <Link to='/packages'><button className='btn btn-info btn-sm md:btn-md btn-outline font-bold text-lg'>Packages</button></Link>
-                        </div>
-                        <a href="#slide1" className="btn btn-circle border-none bg-transparent">❯</a>
+
+                <div className="slide relative">
+                    <div className='bg-black absolute h-full w-full bg-opacity-50'>
+
                     </div>
+                    <div className='w-full h-full flex flex-col justify-center items-center absolute'>
+                        <h2 className='text-white font-semibold text-xl md:text-2xl xl:text-4xl mb-4'>Get the <span className='text-teal-400'>best treatment</span> in the country</h2>
+                        <h2 className='text-white font-semibold text-md md:text-lg text-center'>You can get the most prestigious<br />doctors in our hospital</h2>
+
+                    </div>
+
+                    <div className='w-full h-full flex justify-between items-center absolute'>
+                        <h2 className='text-4xl md:text-5xl font-bold rounded-full bg-teal-500 bg-opacity-30 hover:bg-opacity-100 text-black hover:text-white ml-4 md:ml-10 lg:ml-20' onClick={handlePrevious}><MdKeyboardArrowLeft /></h2>
+                        <h2 className='text-4xl md:text-5xl font-bold rounded-full bg-teal-500 bg-opacity-30 hover:bg-opacity-100 text-black hover:text-white mr-4 md:mr-10 lg:mr-20' onClick={handleNext}><MdKeyboardArrowRight /></h2>
+                    </div>
+
+                    <img src="https://www.aamc.org/sites/default/files/Treatment%20at%20MHS_1200x666.jpg" className="w-full h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] object-cover" alt="" srcset="" />
                 </div>
+
+                <div className="slide relative">
+                    <div className='bg-black absolute h-full w-full bg-opacity-50'>
+
+                    </div>
+                    <div className='w-full h-full flex flex-col justify-center items-center absolute'>
+                        <h2 className='text-white font-semibold text-xl md:text-2xl xl:text-4xl mb-4'>Get Support <span className='text-teal-400'>24X7</span> From Support Center</h2>
+                        <h2 className='text-blue-300 font-semibold text-md md:text-lg text-center'>Our hospital management team is waiting eagerly<br />to give you any support you need</h2>
+                    </div>
+
+                    <div className='w-full h-full flex justify-between items-center absolute'>
+                        <h2 className='text-4xl md:text-5xl font-bold rounded-full bg-teal-500 bg-opacity-30 hover:bg-opacity-100 text-black hover:text-white ml-4 md:ml-10 lg:ml-20' onClick={handlePrevious}><MdKeyboardArrowLeft /></h2>
+                        <h2 className='text-4xl md:text-5xl font-bold rounded-full bg-teal-500 bg-opacity-30 hover:bg-opacity-100 text-black hover:text-white mr-4 md:mr-10 lg:mr-20' onClick={handleNext}><MdKeyboardArrowRight /></h2>
+                    </div>
+
+                    <img src="https://www.evercarebd.com/wp-content/uploads/2022/08/PhotoGhor_067122-1024x683.jpeg" className="w-full h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] object-cover" alt="" srcset="" />
+                </div>
+
+                <div className="slide relative">
+                    <div className='bg-black absolute h-full w-full bg-opacity-50'>
+
+                    </div>
+                    <div className='w-full h-full flex flex-col justify-center items-center absolute'>
+                        <h2 className='text-white font-semibold text-xl md:text-2xl xl:text-4xl mb-4'>Emergency Support, At Any <span className='text-teal-400'>Time</span></h2>
+                        <h2 className='text-blue-300 font-semibold text-md md:text-lg text-center'>Promise Hospital promises you to give you<br />emergency support any time you need</h2>
+                    </div>
+
+                    <div className='w-full h-full flex justify-between items-center absolute'>
+                        <h2 className='text-4xl md:text-5xl font-bold rounded-full bg-teal-500 bg-opacity-30 hover:bg-opacity-100 text-black hover:text-white ml-4 md:ml-10 lg:ml-20' onClick={handlePrevious}><MdKeyboardArrowLeft /></h2>
+                        <h2 className='text-4xl md:text-5xl font-bold rounded-full bg-teal-500 bg-opacity-30 hover:bg-opacity-100 text-black hover:text-white mr-4 md:mr-10 lg:mr-20' onClick={handleNext}><MdKeyboardArrowRight /></h2>
+                    </div>
+
+                    <img src="https://cloudfront-us-east-1.images.arcpublishing.com/pmn/FTAPUQUL2RBQRFCHK6LFQ44NAI.jpg" className="w-full h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] object-cover" alt="" srcset="" />
+                </div>
+
+            </div>
+            <div className="slideshowDots">
+                {colors.map((_, idx) => (
+                    <div key={idx} className={`slideshowDot${index === idx ? " active" : ""}`} onClick={() => {
+                        setIndex(idx);
+                    }}></div>
+                ))}
             </div>
         </div>
     );

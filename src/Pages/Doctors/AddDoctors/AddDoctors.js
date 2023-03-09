@@ -163,12 +163,14 @@ const AddDoctors = () => {
                             <div className=''>
                                 <h2 className='text-xl font-semibold mb-2'>Doctor's Position<span className='text-red-500'>*</span> 💉🩺</h2>
                                 <textarea name="position" placeholder="Type doctor's position (Ex: Head Consultant, Consultant, Surgeon etc.)" className="textarea textarea-primary w-full max-w-xs h-[70px]" required></textarea>
+                                <h2 className='text-center text-sm w-full max-w-xs'>Use <span className='font-bold text-sm'>|</span> for more information</h2>
 
                             </div>
 
                             <div className=''>
                                 <h2 className='text-xl font-semibold mb-2'>Doctor's Qualification<span className='text-red-500'>*</span> 📝</h2>
-                                <textarea name="qualification" placeholder="Type doctor's qualification" className="textarea textarea-primary w-full max-w-xs h-[20px]" required></textarea>
+                                <textarea name="qualification" placeholder="Type doctor's qualification (Ex: MBBS, FCPS, MS)" className="textarea textarea-primary w-full max-w-xs h-[70px]" required></textarea>
+                                <h2 className='text-center text-sm w-full max-w-xs'>Use <span className='font-bold text-sm'>|</span> for more information</h2>
 
                             </div>
 

@@ -10,7 +10,7 @@ const Doctors = () => {
     AllTitle('Doctors')
     const [doctors, setDoctors] = useState([]);
     const [loader, setLoader] = useState(false);
-    const [anotherLoader, setAnotherLoader] = useState({});
+    const [anotherLoader, setAnotherLoader] = useState(null);
 
     useEffect(() => {
         setLoader(true);
@@ -58,7 +58,7 @@ const Doctors = () => {
             <div>
                 {
                     anotherLoader &&
-                    <DoctorBookingForm key={anotherLoader._id} anotherLoader={anotherLoader}></DoctorBookingForm>
+                    <DoctorBookingForm key={anotherLoader._id} anotherLoader={anotherLoader} setAnotherLoader={setAnotherLoader}></DoctorBookingForm>
                 }
             </div>
 

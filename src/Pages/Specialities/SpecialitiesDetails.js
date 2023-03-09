@@ -15,7 +15,7 @@ const SpecialitiesDetails = () => {
     // const [docInfo, setDocInfo] = useState([]);
 
     const [doctors, setDoctors] = useState([]);
-    const [anotherLoader, setAnotherLoader] = useState({});
+    const [anotherLoader, setAnotherLoader] = useState(null);
 
 
     const navigate = useNavigate();
@@ -119,7 +119,7 @@ const SpecialitiesDetails = () => {
             <div>
                 {
                     anotherLoader &&
-                    <AnotherDoctorBookingForm key={anotherLoader._id} anotherLoader={anotherLoader}></AnotherDoctorBookingForm>
+                    <AnotherDoctorBookingForm key={anotherLoader._id} anotherLoader={anotherLoader} setAnotherLoader={setAnotherLoader}></AnotherDoctorBookingForm>
                 }
             </div>
 

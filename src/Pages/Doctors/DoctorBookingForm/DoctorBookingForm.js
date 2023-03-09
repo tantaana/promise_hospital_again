@@ -10,7 +10,7 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 
 
-const DoctorBookingForm = ({ anotherLoader }) => {
+const DoctorBookingForm = ({ anotherLoader, setAnotherLoader }) => {
 
     console.log(anotherLoader)
 
@@ -99,9 +99,10 @@ const DoctorBookingForm = ({ anotherLoader }) => {
                             if (data.acknowledged) {
                                 setLoader(false);
                                 toast.success('Appointment has been booked successfully');
-                                setTimeout(() => {
-                                    window.location.reload()
-                                }, 2000);
+                                setAnotherLoader(null);
+                                // setTimeout(() => {
+                                //     window.location.reload()
+                                // }, 2000);
                             }
                         })
 

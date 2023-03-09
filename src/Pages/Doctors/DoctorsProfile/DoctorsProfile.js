@@ -101,7 +101,7 @@ const DoctorsProfile = () => {
                     <div className='bg-white w-5/6 rounded-xl shadow-2xl'>
 
                         <PhotoView src={doctorImg}>
-                            <img src={doctorImg} className="border-4 border-white mt-[-100px] xl:mt-[-200px] ml-[40px] shadow-2xl w-[250px] md:w-[300px] xl:w-[400px] 2xl:w-[500px] h-[180px] md:h-[200px] xl:h-[300px] 2xl:h-[350px] object-cover mb-10" alt="" />
+                            <img src={doctorImg} className="border-4 border-white mt-[-100px] xl:mt-[-200px] ml-[40px] shadow-2xl w-[250px] md:w-[300px] xl:w-[400px] 2xl:w-[500px] h-[180px] md:h-[200px] xl:h-[300px] 2xl:h-[350px] object-cover mb-10 cursor-zoom-in" alt="" />
                         </PhotoView>
 
                         <h2 className="primary-color font-semibold text-xl lg:text-2xl flex items-center gap-4 text-blue-900 mb-2 ml-[40px]"><span className='text-3xl text-blue-900'><FaUserCircle /></span>{name}</h2>

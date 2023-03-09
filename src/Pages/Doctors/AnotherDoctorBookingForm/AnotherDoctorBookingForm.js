@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import imgCircle from '../../../assets/loading-circle.gif'
 
-const AnotherDoctorBookingForm = ({ anotherLoader }) => {
+const AnotherDoctorBookingForm = ({ anotherLoader, setAnotherLoader }) => {
 
     console.log(anotherLoader)
 
@@ -91,10 +91,11 @@ const AnotherDoctorBookingForm = ({ anotherLoader }) => {
 
                             if (data.acknowledged) {
                                 setLoader(false);
-                                toast.success('Appointment has been booked successfully')
-                                setTimeout(() => {
-                                    window.location.reload()
-                                }, 2000);
+                                toast.success('Appointment has been booked successfully');
+                                setAnotherLoader(null)
+                                // setTimeout(() => {
+                                //     window.location.reload()
+                                // }, 2000);
                             }
                         })
 

@@ -69,7 +69,6 @@ import DiagnosisForm from "../../Pages/Diagnosis/DiagnosisBookFrom/DiagnosisForm
 import Meeting from "../../Pages/Meeting/Meeting";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import AllUser from "../../Pages/Dashboard/AllUser/AllUser";
-import Fellowship from "../../Pages/Doctors/DoctorsProfile/Fellowship/Fellowship";
 
 
 ///// Jahid import end //////////////
@@ -145,10 +144,6 @@ export const router = createBrowserRouter([
                     return fetch(`http://localhost:5000/docInfo/${params.docURL}`)
                 },
                 element: <DoctorProfile></DoctorProfile>
-            },
-            {
-                path: '/doctors/fellowship',
-                element: <Fellowship></Fellowship>
             },
 
 
@@ -246,6 +241,13 @@ export const router = createBrowserRouter([
                     </div>
             }
         ]
+    },
+    {
+        path: '*',
+        element:
+            <div className="flex flex-col justify-center items-center my-10 mx-4">
+                <img src={errorImg} alt="" />
+            </div>
     },
     {
         path: '/dashboard',
