@@ -10,13 +10,8 @@ const InternationalCenters = () => {
                 <div className='w-full text-white'>
                     <div className='lg:w-2/3 text-center mx-auto'>
                         <div>
-<<<<<<< HEAD
                             <p className='text-3xl lg:text-4xl font-semibold mb-2'>Choose Promise Hospital</p>
                             <p className='text-xl lg:text-2xl font-semibold'>Choose a world of good health</p>
-=======
-                            <p className='text-3xl sm:text-2xl font-semibold'>Choose Promise Hospital</p>
-                            <p className='text-3xl font-semibold'>Choose a world of good health.</p>
->>>>>>> b7f3881ccb77bcc881c5af1b1f04dbafd9bfdf0d
                         </div>
                         <div className='mt-5'>
                             <p className='text-xl lg:text-2xl'>From starting out as a vision of one man's dream to the reality of revolutionizing the health care industry, we are proud to be the flag bearers of this paradigm shift with our clinical excellence, patient centricity and ethical practices integral to healthcare</p>

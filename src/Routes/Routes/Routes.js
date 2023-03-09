@@ -77,8 +77,6 @@ import ViewAllGallery from "../../Pages/Dashboard/Gallery/ViewAllGallery";
 
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import AllUser from "../../Pages/Dashboard/AllUser/AllUser";
-<<<<<<< HEAD
-=======
 import UserProfileOne from "../../Pages/Dashboard/UserProfileOne/UserProfileOne";
 import EditeUserProfileOne from "../../Pages/Dashboard/EditeUserProfileOne/EditeUserProfileOne";
 import AdminRoute from "../AdminRoute/AdminRoute";
@@ -86,8 +84,7 @@ import VirtualAppointment from "../../Pages/Dashboard/VirtualAppointment/Virtual
 import DoctorVirtualAppointments from "../../Pages/Dashboard/DoctorVirtualAppointments/DoctorVirtualAppointments";
 import DoctorRoute from "../DoctorRoute/DoctorRoute";
 import OurLeader from "../../Pages/About/OurLeader";
-import Fellowship from "../../Pages/Doctors/DoctorsProfile/Fellowship/Fellowship";
->>>>>>> b7f3881ccb77bcc881c5af1b1f04dbafd9bfdf0d
+
 
 
 ///// Jahid import end //////////////

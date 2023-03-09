@@ -9,12 +9,6 @@ import img4 from '../Gallery/gelleryImg/img4.jpg'
 import img5 from '../Gallery/gelleryImg/img5.jpg'
 import img6 from '../Gallery/gelleryImg/img6.jpg'
 import img7 from '../Gallery/gelleryImg/img7.jpg'
-<<<<<<< HEAD
-=======
-import bg from '../Gallery/gelleryImg/bg.jpeg'
-import Gellery from './Gallery'
-import { Link } from 'react-router-dom';
->>>>>>> b7f3881ccb77bcc881c5af1b1f04dbafd9bfdf0d
 
 const AllGallery = () => {
     const images = [
@@ -74,10 +68,6 @@ const AllGallery = () => {
                             )
                         }
                     </div>
-<<<<<<< HEAD
-=======
-                    <Link to='/gallery'>   <button className="btn btn-active bg-blue-800 text-white  justify-end text-center  mt-3 mb-8" >View All</button></Link>
->>>>>>> b7f3881ccb77bcc881c5af1b1f04dbafd9bfdf0d
                 </div>
 
                 <div className='flex justify-center mt-10'>
