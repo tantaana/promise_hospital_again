@@ -14,7 +14,7 @@ const MyAppointments = () => {
         setLoader(true);
     }
 
-    const url = `http://localhost:5000/appointmentData?patientEmail=${user?.email}`;
+    const url = `https://promise-hospoital-server-jahid900pj.vercel.app/appointmentData?patientEmail=${user?.email}`;
 
     const { data: patientEmail = [], isLoading } = useQuery({
         queryKey: ['patientEmail', user?.email],
@@ -30,6 +30,39 @@ const MyAppointments = () => {
 
     if (isLoading) {
         return <Loader></Loader>
+    }
+
+
+    const ta = (id) => {
+
+
+
+
+        const data = { id };
+
+        fetch('https://promise-hospoital-server-jahid900pj.vercel.app/ssl', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                window.location.replace(data.uri)
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+
+
+
+
+
+
+
+        console.log(id)
     }
 
     return (

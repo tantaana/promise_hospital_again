@@ -12,7 +12,7 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const DoctorBookingForm = ({ anotherLoader, setAnotherLoader }) => {
 
-    console.log(anotherLoader)
+    // console.log(anotherLoader)
 
     const { user } = useContext(AuthContext);
     console.log(user)
@@ -110,16 +110,22 @@ const DoctorBookingForm = ({ anotherLoader, setAnotherLoader }) => {
             })
     }
 
-
+    // onClick={() => setAnotherLoader(doctor)}
 
     return (
         <div className="cardbg-white mx-8">
+
             <input type="checkbox" id="doctor-book-modal" className="modal-toggle" />
             <form onSubmit={handlePatient} className="modal">
                 <div className="modal-box relative w-11/12 max-w-6xl rounded-sm  border border-l-blue-900 border-t-blue-900 border-r-teal-500 border-b-teal-500 border-4">
                     <label htmlFor="doctor-book-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 
                     <h2 className='text-3xl font-semibold text-blue-900 text-center mb-10'>Appointment Form</h2>
+
+                    <div className='mx-4 xl:mx-0'>
+                        <label className='btn btn-link text-xl' htmlFor="doctor-virtual-book-modal">Virtual Appointment Form
+                        </label>
+                    </div>
 
                     <div className="">
 

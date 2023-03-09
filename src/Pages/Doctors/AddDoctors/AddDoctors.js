@@ -44,7 +44,7 @@ const AddDoctors = () => {
 
     const [loader, setLoader] = useState(false);
 
-    const imageHostKey = process.env.REACT_APP_imgbb_key;
+    const imageHostKey = `7bd087226ccbe42290452a157f175e5f`;
 
     const navigate = useNavigate();
 

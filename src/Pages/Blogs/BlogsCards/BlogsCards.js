@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query'
 import BlogCard from '../BlogsCard/BlogCard';
 import blogBg from '../BlogBg/bg.jpeg'
+import Loader from '../../Shared/Loader/Loader';
 
 const BlogsCards = () => {
 
@@ -14,6 +15,20 @@ const BlogsCards = () => {
         }
     })
 
+    if (isLoading) {
+        return (
+            <div className='flex justify-center pt-10 pb-10'>
+                <div class="flex flex-col">
+                    <div class="w-12 h-12 rounded-full animate-spin
+                            border-4 border-solid border-blue-900 border-t-transparent shadow-md">
+
+                    </div>
+
+
+                </div>
+            </div>
+        );
+    }
 
 
 

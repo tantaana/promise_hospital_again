@@ -4,9 +4,10 @@ import { useEffect } from 'react';
 import imgCircle from '../../assets/loading-circle.gif'
 
 const OurSpecialities = () => {
-
+    const [page, setPage] = useState(0);
+    const [size, setSize] = useState(10);
     const [loader, setLoader] = useState(false);
-
+    // const pages = Math.ceil(count / size);
     const locationList = [
         { _id: '1', location: 'Dhaka' },
         { _id: '2', location: 'Chittagong' },
@@ -22,7 +23,7 @@ const OurSpecialities = () => {
     const [specialities, setSpecialities] = useState([]);
     useEffect(() => {
         setLoader(true);
-        fetch('http://localhost:5000/specialities')
+        fetch('https://promise-hospoital-server-jahid900pj.vercel.app/specialities')
             .then(res => res.json())
             .then(data => {
                 setLoader(false);
@@ -70,7 +71,7 @@ const OurSpecialities = () => {
 
                 }
             </div>
-
+            
         </div>
     );
 };

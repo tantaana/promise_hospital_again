@@ -6,7 +6,7 @@ import { MdContactPage } from "react-icons/md";
 import { GiFallingStar } from "react-icons/gi";
 import { BiHappyBeaming } from "react-icons/bi";
 import { BsNewspaper } from "react-icons/bs";
-import { TfiGallery } from "react-icons/tfi";
+import { GrGallery } from "react-icons/gr";
 import { RiContactsBookLine } from "react-icons/ri";
 import { ImAirplane } from "react-icons/im";
 import { BiAbacus } from "react-icons/bi";

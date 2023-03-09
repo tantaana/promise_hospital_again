@@ -5,6 +5,7 @@ import DoctorBanner from './DoctorBanner/DoctorBanner';
 import circleImg from '../../assets/loading-circle.gif'
 import { Link } from 'react-router-dom';
 import DoctorBookingForm from './DoctorBookingForm/DoctorBookingForm';
+import DoctorVirtualBookingForm from './DoctorVirtualBookingForm/DoctorVirtualBookingForm';
 
 const Doctors = () => {
     AllTitle('Doctors')
@@ -14,7 +15,7 @@ const Doctors = () => {
 
     useEffect(() => {
         setLoader(true);
-        fetch('http://localhost:5000/docInfo')
+        fetch('https://promise-hospoital-server-jahid900pj.vercel.app/docInfo')
             .then(res => res.json())
             .then(data => {
                 setDoctors(data);
@@ -59,6 +60,12 @@ const Doctors = () => {
                 {
                     anotherLoader &&
                     <DoctorBookingForm key={anotherLoader._id} anotherLoader={anotherLoader} setAnotherLoader={setAnotherLoader}></DoctorBookingForm>
+                }
+            </div>
+            <div>
+                {
+                    anotherLoader &&
+                    <DoctorVirtualBookingForm key={anotherLoader._id} anotherLoader={anotherLoader}></DoctorVirtualBookingForm>
                 }
             </div>
 

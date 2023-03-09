@@ -63,12 +63,31 @@ import About from "../../Pages/About/About";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import SpecialitiesAdd from "../../Pages/Specialities/seviceDashboard/SpecialitiesAdd";
 import AllServiceShow from "../../Pages/Specialities/seviceDashboard/AllServiceShow";
+import SslSuccess from "../../Pages/MyAppointments/SslSuccess/SslSuccess";
+import ConnectUs from "../../Pages/ConnectUs/ConnectUs";
+import UserProfile from "../../Pages/UserProfile/UserProfile";
+import EditeUserProfile from "../../Pages/UserProfile/EditeUserProfile/EditeUserProfile";
 import Diagnosis from "../../Pages/Diagnosis/Diagnosis/Diagnosis";
 import AddDiagnosis from "../../Pages/DashboardDiagnosis/AddDiagnosis/AddDiagnosis";
 import DiagnosisForm from "../../Pages/Diagnosis/DiagnosisBookFrom/DiagnosisForm/DiagnosisForm";
 import Meeting from "../../Pages/Meeting/Meeting";
+import PatientsChart from "../../Pages/Dashboard/Patients-Chart/PatientsChart";
+import ViewAllGallery from "../../Pages/Dashboard/Gallery/ViewAllGallery";
+
+
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import AllUser from "../../Pages/Dashboard/AllUser/AllUser";
+<<<<<<< HEAD
+=======
+import UserProfileOne from "../../Pages/Dashboard/UserProfileOne/UserProfileOne";
+import EditeUserProfileOne from "../../Pages/Dashboard/EditeUserProfileOne/EditeUserProfileOne";
+import AdminRoute from "../AdminRoute/AdminRoute";
+import VirtualAppointment from "../../Pages/Dashboard/VirtualAppointment/VirtualAppointment";
+import DoctorVirtualAppointments from "../../Pages/Dashboard/DoctorVirtualAppointments/DoctorVirtualAppointments";
+import DoctorRoute from "../DoctorRoute/DoctorRoute";
+import OurLeader from "../../Pages/About/OurLeader";
+import Fellowship from "../../Pages/Doctors/DoctorsProfile/Fellowship/Fellowship";
+>>>>>>> b7f3881ccb77bcc881c5af1b1f04dbafd9bfdf0d
 
 
 ///// Jahid import end //////////////
@@ -116,11 +135,15 @@ export const router = createBrowserRouter([
                 path: '/meet',
                 element: <Meeting></Meeting>,
             },
+            {
+                path: '/gallery',
+                element: <ViewAllGallery></ViewAllGallery>,
+            },
 
             {
                 path: '/specialities/:speciality_id',
                 element: <SpecialitiesDetails></SpecialitiesDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/specialities/${params.speciality_id}`),
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/specialities/${params.speciality_id}`),
 
             },
 
@@ -187,7 +210,14 @@ export const router = createBrowserRouter([
             {
                 path: '/social', element: <SocilaMediya></SocilaMediya>
             },
-
+            {
+                path: '/success',
+                element: <SslSuccess></SslSuccess>
+            },
+            {
+                path: '/contact',
+                element: <ConnectUs></ConnectUs>
+            },
 
 
 
@@ -213,6 +243,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/about', element: <About></About>
+            },
+            {
+                path: '/lead', element: <OurLeader></OurLeader>
             },
             {
                 path: '/diagnosis', element: <Diagnosis></Diagnosis>
@@ -251,12 +284,16 @@ export const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashboardLayout></DashboardLayout>, children: [
+        element:
+            <PrivateRoute>
+                <DashboardLayout></DashboardLayout>
+            </PrivateRoute>
+        , children: [
             ///// tanvir start 230-245 line //////////////////
             { path: '/dashboard/add_doctors', element: <AddDoctors></AddDoctors> },
             { path: '/dashboard/appointments', element: <MyAppointments></MyAppointments> },
             { path: '/dashboard/details/:id', element: <MyDetails></MyDetails>, loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/details/${params.id}`) },
-            { path: '/dashboard/all_users', element: <AllUser></AllUser> },
+            { path: '/dashboard/all_users', element: <AdminRoute> <AllUser></AllUser> </AdminRoute> },
 
 
 
@@ -281,6 +318,12 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard', element: <Dashboard></Dashboard>
             },
+            {
+                path: '/dashboard/chart',
+                element: <PatientsChart></PatientsChart>,
+
+            },
+
 
             {
                 path: '/dashboard/show_services', element: <AllServiceShow></AllServiceShow>
@@ -304,6 +347,13 @@ export const router = createBrowserRouter([
             /////// jahid aria 266-280 line //////
             {
                 path: '/dashboard/add_diagnosis', element: <AddDiagnosis></AddDiagnosis>
+            },
+            {
+                path: '/dashboard/VirtualAppointment', element: <VirtualAppointment></VirtualAppointment>
+            },
+            {
+                path: '/dashboard/doctorVirtualAppointment',
+                element: <DoctorRoute> <DoctorVirtualAppointments></DoctorVirtualAppointments></DoctorRoute>
             },
 
 
@@ -348,7 +398,7 @@ export const router = createBrowserRouter([
                 path: '/dashboard/payment/:id',
                 element: <Payment></Payment>,
                 loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/booking/${params.id}`)
-            }
+            },
 
 
 
@@ -366,6 +416,16 @@ export const router = createBrowserRouter([
             //// solyman aria start 317-330 line //////////
 
 
+            {
+                path: '/dashboard/useprofile',
+                element: <UserProfileOne></UserProfileOne>
+
+            },
+            {
+                path: '/dashboard/editeuserprofile/:email',
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/users/edite/${params.email}`),
+                element: <EditeUserProfileOne />
+            }
 
 
 
