@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './HomeCarousel.css'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
+import { AiFillHeart } from 'react-icons/ai'
 
 
 
@@ -63,7 +64,8 @@ const HomeCarousel = () => {
                     </div>
                     <div className='w-full h-full flex flex-col justify-center items-center absolute'>
                         <h2 className='text-white font-semibold text-2xl xl:text-4xl mb-4'>Welcome to <span className='text-blue-300'>Promise</span> <span className='text-teal-400'>Hospital</span></h2>
-                        <h2 className='text-white text-md md:text-lg text-center'>For your best treatment<br />❤️ We are beside you forever ❤️</h2>
+                        <h2 className='text-white text-md md:text-lg text-center'>For your best treatment</h2>
+                        <h2 className='text-white text-md md:text-lg text-center flex items-center justify-center gap-2'><AiFillHeart className='text-rose-600 font-bold' /> We are beside you forever <AiFillHeart className='text-rose-600 font-bold' /></h2>
                     </div>
 
                     <div className='w-full h-full flex justify-between items-center absolute'>

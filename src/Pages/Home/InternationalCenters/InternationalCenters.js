@@ -5,7 +5,7 @@ import './InternationalCenters.css'
 
 const InternationalCenters = () => {
     return (
-        <div className='chooseManipal-bg p-14'>
+        <div className='chooseManipal-bg p-14 my-10 lg:my-28'>
             <div className='good-health rounded-md p-5'>
                 <div className='w-full text-white'>
                     <div className='lg:w-2/3 text-center mx-auto'>
@@ -25,7 +25,7 @@ const InternationalCenters = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2'>
                     <div className='flex justify-center items-center gap-4 text-white '>
                         <HiClock className='text-4xl bg-white text-black rounded-lg'></HiClock>
-                        <div className='w-[200px]'>
+                        <div className='w-[300px]'>
                             <h2 className='text-2xl font-bold'>68+</h2>
                             <p className='text-xl'>years of experience</p>
                         </div>
@@ -33,7 +33,7 @@ const InternationalCenters = () => {
 
                     <div className='flex justify-center items-center gap-4 text-white '>
                         <HiUserGroup className='text-4xl bg-white text-black rounded-lg'></HiUserGroup>
-                        <div className='w-[200px]'>
+                        <div className='w-[300px]'>
                             <h2 className='text-2xl font-bold'>45+</h2>
                             <p className='text-xl'>million lives touched</p>
                         </div>
@@ -41,7 +41,7 @@ const InternationalCenters = () => {
 
                     <div className='flex justify-center items-center gap-4 text-white '>
                         <HiGlobeAlt className='text-4xl bg-white text-black rounded-lg'></HiGlobeAlt>
-                        <div className='w-[200px]'>
+                        <div className='w-[300px]'>
                             <h2 className='text-2xl font-bold'>60</h2>
                             <p className='text-xl'>countries helped</p>
                         </div>
@@ -49,7 +49,7 @@ const InternationalCenters = () => {
 
                     <div className='flex justify-center items-center gap-4 text-white '>
                         <HiHome className='text-4xl bg-white text-black rounded-lg'></HiHome>
-                        <div className='w-[200px]'>
+                        <div className='w-[300px]'>
                             <h2 className='text-2xl font-bold'>7600+</h2>
                             <p className='text-xl'>beds in 28+ hospitals</p>
                         </div>

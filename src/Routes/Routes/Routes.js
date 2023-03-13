@@ -94,11 +94,11 @@ import OurLeader from "../../Pages/About/OurLeader";
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <Main></Main>,
+        element: <Main />,
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home />
             },
             ////----- Tanvir aria is 81-101 line ----------//////////////////////////
             { path: '/stories', element: <SuccessStories></SuccessStories> },
