@@ -10,10 +10,13 @@ import bgImgSmall from '../../../assets/promise-small.jpg'
 import DoctorDetailsLayout from '../../../Layout/DoctorDetailsLayout';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import AllTitle from '../../../Hooks/AllTitle';
 
 const DoctorsProfile = () => {
     const doctorData = useLoaderData()
     const { name, location, speciality, qualification, doctorImg, position } = doctorData;
+
+    AllTitle('Profile')
 
     const navigate = useNavigate();
     const goBack = () => {

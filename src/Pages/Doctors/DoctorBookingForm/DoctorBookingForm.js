@@ -8,6 +8,7 @@ import { toast } from 'react-hot-toast';
 import imgCircle from '../../../assets/loading-circle.gif'
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import { HiCursorClick } from 'react-icons/hi'
+import bgImg from './BookingImage/doc-new.png'
 
 
 
@@ -231,8 +232,16 @@ const DoctorBookingForm = ({ anotherLoader, setAnotherLoader }) => {
                         </div>
                     </div>
 
-                    <div className='py-10'>
-                        <h2 className='text-2xl font-semibold text-center text-black'>Consultation fees <span className='text-4xl font-bold text-blue-900 border-b-2 border-blue-500 rounded'>{anotherLoader?.fees}</span>/- only</h2>
+                    <div className='flex justify-center'>
+                        <div className='w-full h-[200px] rounded-md flex justify-center items-center'
+                            style={
+                                {
+                                    backgroundImage: `url(${bgImg})`,
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundPosition: 'center'
+                                }}>
+                            <h2 className='text-2xl md:text-3xl font-semibold text-center text-gray-300'>Consultation fees <span className='text-4xl md:text-5xl font-bold text-teal-400'>{anotherLoader?.fees}</span>/- only</h2>
+                        </div>
                     </div>
 
 

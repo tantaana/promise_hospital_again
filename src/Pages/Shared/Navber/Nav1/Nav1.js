@@ -93,7 +93,7 @@ const Nav1 = () => {
 
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn hover:bg-teal-500 m-1 text-3xl bg-transparent border border-teal-700 rounded-2xl text-black"><BiMenu /></label>
-                        <ul tabIndex={0} className="dropdown-content menu p-2 shadow w-52 text-lg font-semibold bg-gradient-to-r from-blue-400 to-teal-300 m-1">
+                        <ul tabIndex={0} className="dropdown-content menu p-2 shadow w-56 text-lg font-semibold bg-gradient-to-r from-blue-400 to-teal-300 m-1">
                             {/* <label htmlFor="dashboard-drawer" className="">
                                 
                             </label> */}
@@ -110,7 +110,7 @@ const Nav1 = () => {
 
                 <div className="dropdown dropdown-end block xl:hidden">
                     <label tabIndex={0} className="btn hover:bg-teal-500 m-1 text-3xl bg-transparent border-none text-black"><BiMenu /></label>
-                    <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-gradient-to-r from-blue-400 to-teal-300 w-52 break-all">
+                    <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-gradient-to-r from-blue-400 to-teal-300 w-56 break-all">
                         {/* <label htmlFor="dashboard-drawer" className="">
                            
                         </label> */}
@@ -147,7 +147,7 @@ const Nav1 = () => {
                                 </div>
                                 :
                                 <div className='flex justify-center gap-2 mt-4'>
-                                    <Link to='/login'><button className='btn btn-outline glass btn-primary btn-sm font-semibold'>Log In</button></Link>
+                                    <Link to='/login'><button className='btn btn-outline glass hover:bg-blue-600 btn-sm font-semibold text-blue-800 hover:text-white'>Log In</button></Link>
                                     <Link to='/signup'><button className='btn btn-outline btn-success btn-sm glass font-semibold'>Sign Up</button></Link>
 
                                 </div>
