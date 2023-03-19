@@ -84,7 +84,7 @@ import VirtualAppointment from "../../Pages/Dashboard/VirtualAppointment/Virtual
 import DoctorVirtualAppointments from "../../Pages/Dashboard/DoctorVirtualAppointments/DoctorVirtualAppointments";
 import DoctorRoute from "../DoctorRoute/DoctorRoute";
 import OurLeader from "../../Pages/About/OurLeader";
-import Fellowship from "../../Pages/Doctors/DoctorsProfile/Fellowship/Fellowship";
+
 
 
 ///// Jahid import end //////////////
@@ -94,11 +94,11 @@ import Fellowship from "../../Pages/Doctors/DoctorsProfile/Fellowship/Fellowship
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <Main></Main>,
+        element: <Main />,
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home />
             },
             ////----- Tanvir aria is 81-101 line ----------//////////////////////////
             { path: '/stories', element: <SuccessStories></SuccessStories> },
@@ -164,10 +164,6 @@ export const router = createBrowserRouter([
                     return fetch(`http://localhost:5000/docInfo/${params.docURL}`)
                 },
                 element: <DoctorProfile></DoctorProfile>
-            },
-            {
-                path: '/doctors/fellowship',
-                element: <Fellowship></Fellowship>
             },
 
 
@@ -275,6 +271,13 @@ export const router = createBrowserRouter([
                     </div>
             }
         ]
+    },
+    {
+        path: '*',
+        element:
+            <div className="flex flex-col justify-center items-center my-10 mx-4">
+                <img src={errorImg} alt="" />
+            </div>
     },
     {
         path: '/dashboard',
