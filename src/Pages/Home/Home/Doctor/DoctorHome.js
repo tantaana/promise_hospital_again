@@ -18,7 +18,7 @@ const DoctorHome = () => {
 
     console.log("test", doctors)
     useEffect(() => {
-        fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/docInfo?page=0&size=3`)
+        fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/docInfo`)
             .then(res => res.json())
             .then(data => setDoctor(data))
 
@@ -46,16 +46,10 @@ const DoctorHome = () => {
                 modules={[EffectCoverflow, Autoplay]}
                 className="mySwiper"
             >
-                <SwiperSlide>
-                    <div className="swiper-picture">
-                        <img src="https://i.ibb.co/R673wWg/heart-specialist-in-gurgaon-col-dr-monik-mehta.png" alt="" />
-                    </div>
-                    <div className="swiper-detail">
-                        <h3>Dr. (COL) Manik Mia</h3>
-                        <span>Cardiology & Cardiac Surgery</span>
-                    </div>
 
-                </SwiperSlide>
+
+
+
                 <SwiperSlide>
                     <div className="swiper-picture">
                         <img src="https://i.ibb.co/THWKWNx/dr-col-r-d-holla-senior-consultant-internal-medicine.jpg" alt="" />
