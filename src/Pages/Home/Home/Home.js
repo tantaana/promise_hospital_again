@@ -9,6 +9,7 @@ import MedicalValue from '../MedicalValue/MedicalValue';
 import Overview from '../Overview/Overview';
 
 
+
 const Home = () => {
     AllTitle('Home')
     return (
@@ -16,7 +17,6 @@ const Home = () => {
             <HomeCarousel></HomeCarousel>
             <Overview></Overview>
             <AllGallery></AllGallery>
-            {/* <DoctorHome></DoctorHome> */}
             <InternationalCenters></InternationalCenters>
             <MedicalValue></MedicalValue>
             <Book></Book>
