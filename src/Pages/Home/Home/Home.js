@@ -9,19 +9,19 @@ import MedicalValue from '../MedicalValue/MedicalValue';
 import Overview from '../Overview/Overview';
 import DoctorHome from './Doctor/DoctorHome';
 
+
 const Home = () => {
     AllTitle('Home')
     return (
         <div>
             <HomeCarousel></HomeCarousel>
             <Overview></Overview>
-          
-            <AllGallery></AllGallery> 
+            <AllGallery></AllGallery>
             <DoctorHome></DoctorHome>
             <InternationalCenters></InternationalCenters>
             <MedicalValue></MedicalValue>
             <Book></Book>
-           <About></About>
+            <About></About>
         </div>
     );
 };

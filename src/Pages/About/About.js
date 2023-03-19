@@ -1,12 +1,13 @@
 import React from 'react';
 import aboutBanner from './about-banner.jpg'
 import OurLeader from './OurLeader';
+import Lone from './LeaderImg/Dr__Ballal (1).jpg'
 
 const About = () => {
     return (
         <div>
             <div>
-                <img src={aboutBanner} alt="" />
+                <img src={aboutBanner} className="object-cover w-full h-[500px] lg:h-[600px]" alt="" />
             </div>
             <div className='bg-blue-700 text-slate-200	 '>
                 <div className='w-11/12 mx-auto md:p-10'>
