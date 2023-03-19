@@ -7,7 +7,7 @@ import HomeCarousel from '../HomeCarousel/HomeCarousel';
 import InternationalCenters from '../InternationalCenters/InternationalCenters';
 import MedicalValue from '../MedicalValue/MedicalValue';
 import Overview from '../Overview/Overview';
-import DoctorHome from './Doctor/DoctorHome';
+
 
 const Home = () => {
     AllTitle('Home')
@@ -16,7 +16,7 @@ const Home = () => {
             <HomeCarousel></HomeCarousel>
             <Overview></Overview>
             <AllGallery></AllGallery>
-            <DoctorHome></DoctorHome>
+            {/* <DoctorHome></DoctorHome> */}
             <InternationalCenters></InternationalCenters>
             <MedicalValue></MedicalValue>
             <Book></Book>
