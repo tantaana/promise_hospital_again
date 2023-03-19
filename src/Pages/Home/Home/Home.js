@@ -10,7 +10,6 @@ import Overview from '../Overview/Overview';
 import DoctorHome from './Doctor/DoctorHome';
 
 
-
 const Home = () => {
     AllTitle('Home')
     return (
