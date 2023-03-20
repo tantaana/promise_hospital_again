@@ -161,7 +161,7 @@ export const router = createBrowserRouter([
             {
                 path: '/doctors/:docURL',
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/docInfo/${params.docURL}`)
+                    return fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/docInfo/${params.docURL}`)
                 },
                 element: <DoctorProfile></DoctorProfile>
             },

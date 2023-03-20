@@ -60,7 +60,7 @@ const AllUser = () => {
     }
 
     const handleMakeAdmin = (id) => {
-        fetch(`http://localhost:5000/userData/makeAdmin/${id}`, {
+        fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/userData/makeAdmin/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())
