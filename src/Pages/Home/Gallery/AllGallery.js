@@ -1,15 +1,16 @@
 import React from 'react';
-import './Gallery.css';
-import img1 from '../Gallery/gelleryImg/img1.jpg'
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import { Link } from 'react-router-dom';
+
+import img1 from '../../../image/home.jpg'
 import img2 from '../Gallery/gelleryImg/img2.jpg'
 import img3 from '../Gallery/gelleryImg/img3.jpg'
 import img4 from '../Gallery/gelleryImg/img4.jpg'
 import img5 from '../Gallery/gelleryImg/img5.jpg'
 import img6 from '../Gallery/gelleryImg/img6.jpg'
 import img7 from '../Gallery/gelleryImg/img7.jpg'
-import bg from '../Gallery/gelleryImg/bg.jpeg'
-import Gellery from './Gallery'
-import { Link } from 'react-router-dom';
+import bgImg from '../Gallery/gelleryImg/bg.jpg'
+import './AllGallery.css'
 
 const AllGallery = () => {
     const images = [
@@ -37,37 +38,47 @@ const AllGallery = () => {
             _id: 6,
             img: img7,
         },]
-    return (
-        <div className='justify-center text-center'>
-            <div className=" bg-no-repeat hero   "
-                style={
-                    {
-                        background: `url(${bg})`,
-                        padding: 20,
-                        height: '100%',
 
-                    }
-                }>
-                <div className='justify-center text-center '>
-                    <h2 className='home-gallery'>Gallery</h2>
-                    <p className='text-center gallery-home active w-44 mb-5 mx-auto font-bold text-lg'>Hospital Images </p>
-                    <div className='lg:flex sm:grid mr-6'>
-                        <div>
-                            <img className=' hover:scale-110 transition duration-300 ease-in-out  sm:h-48 sm:w-64 mb-4' style={{ height: 470, borderRadius: 10 }} src={img1} alt=''></img>
-                        </div>
-                        <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ml-5 '>
-                            {
-                                images.map(imag => <Gellery
-                                    key={imag._id}
-                                    imag={imag}
-                                ></Gellery>)
-                            }</div>
+
+    return (
+
+        <PhotoProvider>
+            <div className='my-28 lg:my-40 py-10 bgDiv'>
+                <h2 className='text-blue-900 text-3xl font-bold text-center mb-10'>Gallery</h2>
+
+
+                <div className='flex flex-col lg:flex-row justify-center items-center gap-4 2xl:gap-6'>
+
+                    <div className='relative'>
+                        <PhotoView src={img1}>
+                            <div>
+                                <div className='bg-black w-full h-full relative'></div>
+                                <img src={img1} className="object-cover rounded-md hover:scale-105 hover:brightness-75 transition duration-300 ease-in-out h-[400px] sm:h-[400px] md:h-[500px] lg:h-[350px] xl:h-[450px] 2xl:h-[650px] w-[320px] sm:w-[400px] md:w-[600px] lg:w-[250px] xl:w-[350px] 2xl:w-[450px] cursor-zoom-in" alt="" srcset="" />
+                            </div>
+
+                        </PhotoView>
+
+
                     </div>
-                    <Link to='/gallery'>   <button className="btn btn-active bg-blue-800 text-white  justify-end text-center  mt-3 mb-8" >View All</button></Link>
+
+                    <div className='grid gap-4 2xl:gap-6 grid-cols-1 lg:grid-cols-3'>
+                        {
+                            images.map(image =>
+                                <div>
+                                    <PhotoView src={image.img}>
+                                        <img src={image.img} className="object-cover rounded-md hover:scale-105 hover:brightness-75 transition duration-300 ease-in-out h-[400px] sm:h-[400px] md:h-[500px] lg:h-[160px] xl:h-[210px] 2xl:h-[310px] w-[320px] sm:w-[400px] md:w-[600px] lg:w-[200px] xl:w-[250px] 2xl:w-[300px] cursor-zoom-in" alt="" srcset="" />
+                                    </PhotoView>
+                                </div>
+                            )
+                        }
+                    </div>
                 </div>
 
+                <div className='flex justify-center mt-10'>
+                    <Link to='/gallery'><button className='btn bg-blue-900 hover:bg-teal-500 border-none text-white'>View All</button></Link>
+                </div>
             </div>
-        </div>
+        </PhotoProvider>
     );
 };
 
