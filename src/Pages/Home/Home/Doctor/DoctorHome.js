@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Autoplay } from 'swiper';
+import backImg from './doc_bg.jpg'
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -16,7 +17,12 @@ const DoctorHome = () => {
 
     return (
 
-        <div className='swiper-body'>
+        <div className='swiper-body' style={{
+            backgroundImage: `url(${backImg})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            padding: '20px 0px 20px 0px'
+        }}>
             <Swiper
                 effect={"coverflow"}
                 grabCursor={true}
