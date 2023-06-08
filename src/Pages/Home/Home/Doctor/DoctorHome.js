@@ -104,6 +104,10 @@ const DoctorHome = () => {
                 </SwiperSlide>
 
             </Swiper>
+            <div className='text-center mt-6 pb-8'>
+                <Link to='/doctors'><button className='btn bg-blue-500 rounded-md text-white hover:bg-blue-600 border-none'>View All</button></Link>
+                
+            </div>
         </div>
 
 
