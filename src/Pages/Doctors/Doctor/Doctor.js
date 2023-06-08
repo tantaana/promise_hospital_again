@@ -6,7 +6,8 @@ import circleImg from '../../../assets/loading-circle.gif'
 import { MdLocationPin } from 'react-icons/md';
 
 const Doctor = ({ doctor, setAnotherLoader }) => {
-    const { doctorImg, location, speciality, position, name, _id, doctor_email } = doctor;
+    const { doctorImg, location, speciality, position, name, _id, docURL } = doctor;
+    console.log(docURL)
     const [loader, setLoader] = useState(false);
 
 
@@ -16,25 +17,6 @@ const Doctor = ({ doctor, setAnotherLoader }) => {
 
     }
     return (
-
-        // <div className=" xl:flex border shadow-2xl scale-100 hover:scale-105" id="doctor-border-color2">
-        //     <div className="img border-r-2 bg-white rounded-l-2xl flex justify-center items-center  " id="border-color" >
-        //         <img className="object-cover w-full h-[250px] w-[300px] rounded-l-2xl" src={doctorImg} alt="" />
-        //     </div>
-        //     <div className="doctors-text py-4 pl-4 bg-white w-full rounded-r-2xl ">
-        //         <h2 className="font-semibold text-2xl text-color">{name}</h2>
-        //         <p className="text-gray-500 my-4">{speciality}</p>
-        //         <span className="">{location}</span> <br />
-        //         <div className="mt-8 flex gap-2">
-        //             <Link to={`/doctors/${_id}`} onClick={checkLoader}><button className='btn btn-md rounded btn-primary hover:text-white'>View profile</button></Link>
-        //             <div className='flex items-center'>
-        //                 <label className='btn btn-secondary rounded hover:text-white' onClick={() => setAnotherLoader(doctor)} htmlFor="doctor-book-modal">Book an appointment</label>
-        //                 <div>{loader ? <img src={circleImg} className='w-[30px] h-[30px]' alt="" /> : ''}</div>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
-
 
         <div>
 
@@ -70,7 +52,7 @@ const Doctor = ({ doctor, setAnotherLoader }) => {
 
                             <div className="mt-8 mb-2 flex-col xl:flex-row flex gap-2 ">
 
-                                <Link className='mx-4 xl:mx-0' to={`/doctors/${_id}`} onClick={checkLoader}><button className='btn btn-md rounded btn-secondary hover:text-white w-full'>View profile</button></Link>
+                                <Link className='mx-4 xl:mx-0' to={`/doctors/${docURL}`} onClick={checkLoader}><button className='btn btn-md rounded btn-secondary hover:text-white w-full'>View profile</button></Link>
 
 
                                 <div className='mx-4 xl:mx-0'>

@@ -79,6 +79,8 @@ const Stepper = ({ steps, currentStep }) => {
                 <div className={`flex-auto border-t-2 transition duration-500 ease-in-out ${step.completed ? 'border-green-600' : 'border-gray-300'} `}>
 
                 </div>
+
+
             </div>
         )
     })

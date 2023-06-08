@@ -77,10 +77,14 @@ import ViewAllGallery from "../../Pages/Dashboard/Gallery/ViewAllGallery";
 
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import AllUser from "../../Pages/Dashboard/AllUser/AllUser";
+import UserProfileOne from "../../Pages/Dashboard/UserProfileOne/UserProfileOne";
+import EditeUserProfileOne from "../../Pages/Dashboard/EditeUserProfileOne/EditeUserProfileOne";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import VirtualAppointment from "../../Pages/Dashboard/VirtualAppointment/VirtualAppointment";
 import DoctorVirtualAppointments from "../../Pages/Dashboard/DoctorVirtualAppointments/DoctorVirtualAppointments";
 import DoctorRoute from "../DoctorRoute/DoctorRoute";
+import OurLeader from "../../Pages/About/OurLeader";
+
 
 
 ///// Jahid import end //////////////
@@ -90,11 +94,11 @@ import DoctorRoute from "../DoctorRoute/DoctorRoute";
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <Main></Main>,
+        element: <Main />,
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home />
             },
             ////----- Tanvir aria is 81-101 line ----------//////////////////////////
             { path: '/stories', element: <SuccessStories></SuccessStories> },
@@ -133,7 +137,6 @@ export const router = createBrowserRouter([
                 element: <ViewAllGallery></ViewAllGallery>,
             },
 
-
             {
                 path: '/specialities/:speciality_id',
                 element: <SpecialitiesDetails></SpecialitiesDetails>,
@@ -156,9 +159,9 @@ export const router = createBrowserRouter([
                 path: '/doctors', element: <Doctors></Doctors>
             },
             {
-                path: '/doctors/:id',
+                path: '/doctors/:docURL',
                 loader: async ({ params }) => {
-                    return fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/docInfo/${params.id}`)
+                    return fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/docInfo/${params.docURL}`)
                 },
                 element: <DoctorProfile></DoctorProfile>
             },
@@ -239,6 +242,9 @@ export const router = createBrowserRouter([
                 path: '/about', element: <About></About>
             },
             {
+                path: '/lead', element: <OurLeader></OurLeader>
+            },
+            {
                 path: '/diagnosis', element: <Diagnosis></Diagnosis>
             },
             {
@@ -265,6 +271,13 @@ export const router = createBrowserRouter([
                     </div>
             }
         ]
+    },
+    {
+        path: '*',
+        element:
+            <div className="flex flex-col justify-center items-center my-10 mx-4">
+                <img src={errorImg} alt="" />
+            </div>
     },
     {
         path: '/dashboard',
@@ -399,14 +412,17 @@ export const router = createBrowserRouter([
 
             //// solyman aria start 317-330 line //////////
 
-            // {
-            //     path: '/userprofile',
-            //     element: <UserProfile></UserProfile>
-            // },
-            // {
-            //     path: '/EditeUserProfile',
-            //     element: <EditeUserProfile />
-            // },
+
+            {
+                path: '/dashboard/useprofile',
+                element: <UserProfileOne></UserProfileOne>
+
+            },
+            {
+                path: '/dashboard/editeuserprofile/:email',
+                loader: ({ params }) => fetch(`https://promise-hospoital-server-jahid900pj.vercel.app/users/edite/${params.email}`),
+                element: <EditeUserProfileOne />
+            }
 
 
 

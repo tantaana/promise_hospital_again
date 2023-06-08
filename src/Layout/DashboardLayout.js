@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { RiProfileFill } from 'react-icons/ri';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider/AuthProvider';
 import useAdmin from '../Hooks/useAdmin/useAdmin';
@@ -12,6 +13,7 @@ const DashboardLayout = () => {
     const { user, loading } = useContext(AuthContext)
     const [isAdmin, isAdminLoading] = useAdmin(user?.email)
     const [isDoctor, isDoctorLoading] = useDoctor(user?.email)
+    console.log(isAdmin)
 
 
     const activeLinks = ({ isActive }) => {
@@ -45,8 +47,9 @@ const DashboardLayout = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu text-lg p-4 w-80 bg-gradient-to-r from-blue-900 to-teal-500">
 
-                        <NavLink to='/dashboard' className="text-xl text-white text-center font-semibold bg-blue-900 border-teal-500 border-4 pb-2 mb-10">Dashboard <span className='text-4xl'>💼</span></NavLink>
+                        <NavLink to='/dashboard' className="py-1 text-xl text-white hover:text-black text-center font-semibold bg-blue-900 hover:bg-blue-400 border-teal-500 border-4 mb-10 flex justify-center items-center gap-2"><span>My Dashboard</span> <RiProfileFill className='text-3xl' /></NavLink>
 
+                        <li onClick={handleClick} className='text-white hover:bg-teal-600 hover:rounded-lg'><NavLink to='/dashboard/useprofile' style={activeLinks} className="text-lg text-white font-semibold hover:rounded-lg p-2">My Profile</NavLink></li>
                         <li onClick={handleClick} className='text-white hover:bg-teal-600 hover:rounded-lg'><NavLink to='/dashboard/appointments' style={activeLinks} className="text-lg text-white font-semibold hover:rounded-lg p-2">My Appointments</NavLink></li>
 
                         <li onClick={handleClick} className='text-white hover:bg-teal-600 hover:rounded-lg'><NavLink to='/dashboard/VirtualAppointment' style={activeLinks} className="text-lg text-white font-semibold hover:rounded-lg p-2">Virtual Appointment</NavLink></li>
