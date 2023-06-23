@@ -41,7 +41,7 @@ const Doctors = () => {
                     loader ?
                         <div class="flex flex-col">
                             <div class="w-12 h-12 rounded-full animate-spin
-                        border-4 border-solid border-blue-900 border-t-transparent shadow-md"></div>
+                        border-4 border-solid border-sky-700 border-t-transparent shadow-md"></div>
 
 
                         </div>

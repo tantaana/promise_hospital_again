@@ -48,14 +48,34 @@ const DoctorHome = () => {
 
                 <SwiperSlide>
                     <div className="swiper-picture">
-                        <img src="https://i.ibb.co/4KhXjkP/dr-a-aruna-prasad-consultant-dermatologist-and-Cosmetologist.png" alt="" />
+                        <img src="https://i.ibb.co/R673wWg/heart-specialist-in-gurgaon-col-dr-monik-mehta.png" alt="" />
                     </div>
                     <div className="swiper-detail">
-                        <h3>Dr. A Aruna Chowdhury</h3>
-                        <span>Dermatology</span>
+                        <h3>Dr. (COL) Manik Mia</h3>
+                        <span>Cardiology & Cardiac Surgery</span>
                     </div>
                 </SwiperSlide>
 
+                <SwiperSlide>
+                    <div className="swiper-picture">
+                        <img src="https://i.ibb.co/THWKWNx/dr-col-r-d-holla-senior-consultant-internal-medicine.jpg" alt="" />
+                    </div>
+                    <div className="swiper-detail">
+                        <h3>Dr. (COL) Rabbi Ahmed</h3>
+                        <span>Internal Medicine</span>
+                    </div>
+
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className="swiper-picture">
+                        <img src="https://i.ibb.co/hMZmnjF/dr-abdul-majeed-senior-consultant-in-internal-medicine-head-of-department-of-internal-medicine-facul.png" alt="" />
+                    </div>
+                    <div className="swiper-detail">
+                        <h3>Dr. Abdul Majeed</h3>
+                        <span>Internal Medicine</span>
+                    </div>
+
+                </SwiperSlide>
                 <SwiperSlide>
                     <div className="swiper-picture">
                         <img src="https://i.ibb.co/hMZmnjF/dr-abdul-majeed-senior-consultant-in-internal-medicine-head-of-department-of-internal-medicine-facul.png" alt="" />
@@ -90,6 +110,10 @@ const DoctorHome = () => {
                 </SwiperSlide>
 
             </Swiper>
+            <div className='text-center mt-6 pb-8'>
+                <Link to='/doctors'><button className='btn bg-blue-500 rounded-md text-white hover:bg-blue-600 border-none'>View All</button></Link>
+                
+            </div>
         </div>
 
 

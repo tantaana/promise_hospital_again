@@ -15,6 +15,8 @@ const BlogsCards = () => {
         }
     })
 
+    
+
     if (isLoading) {
         return (
             <div className='flex justify-center pt-10 pb-10'>

@@ -40,7 +40,7 @@ const Signup = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:5000/userData')
+        fetch('https://promise-hospoital-server-jahid900pj.vercel.app/userData')
             .then(res => res.json())
             .then(data => {
 
