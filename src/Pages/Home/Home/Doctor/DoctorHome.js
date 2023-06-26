@@ -66,7 +66,7 @@ const DoctorHome = () => {
             <SwiperSlide key={i}>
               <div className="mainDiv">
                 <div className="bgDoc rounded-xl border-r-4 border-teal-500 pt-10 pb-16 px-4">
-                  <h2 className="text-3xl text-blue-900 font-bold text-center mb-16">
+                  <h2 className="text-3xl text-black font-bold text-center mb-16">
                     Top Doctors
                   </h2>
 
