@@ -31,7 +31,7 @@ const CentreOfExcellence = () => {
   }, []);
 
   return (
-    <div className="my-10">
+    <div className="my-16">
       <h2
         className="text-3xl font-bold text-center my-8"
         style={{ color: "#1e3a8a" }}
