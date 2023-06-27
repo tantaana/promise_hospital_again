@@ -1,117 +1,110 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
-// import './DocHome.css'
-import { Link } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Autoplay } from 'swiper';
+import React, { useEffect, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import './styles.css'
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
+
+import "./DoctorHome.css";
+
+// import required modules
+import { EffectFade, Pagination, Autoplay } from "swiper";
+import { Link } from "react-router-dom";
 
 const DoctorHome = () => {
+  const [loadDoc, setLoadDoc] = useState([]);
+  const [loader, setLoader] = useState(false);
 
+  useEffect(() => {
+    setLoader(true);
+    fetch("https://promise-hospoital-server-jahid900pj.vercel.app/docInfo")
+      .then((res) => res.json())
+      .then((data) => {
+        setLoadDoc(data);
+        setLoader(false);
+        console.log(data);
+      });
+  }, []);
 
-    return (
+  return (
+    <div>
+      <div className="flex justify-center">
+        {loader ? (
+          <div class="flex flex-col">
+            <div
+              class="w-12 h-12 rounded-full animate-spin
+                        border-4 border-solid border-blue-900 border-t-transparent shadow-md"
+            ></div>
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
 
-        <div className='swiper-body'>
-            <Swiper
-                effect={"coverflow"}
-                grabCursor={true}
-                centeredSlides={true}
-                slidesPerView={'auto'}
-                loop={true}
-                autoplay={{
-                    delay: 1500,
-                    disableOnInteraction: false,
-                }}
-                coverflowEffect={{
-                    rotate: 0,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 4,
-                    slideShadows: true,
-                }}
-                modules={[EffectCoverflow, Autoplay]}
-                className="mySwiper"
-            >
+      <Swiper
+        spaceBetween={30}
+        effect={"fade"}
+        loop={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[EffectFade, Pagination, Autoplay]}
+        className="mySwiper"
+      >
+        {loadDoc?.map((doc, i) => {
+          return (
+            <SwiperSlide key={i}>
+              <div className="mainDiv">
+                <div className="bgDoc rounded-xl border-r-4 border-teal-500 pt-10 pb-16 px-4">
+                  <h2 className="text-3xl text-black font-bold text-center mb-16">
+                    Top Doctors
+                  </h2>
 
-
-
-                <SwiperSlide>
-                    <div className="swiper-picture">
-                        <img src="https://i.ibb.co/R673wWg/heart-specialist-in-gurgaon-col-dr-monik-mehta.png" alt="" />
-                    </div>
-                    <div className="swiper-detail">
-                        <h3>Dr. (COL) Manik Mia</h3>
-                        <span>Cardiology & Cardiac Surgery</span>
-                    </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <div className="swiper-picture">
-                        <img src="https://i.ibb.co/THWKWNx/dr-col-r-d-holla-senior-consultant-internal-medicine.jpg" alt="" />
-                    </div>
-                    <div className="swiper-detail">
-                        <h3>Dr. (COL) Rabbi Ahmed</h3>
-                        <span>Internal Medicine</span>
-                    </div>
-
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="swiper-picture">
-                        <img src="https://i.ibb.co/hMZmnjF/dr-abdul-majeed-senior-consultant-in-internal-medicine-head-of-department-of-internal-medicine-facul.png" alt="" />
-                    </div>
-                    <div className="swiper-detail">
-                        <h3>Dr. Abdul Majeed</h3>
-                        <span>Internal Medicine</span>
-                    </div>
-
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="swiper-picture">
-                        <img src="https://i.ibb.co/hMZmnjF/dr-abdul-majeed-senior-consultant-in-internal-medicine-head-of-department-of-internal-medicine-facul.png" alt="" />
-                    </div>
-                    <div className="swiper-detail">
-                        <h3>Dr. Abdul Majeed</h3>
-                        <span>Internal Medicine</span>
-                    </div>
-
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <div className="swiper-picture">
-                        <img src="https://i.ibb.co/xFRKF76/dr-anand-n-s-consultant-general-and-bariatric-surgeon.png" alt="" />
-                    </div>
-                    <div className="swiper-detail">
-                        <h3>Dr. Anand N S</h3>
-                        <span>Bariatric Surgery</span>
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="flex flex-col justify-center items-end">
+                      <h2 className="text-2xl lg:text-3xl font-semibold text-right mb-6">
+                        {doc?.name}
+                      </h2>
+                      <h2 className="text-lg lg:text-xl text-right">
+                        {doc?.position}
+                      </h2>
+                      <h2 className="text-lg lg:text-xl font-semibold text-right">
+                        {doc?.speciality}
+                      </h2>
                     </div>
 
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <div className="swiper-picture">
-                        <img src="https://i.ibb.co/hskTXhm/dr-adarsh-k-s-consultant-diabetes-and-endocrinology.jpg" alt="" />
+                    <div className="avatar">
+                      <div className="w-[200px] h-[200px] lg:w-[300px] lg:h-[300px] object-cover rounded-full ring ring-primary hover:ring-secondary ring-offset-base-100 ring-offset-2">
+                        <img src={doc?.doctorImg} alt="Doctor_Image" />
+                      </div>
                     </div>
-                    <div className="swiper-detail">
-                        <h3>Dr. Azmain Iktedar</h3>
-                        <span>Diabetes & Endocrinology</span>
-                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
 
-                </SwiperSlide>
-
-            </Swiper>
-            <div className='text-center mt-6 pb-8'>
-                <Link to='/doctors'><button className='btn bg-blue-500 rounded-md text-white hover:bg-blue-600 border-none'>View All</button></Link>
-                
-            </div>
-        </div>
-
-
-    );
+      <div className="flex justify-center mt-8">
+        <Link to="/doctors">
+          <button className="btn bg-blue-900 hover:bg-teal-500 border-none text-white">
+            View All
+          </button>
+        </Link>
+      </div>
+    </div>
+  );
 };
 
 export default DoctorHome;

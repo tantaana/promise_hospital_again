@@ -1,0 +1,10 @@
+.swiper-grid-column > .swiper-wrapper {
+  flex-direction: unset !important;
+}
+
+.anotherClass {
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
